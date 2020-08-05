@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Loading :active.sync="isLoading"></Loading>
+    <div class="nav">
+     <ul class="d-flex justify-content-between">
+      <li><router-link to="/">index</router-link></li>
+      <li><router-link to="/core">core</router-link></li>
+      <li><router-link to="/products">products</router-link></li>
+      <li><router-link to="/cart">cart</router-link></li>
+      <li><router-link to="/admin">dashboard</router-link></li>
+    </ul>
+  </div>
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
+  data(){
+    return{
+      isLoading:false,
+      fullPage:true,
+    };
+  },
   components: {
     HelloWorld
-  }
-}
+  },
+  created(){
+    this.isLoading = true;
+    setTimeout(() =>{
+      this.isLoading = false;
+    });
+  },
+};
 </script>
