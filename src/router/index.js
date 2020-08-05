@@ -5,9 +5,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:'/',
-    component:() => import('../views/Home.vue'),
-    children:[
+    path: '/',
+    component: () => import('../views/Home.vue'),
+    children: [
       // 前台
       {
         path: '',
@@ -28,7 +28,7 @@ const routes = [
         name: 'Cart',
         component: () => import('../views/cart.vue')
       },
-      //後台
+      // 後台
       {
         path: '/login',
         component: () => import('../views/dashboard/login.vue')
@@ -36,7 +36,7 @@ const routes = [
       {
         path: '/admin',
         component: () => import('../views/dashboard/dashboard.vue'),
-        children:[
+        children: [
           {
             path: 'products',
             component: () => import('../views/dashboard/login.vue')
@@ -52,15 +52,15 @@ const routes = [
           {
             path: 'image',
             component: () => import('../views/dashboard/image.vue')
-          },
+          }
         ]
-      },
-    ],
-  },
-];
+      }
+    ]
+  }
+]
 
 const router = new VueRouter({
   routes
-});
+})
 
 export default router

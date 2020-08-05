@@ -8,11 +8,11 @@ import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 
-Vue.component('Loading', Loading);
+Vue.component('Loading', Loading)
 
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-Vue.use(VueAxios, axios);
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+Vue.use(VueAxios, axios)
 
 new Vue({
   router,

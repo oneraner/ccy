@@ -15,24 +15,22 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  data(){
-    return{
-      isLoading:false,
-      fullPage:true,
-    };
+  data () {
+    return {
+      isLoading: false,
+      fullPage: true
+    }
   },
   components: {
-    HelloWorld
+
   },
-  created(){
-    this.isLoading = true;
-    setTimeout(() =>{
-      this.isLoading = false;
-    });
-  },
-};
+  created () {
+    this.isLoading = true
+    setTimeout(() => {
+      this.isLoading = false
+    })
+  }
+}
 </script>

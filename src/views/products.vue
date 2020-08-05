@@ -4,11 +4,11 @@
   </div>
 </template>
 <script>
-export default{
-    data(){
-        return{
-            products:[],
-        };
-    },
-};
+export default {
+  data () {
+    return {
+      products: []
+    }
+  }
+}
 </script>
