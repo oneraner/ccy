@@ -1,14 +1,16 @@
 <template>
   <div class="home">
     <Loading :active.sync="isLoading"></Loading>
-    <div class="nav">
-      <p class="logo"></p>
-     <ul class="d-flex justify-content-between">
-      <li><router-link to="/">index</router-link></li>
-      <li><router-link to="/core">core</router-link></li>
-      <li><router-link to="/products">products</router-link></li>
-      <li><router-link to="/cart">cart</router-link></li>
-      <li><router-link to="/admin">dashboard</router-link></li>
+    <div class="nav d-flex justify-content-between align-items-center">
+      <button type="button" class="btn logo">logo</button>
+     <ul class="d-flex justify-content-between col-6">
+      <li><router-link to="/" class="navButton">最新消息</router-link></li>
+      <li><router-link to="/core" class="navButton">經營理念</router-link></li>
+      <li><router-link to="/products" class="navButton">美食饗宴</router-link></li>
+    </ul>
+    <ul class="d-flex justify-content-between col-2">
+       <li><router-link to="/admin" class="btn">管理者專用</router-link></li>
+       <li><router-link to="/cart" class="navButton">購物車</router-link></li>
     </ul>
   </div>
   <router-view></router-view>
