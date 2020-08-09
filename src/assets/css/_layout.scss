@@ -1,11 +1,31 @@
 .nav{
     background-color: $primary;
-    height: 125px;
+    height: 130px;
 }
 .navButton{
     font-family:'Noto Sans TC', sans-serif;
     font-size: $font-size-base;
     font-weight: 400;
+    font-style: italic;
     color: $secondary;
     text-decoration:none;
+    padding: 20px;
+}
+.navButton:hover{
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.btn-manager{
+    font-size: 0.8rem;
+}
+.footer{
+    background-color: $primary;
+    height: 130px;
+}
+.contact{
+    @include englishFont;
+}
+.address{
+    @include chineseFont;
 }
