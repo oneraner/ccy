@@ -13742,4 +13742,11 @@ ul {
 body {
   font-family: 'Coiny' , 'Noto Sans TC', sans-serif , cursive;
 }
+
+.logo {
+  width: 500px;
+  height: 200px;
+  background-image: url("../image/ccylogo.png");
+  background-position: center;
+}
 /*# sourceMappingURL=all.css.map */

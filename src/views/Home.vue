@@ -2,6 +2,7 @@
   <div class="home">
     <Loading :active.sync="isLoading"></Loading>
     <div class="nav">
+      <p class="logo"></p>
      <ul class="d-flex justify-content-between">
       <li><router-link to="/">index</router-link></li>
       <li><router-link to="/core">core</router-link></li>
@@ -11,6 +12,9 @@
     </ul>
   </div>
   <router-view></router-view>
+  <div class="footer">
+    <div>copyright</div>
+  </div>
   </div>
 </template>
 
