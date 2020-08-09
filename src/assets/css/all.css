@@ -11802,9 +11802,9 @@ input[type="color"].form-control:disabled {
   padding: 0.25rem 0;
 }
 
-.b-form-spinbutton:not(.d-inline-flex):not(.flex-column) {
+/* /* .b-form-spinbutton:not(.d-inline-flex):not(.flex-column) {
   output-width: 100%;
-}
+} */
 
 .b-form-spinbutton.d-inline-flex:not(.flex-column) {
   width: auto;
