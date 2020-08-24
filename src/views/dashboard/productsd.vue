@@ -32,10 +32,10 @@
           <td>{{ item.category }}</td>
           <td>{{ item.title }}</td>
           <td>
-            {{ item.origin_price | currency }}
+            {{ item.origin_price }}
           </td>
           <td>
-            {{ item.price | currency }}
+            {{ item.price }}
           </td>
           <td>
             <span
@@ -69,8 +69,8 @@
     <div class="col-4">
       <b-form>
         <div class="form-group">
-        <label>輸入圖片網址</label>
-        <b-form-input v-model="tempProduct.imgUrl[0]" type="text" class="form-control" placeholder="請輸入連結"></b-form-input>
+        <label>顯示圖片網址</label>
+        <input v-model="tempProduct.imgUrl" type="text" class="form-control" placeholder="請輸入圖片網址">
         </div>
         <div class="form-group">
           <label>上傳圖片</label>
@@ -80,8 +80,7 @@
             placeholder="選擇圖片"
             drop-placeholder="Drop file here..."
           ></b-form-file>
-          <div class="mt-3">Selected file: {{ file ? file.name : '' }}</div>
-          <img class="img-fluid" :src="tempProduct.imgUrl[0]" alt="">
+          <img class="img-fluid" :src="tempProduct.imgUrl" alt="">
         </div>
       </b-form>
     </div>
@@ -173,6 +172,7 @@ export default {
       this.$refs['newModal'].show();
     },
     getDetails (item) {
+      this.tempProduct = {... item};
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
       this.$http.get(api).then((response) => {
         this.tempProduct = response.data.data;
