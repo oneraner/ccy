@@ -1,3 +1,80 @@
 <template>
-<div>Here is image pages</div>
+  <div class="container">
+    <table id="imageTable" class="table mt-3" width="1200px">
+      <thead>
+        <tr>
+          <th scope="col">圖片縮圖</th>
+          <th scope="col">網址</th>
+          <th scope="col">Button</th>
+        </tr>
+      </thead>
+      <tbody v-if="storages.length">
+        <tr v-for="(item, key) in storages" :key="key">
+          <td class="table-width-mid">
+            <img :src="item.path" class="img-fluid" width="230px">
+          </td>
+          <td class="table-width-big">
+            {{item.path}}
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm">
+              <b-button class="btn btn-danger" @click.prevent="openModal(item)">Delete</b-button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- 分頁 -->
+    <b-pagination v-model="currentPage" pills :total-rows="rows" :per-page="perPage" align="center" aria-controls="imageTable"></b-pagination>
+    <!-- Modal -->
+    <b-modal id="deleteModal" ref="deleteModal" class="modal-dialog modal-dialog-centered" tabindex="-1" role="dialog" centered title="刪除圖片" hide-footer>
+      <div class="modal-body">
+        <p>確定刪除所選的圖片</p>
+      </div>
+      <div class="modal-footer">
+        <b-button type="button" class="btn btn-primary" @click="$bvModal.hide('deleteModal')">取消</b-button>
+        <b-button type="button" class="btn btn-danger" @click="deleteImage">確認刪除</b-button>
+      </div>
+    </b-modal>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'pic',
+  data () {
+    return {
+      storages: {},
+      tempData: {},
+      pagination: {},
+      currentPage: 1,
+      perPage: '3'
+    }
+  },
+  created () {
+    this.getData()
+  },
+  methods: {
+    getData (page = 1) {
+      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/storage?page=${page}`
+      this.$http.get(url).then((response) => {
+        this.storages = response.data.data
+        this.pagination = response.data.meta.pagination
+      })
+    },
+    openModal (item) {
+      this.$refs.deleteModal.show()
+      this.tempData = { ...item }
+    },
+    deleteImage () {
+      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/storage/${this.tempData.id}`
+
+      this.$http.delete(url).then(() => {
+        this.$refs.deleteModal.hide()
+        this.getData()
+      })
+    }
+  }
+
+}
+</script>

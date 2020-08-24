@@ -28,18 +28,20 @@ const routes = [
         name: 'Cart',
         component: () => import('../views/cart.vue')
       },
-      // 後台
       {
         path: '/login',
-        component: () => import('../views/dashboard/login.vue')
+        name: 'Login',
+        component: () => import('../views/login.vue')
       },
+      // 後台
       {
         path: '/admin',
+        name: 'admin',
         component: () => import('../views/dashboard/dashboard.vue'),
         children: [
           {
             path: 'products',
-            component: () => import('../views/dashboard/login.vue')
+            component: () => import('../views/dashboard/productsd.vue')
           },
           {
             path: 'discount',

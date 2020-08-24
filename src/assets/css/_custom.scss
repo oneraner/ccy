@@ -4,15 +4,30 @@
     background-position: center;
     background-size: cover;
 }
-@mixin chineseFont {
-    font-family:'Noto Sans TC', sans-serif;
-    font-size: $font-size-base;
-    font-weight: 400;
-    color: $secondary;
+.table-width-big{
+    width: 500px;
+    max-width: 500px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
-@mixin englishFont {
-    font-family: 'Coiny', cursive;
-    font-size: $font-size-base;
-    font-weight: 400;
-    color: $secondary;
+.table-width-mid{
+    width: 250px;
+    max-width: 250px;
+}
+.bg-cri{
+    background-color: $green;
+    border-radius: 40%;
+    height: 400px;
+}
+.minicard{
+    height: 200px;
+    border-radius: 10px;
+    border: $primary 3px solid;
+}
+
+.managerContent{
+    @include chineseFont;
+}
+.steakContent{
+    @include chineseFont;
 }
