@@ -98,8 +98,8 @@ export default {
     getProduct (id) {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`;
       this.$http.get(api).then((res) => {
-        this.tempProduct = res.data.data
-        this.tempProduct.num = 1
+        this.tempProduct = res.data.data;
+        this.tempProduct.num = 1;
       })
     },
     getCart () {

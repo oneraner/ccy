@@ -9,7 +9,9 @@
     <b-button @click="addCart(item.id)">加入購物車</b-button>
     </p>
     </div>
-    <b-modal ref="productModal"></b-modal>
+    <b-modal ref="productModal">
+      <div>thisisproductmodal</div>
+    </b-modal>
   </div>
 </template>
 <script>
@@ -37,6 +39,7 @@ export default {
       this.$http.get(api).then((res) => {
         this.tempProduct = res.data.data
         this.tempProduct.num = 1
+        this.$refs.productModal.show();
       })
     },
     addCart (id, quantity = 1) {
