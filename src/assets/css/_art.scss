@@ -30,6 +30,7 @@
 }
 .dessertImage{
     @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/mrwLz0ajrH9zWn4aHx9W6mNXjtdMAoN2DUPqK2ep7nFGUrQACBnvUqxXiIawUhZxSZt6kWBgJgrpBbhGSmzhJ4jI0TpjtJaR6HNoeo5V5lj5kdKrGtTR9qc4TCvwjb1j.jpg');
+    height: 250px;
     border-radius: 25px;
 }
 .entree{

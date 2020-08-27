@@ -48,13 +48,13 @@
             <div class="btn-group">
               <b-button
                 class="btn btn-outline-primary btn-sm"
-                @click.prevent="getDetails(item)"
+                @click="getDetails(item)"
               >
                 編輯
               </b-button>
               <button
                 class="btn btn-outline-danger btn-sm"
-                @click="openModal('delete', item)"
+                @click="delModal(item)"
               >
                 刪除
               </button>
@@ -70,7 +70,7 @@
       <b-form>
         <div class="form-group">
         <label>顯示圖片網址</label>
-        <input v-model="tempProduct.imgUrl" type="text" class="form-control" placeholder="請輸入圖片網址">
+        <input v-model="tempProduct.imageUrl" type="text" class="form-control" placeholder="請輸入圖片網址">
         </div>
         <div class="form-group">
           <label>上傳圖片</label>
@@ -80,7 +80,7 @@
             placeholder="選擇圖片"
             drop-placeholder="Drop file here..."
           ></b-form-file>
-          <img class="img-fluid" :src="tempProduct.imgUrl" alt="">
+          <img class="img-fluid" :src="tempProduct.imageUrl" alt="">
         </div>
       </b-form>
     </div>
@@ -129,7 +129,12 @@
   </div>
 </b-modal>
 <!-- delModal -->
-<b-modal ref="delModal">Hello From My Modal!</b-modal>
+<b-modal ref="delModal" centered hide-footer title="刪除商品">
+  <div class="d-flex justify-content-between">
+  確定刪除"{{tempProduct.title}}"？
+  <b-button @click="delProduct()">確認刪除</b-button>
+  </div>
+</b-modal>
     <!-- Modalend -->
 </div>
 </template>
@@ -141,49 +146,56 @@ export default {
       token: '',
       products: [],
       tempProduct: {
-        title:'',
-        category:'',
-        unit:'',
-        origin_price:'',
-        price:'',
-        description:'',
-        content:'',
-        enabled:true,
-        imgUrl: [],
+        title: '',
+        category: '',
+        unit: '',
+        origin_price: '',
+        price: '',
+        description: '',
+        content: '',
+        enabled: true,
+        imageUrl: []
       },
-      file:null,
-      pagination: {},
-    };
+      file: null,
+      pagination: {}
+    }
   },
   created () {
-    this.getProducts();
+    getProducts()
   },
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`;
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`
       this.$http.get(api).then((response) => {
         this.products = response.data.data
-      });
+      })
     },
-    newModal(){
+    newModal () {
       this.tempProduct = {
-        imgUrl:[],
-      };
-      this.$refs['newModal'].show();
+        imageUrl: []
+      }
+      this.$refs.newModal.show()
     },
     getDetails (item) {
-      this.tempProduct = {... item};
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
+      this.tempProduct = { ...item }
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.get(api).then((response) => {
-        this.tempProduct = response.data.data;
-      });
-      this.tempProduct = {... item};
-      this.$refs['newModal'].show();
+        this.tempProduct = response.data.data
+      })
+      this.tempProduct = { ...item }
+      this.$refs.newModal.show()
     },
-    delProduct(){
-      this.tempProduct = {... item};
-      this.$refs['delModal'].show();
+    delModal (item) {
+      this.tempProduct = { ...item }
+      this.$refs.delModal.show()
     },
+    delProduct () {
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
+      this.$http.delete(api).then(() => {
+        this.$refs.delModal.hide()
+        this.getProducts()
+      })
+    }
   //   updateProduct () {
   //     // 新增商品
   //     let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/product`
