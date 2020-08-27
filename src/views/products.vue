@@ -9,6 +9,7 @@
     <b-button @click="addCart(item.id)">加入購物車</b-button>
     </p>
     </div>
+    <b-modal ref="productModal"></b-modal>
   </div>
 </template>
 <script>
