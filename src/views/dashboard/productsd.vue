@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <nav class="d-flex justify-content-end mt-3 mb-3">
-        <b-button pill variant="outline-secondary" @click="newModal">建立新產品</b-button>
+        <b-button pill variant="primary" @click="newModal">建立新產品</b-button>
     </nav>
     <table class="table mt-4">
       <thead>
@@ -70,17 +70,18 @@
       <b-form>
         <div class="form-group">
         <label>顯示圖片網址</label>
-        <input v-model="tempProduct.imageUrl" type="text" class="form-control" placeholder="請輸入圖片網址">
+        <input v-model="tempProduct.imageUrl[0]" type="text" class="form-control" placeholder="請輸入圖片網址">
         </div>
         <div class="form-group">
-          <label>上傳圖片</label>
+          <label class="d-flex justify-content-between align-items-center">上傳圖片<b-button @click="uploadedFile">上傳圖片</b-button></label>
           <b-form-file
             v-model="file"
             :state="Boolean(file)"
             placeholder="選擇圖片"
             drop-placeholder="Drop file here..."
           ></b-form-file>
-          <img class="img-fluid" :src="tempProduct.imageUrl" alt="">
+          
+          <img class="img-fluid" :src="tempProduct.imageUrl[0]" alt="">
         </div>
       </b-form>
     </div>
@@ -117,6 +118,7 @@
         <label>產品描述</label>
         <b-form-textarea rows="3" max-rows="3"  v-model="tempProduct.content" placeholder="請輸入產品描述"></b-form-textarea>
       </div>
+      <div class="d-flex justify-content-between">
       <b-form-checkbox
       id="is_enabled"
       v-model="tempProduct.enabled"
@@ -125,6 +127,9 @@
     >
     啟用
     </b-form-checkbox>
+    <b-button @click="newProduct()">新增產品</b-button>
+    <b-button @click="saveProduct()">儲存修改</b-button>
+    </div>
     </div>
   </div>
 </b-modal>
@@ -157,64 +162,76 @@ export default {
         imageUrl: []
       },
       file: null,
+      filePath:{},
       pagination: {}
     }
   },
   created () {
-    getProducts()
+    this.getProducts()
   },
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`;
       this.$http.get(api).then((response) => {
-        this.products = response.data.data
+        this.products = response.data.data;
       })
     },
     newModal () {
       this.tempProduct = {
         imageUrl: []
       }
-      this.$refs.newModal.show()
+      this.$refs.newModal.show();
     },
     getDetails (item) {
       this.tempProduct = { ...item }
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
       this.$http.get(api).then((response) => {
-        this.tempProduct = response.data.data
+        this.tempProduct = response.data.data;
       })
       this.tempProduct = { ...item }
-      this.$refs.newModal.show()
+      this.$refs.newModal.show();
+    },
+    newProduct(){
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/`;
+      this.$http.post(api, this.tempProduct).then(() => {
+        this.getProducts();
+        this.$refs.newModal.hide();
+      });
+    },
+    saveProduct(item){
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
+      this.$http.patch(api, this.tempProduct).then(() => {
+        this.getProducts();
+        this.$refs.newModal.hide();
+      });
+    },
+    uploadedFile(){
+      const uploadedFile = this.file;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/storage`;
+      console.log(this.file);
+      console.dir(this.file);
+      const formData = new FormData();
+      formData.append('file', uploadedfile);
+      axios.defaults.headers.common.Authorization = `Bearer ${this.token}`;
+      this.$http.post(api, formData, {
+        'Content-Type': 'multipart/form-data',
+      }).then((response) => {
+        console.log(response);
+        this.filePath = response.data.data.path;
+      })
     },
     delModal (item) {
       this.tempProduct = { ...item }
-      this.$refs.delModal.show()
+      this.$refs.delModal.show();
     },
     delProduct () {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.delete(api).then(() => {
-        this.$refs.delModal.hide()
-        this.getProducts()
+        this.$refs.delModal.hide();
+        this.getProducts();
       })
     }
-  //   updateProduct () {
-  //     // 新增商品
-  //     let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/product`
-  //     let httpMethod = 'post'
-  //     // 當不是新增商品時則切換成編輯商品 API
-  //     if (!this.isNew) {
-  //       api = `${process.env.VUE_APP_APIPATH}/api/${this.uuid}/admin/ec/product/${this.tempProduct.id}`
-  //       httpMethod = 'patch'
-  //     }
-  //     this.$http[httpMethod](api, this.tempProduct).then(() => {
-  //       $('#productModal').modal('hide')
-  //       this.isLoading = false
-  //       this.getProducts()
-  //     }).catch((error) => {
-  //       this.isLoading = false
-  //       const errorData = error.response.data
-  //       $('#productModal').modal('hide')
-  //     })
-  //   },
+
   //   delProduct () {
   //     const url = `${process.env.VUE_APP_APIPATH}/api/${this.uuid}/admin/ec/product/${this.tempProduct.id}`
   //     this.$http.delete(url).then(() => {

@@ -67,12 +67,15 @@ $colors: map-merge(
 );
 
 // $primary:       $blue !default;
-$primary:#F893D0;
+$primary:#DF1383;
 // $primary:#E31291;
 // $secondary:     $gray-600 !default;
-$secondary:#2A14C3;
+$secondary:#ffd9e6;
 // $success:       $green !default;
-$success:#05445F;
+$success:#ff73b3;
+$bgc:#ffd9e6;
+$darkbgc:#ff73b3;
+
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
@@ -250,7 +253,8 @@ $line-height-sm:              1.5 !default;
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .25rem !default;
+// $border-radius:               .25rem !default;
+$border-radius:               25px !default;
 $border-radius-lg:            .3rem !default;
 $border-radius-sm:            .2rem !default;
 

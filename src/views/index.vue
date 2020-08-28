@@ -1,6 +1,7 @@
 <template>
+<div class="container">
 <div class="row justify-content-center">
-  <ul class="d-flex justify-content-center col-11 mb-3">
+  <ul class="d-flex justify-content-center col-12 mb-3">
     <li class="minicard entree col-3 mr-3" @click="$bvModal.show('entreeModal')"></li>
     <li class="minicard soup col-3 mr-3" @click="$bvModal.show('soupModal')"></li>
     <li class="minicard salad col-3" @click="$bvModal.show('saladModal')"></li>
@@ -12,6 +13,7 @@
       <li class="bg-cri d-flex justify-content-center align-items-center col-6"><p class="minicard tea col-10"></p></li>
     </ul>
   </div>
+  <router-link to="/news" class="posterImage col-12 mb-5"></router-link>
 <b-modal id="entreeModal" size="xl" hide-header hide-footer>
   <div class="d-block entreeBig">
   </div>
@@ -27,6 +29,7 @@
   </div>
     <b-button class="mt-3" block @click="$bvModal.hide('saladModal')">Close Me</b-button>
 </b-modal>
+</div>
 </div>
 </template>
 <script>

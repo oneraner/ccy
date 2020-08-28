@@ -39,15 +39,15 @@
     </div>
     <table class="table col-11">
         <thead>
-            <th>刪除</th>
-            <th>品名</th>
+            <th>從購物車移除</th>
+            <th>餐點</th>
             <th>數量</th>
             <th>單價</th>
             <th>總價</th>
         </thead>
         <tbody>
             <tr v-for="item in carts" :key="item.id">
-                <td>刪除按鈕</td>
+                <td><b-button fill>刪除按鈕</b-button></td>
                 <td>{{item.product.title}}</td>
                 <td>
                   <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal()"></b-form-spinbutton>

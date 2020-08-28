@@ -9,8 +9,13 @@
     <b-button @click="addCart(item.id)">加入購物車</b-button>
     </p>
     </div>
-    <b-modal ref="productModal">
-      <div>thisisproductmodal</div>
+    <b-modal ref="productModal" :title="tempProduct.title" centered>
+      <div class="mb-3">介紹：{{tempProduct.content}}</div>
+      <div class="mb-3">成分：{{tempProduct.description}}</div>
+      <p class="d-flex justify-content-around">
+      <span>原價：<del>{{tempProduct.origin_price}}</del></span>
+      <span>特價：{{tempProduct.price}}</span>
+      </p>
     </b-modal>
   </div>
 </template>

@@ -1,5 +1,7 @@
+.darkbgc{
+    background-color: $darkbgc;
+}
 .nav{
-    background-color: $primary;
     height: 130px;
     border-radius: 10px;
 }
@@ -8,38 +10,39 @@
     font-size: $font-size-base;
     font-weight: 400;
     font-style: italic;
-    color: $secondary;
+    color: #000;
+    background-color: $bgc;
     text-decoration:none;
-    padding: 20px;
+    padding: 30px 20px 30px 20px;
+    border-radius: $border-radius;
 }
 .navButton:hover{
     @include hover;
-//     background-color: #fff;
-//     text-decoration: none;
-//     border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
 }
 .cartButton{
     font-family:'Noto Sans TC', sans-serif;
     font-size: $font-size-base;
     font-weight: 400;
     font-style: italic;
-    color: #E31291;
-    background-color: #FAF3F3;
+    color: #000;
+    background-color: $bgc;
     text-decoration:none;
     padding: 30px 20px 30px 20px;
-    border-radius: 25px;
+    border-radius: $border-radius;
 }
 .btn-manager{
     font-size: 0.8rem;
 }
 .footer{
-    background-color: $primary;
     height: 130px;
-    border-radius: 10px;
 }
 .contact{
-    @include englishFont;
+    @include font;
+    color: #000;
 }
 .address{
-    @include chineseFont;
+    @include font;
 }

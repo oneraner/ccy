@@ -1,10 +1,13 @@
 <template>
-  <div class="home container">
+<div class="bgc">
+  <div class="home">
+    <div class="darkbgc">
+    <div class="container">
     <Loading :active.sync="isLoading"></Loading>
     <div class="nav d-flex justify-content-between align-items-center mb-3">
       <b-link to="/" class="logo col-4"></b-link>
      <ul class="d-flex justify-content-around col-6">
-      <li><router-link to="/" class="navButton">最新消息</router-link></li>
+      <li><router-link to="/news" class="navButton">最新消息</router-link></li>
       <li><router-link to="/core" class="navButton">經營理念</router-link></li>
       <li><router-link to="/products" class="navButton">美食饗宴</router-link></li>
       <li><router-link to="/admin" class="btn btn-danger btn-manager">管理者專用</router-link></li>
@@ -13,19 +16,24 @@
        <li><router-link to="/cart" class="cartButton">購物車</router-link></li>
     </ul>
   </div>
+  </div>
+  </div>
   <router-view></router-view>
-  <footer class="d-flex justify-content-between align-items-center footer">
+  <div class="darkbgc">
+  <footer class="d-flex justify-content-between align-items-center footer container">
     <b-link to="/" class="logo col-4"></b-link>
     <ul>
-      <li class="address mb-3">餐廳地址：台北市信義區光復南路888號</li>
-      <li class="text-success">本網站由ccysteak公司所有</li>
+      <li class="address rounded-pill bgc p-1 mb-3">餐廳地址：台北市信義區光復南路888號</li>
+      <li class="address rounded-pill bgc d-flex justify-content-center p-1">本網站由ccysteak公司所有</li>
     </ul>
     <ul class="d-flex flex-column align-items-start">
-    <li><a href="tel:+#" class="contact">Tel：(02)34567890</a></li>
-    <li><a href="mailto:#" class="contact">E-mail：ccysteak@gmail.com</a></li>
+    <li class="bgc rounded-pill p-1 mb-3"><a href="tel:+#" class="contact">Tel：(02)34567890</a></li>
+    <li class="bgc rounded-pill p-1"><a href="mailto:#" class="contact">E-mail：ccysteak@gmail.com</a></li>
     </ul>
   </footer>
   </div>
+  </div>
+</div>
 </template>
 
 <script>

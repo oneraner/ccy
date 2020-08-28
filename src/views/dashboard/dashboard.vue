@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <ul class="d-flex justify-content-between">
+    <ul class="d-flex justify-content-between darkbgc">
       <li><router-link to="/">回前台</router-link></li>
       <li><router-link to="/admin/">後台首頁</router-link></li>
       <li><router-link to="/admin/products">後台products</router-link></li>

@@ -10,29 +10,30 @@
     word-wrap: break-word;
     word-break: break-all;
 }
+.bgc{
+    background-color: $bgc;
+}
 .table-width-mid{
     width: 250px;
     max-width: 250px;
 }
 .bg-cri{
-    background-color: $green;
-    border-radius: 40%;
-    height: 400px;
+    color: 000;
 }
 .minicard{
     height: 200px;
+    border: $darkbgc 3px solid;
     border-radius: 10px;
-    border: $primary 3px solid;
 }
 
 .managerContent{
-    @include chineseFont;
+    @include font;
 }
 .steakContent{
-    @include chineseFont;
+    @include font;
 }
 .dessertcontent{
-    @include chineseFont;
+    @include font;
 }
 .card{
     width: 300px;
