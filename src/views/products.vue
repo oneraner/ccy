@@ -34,29 +34,29 @@ export default {
   },
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`;
       this.$http.get(api).then((res) => {
-        this.products = res.data.data
-      })
+        this.products = res.data.data;
+      });
     },
     getProduct (id) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`;
       this.$http.get(api).then((res) => {
-        this.tempProduct = res.data.data
-        this.tempProduct.num = 1
+        this.tempProduct = res.data.data;
+        this.tempProduct.num = 1;
         this.$refs.productModal.show();
       })
     },
     addCart (id, quantity = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
       const cart = {
         product: id,
         quantity
       }
       this.$http.post(api, cart).then((res) => {
-        console.log(res)
+        console.log(res);
       }).catch(error => {
-        console.log(error.response)
+        console.log(error.response);
       })
     }
   }

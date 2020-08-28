@@ -80,7 +80,6 @@
             placeholder="選擇圖片"
             drop-placeholder="Drop file here..."
           ></b-form-file>
-          
           <img class="img-fluid" :src="tempProduct.imageUrl[0]" alt="">
         </div>
       </b-form>
@@ -122,8 +121,6 @@
       <b-form-checkbox
       id="is_enabled"
       v-model="tempProduct.enabled"
-      value="true"
-      unchecked-value="false"
     >
     啟用
     </b-form-checkbox>
@@ -159,11 +156,10 @@ export default {
         description: '',
         content: '',
         enabled: true,
-        imageUrl: []
+        imageUrl: [],
       },
       file: null,
-      filePath:{},
-      pagination: {}
+      pagination: {},
     }
   },
   created () {
@@ -171,7 +167,7 @@ export default {
   },
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`;
       this.$http.get(api).then((response) => {
         this.products = response.data.data;
       })
@@ -192,7 +188,7 @@ export default {
       this.$refs.newModal.show();
     },
     newProduct(){
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product`;
       this.$http.post(api, this.tempProduct).then(() => {
         this.getProducts();
         this.$refs.newModal.hide();
@@ -208,16 +204,14 @@ export default {
     uploadedFile(){
       const uploadedFile = this.file;
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/storage`;
-      console.log(this.file);
-      console.dir(this.file);
       const formData = new FormData();
-      formData.append('file', uploadedfile);
-      axios.defaults.headers.common.Authorization = `Bearer ${this.token}`;
+      formData.append('file', uploadedFile);
       this.$http.post(api, formData, {
-        'Content-Type': 'multipart/form-data',
+        headers:{
+          'Content-Type': 'multipart/form-data',
+        },
       }).then((response) => {
-        console.log(response);
-        this.filePath = response.data.data.path;
+        this.tempProduct.imageUrl.push(response.data.data.path);
       })
     },
     delModal (item) {
