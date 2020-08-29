@@ -1,38 +1,41 @@
 <template>
 <div class="container">
     <div class="row justify-content-center">
-    <div class="card-group justify-content-between col-11">
-        <div class="card">
-          <img class="card-img-top mb-4" :src="products[2].imageUrl[0]">
-          <p class="card-title">
-              {{products[2].title}}
-              <span>加購價:{{products[2].price}}</span>
-          </p>
+    <div class="d-flex justify-content-between col-11 mb-3">
+         <div class="card">
+          <img :src="products[2].imageUrl[0]" class="card-img-top mb-3">
+          <p class="card-title mb-3">{{products[2].title}}</p>
           <p class="d-flex justify-content-around">
-          <b-button @click="getProduct(products[2].id)">查看詳情</b-button>
-          <b-button @click="addCart(products[2].id)">加入購物車</b-button>
+            <span class="card-text">原價：<del>{{products[2].origin_price}}</del></span>
+            <span class="card-text">特價：{{products[2].price}}</span>
+          </p>
+          <p class="d-flex justify-content-around darkbgc p-3">
+            <b-button @click="getProduct(products[2].id)">查看詳情</b-button>
+            <b-button @click="addCart(products[2].id)">加入購物車</b-button>
           </p>
         </div>
         <div class="card">
-          <img class="card-img-top mb-4" :src="products[3].imageUrl[0]">
-          <p class="card-title">
-              {{products[3].title}}
-              <span>加購價:{{products[3].price}}</span>
-          </p>
+          <img :src="products[3].imageUrl[0]" class="card-img-top mb-3">
+          <p class="card-title mb-3">{{products[3].title}}</p>
           <p class="d-flex justify-content-around">
-          <b-button @click="getProduct(products[3].id)">查看詳情</b-button>
-          <b-button @click="addCart(products[3].id)">加入購物車</b-button>
+            <span class="card-text">原價：<del>{{products[3].origin_price}}</del></span>
+            <span class="card-text">特價：{{products[3].price}}</span>
+          </p>
+          <p class="d-flex justify-content-around darkbgc p-3">
+            <b-button @click="getProduct(products[3].id)">查看詳情</b-button>
+            <b-button @click="addCart(products[3].id)">加入購物車</b-button>
           </p>
         </div>
-        <div class="card">
-          <img class="card-img-top mb-4" :src="products[1].imageUrl[0]">
-          <p class="card-title">
-              {{products[1].title}}
-              <span>加購價:{{products[1].price}}</span>
-          </p>
+         <div class="card">
+          <img :src="products[5].imageUrl[0]" class="card-img-top mb-3">
+          <p class="card-title mb-3">{{products[5].title}}</p>
           <p class="d-flex justify-content-around">
-          <b-button @click="getProduct(products[1].id)">查看詳情</b-button>
-          <b-button @click="addCart(products[1].id)">加入購物車</b-button>
+            <span class="card-text">原價：<del>{{products[5].origin_price}}</del></span>
+            <span class="card-text">特價：{{products[5].price}}</span>
+          </p>
+          <p class="d-flex justify-content-around darkbgc p-3">
+            <b-button @click="getProduct(products[5].id)">查看詳情</b-button>
+            <b-button @click="addCart(products[5].id)">加入購物車</b-button>
           </p>
         </div>
     </div>

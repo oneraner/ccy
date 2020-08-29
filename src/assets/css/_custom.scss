@@ -36,11 +36,19 @@
     @include font;
 }
 .card{
+    @include border;
     width: 300px;
     max-width: 300px;
-    border-radius: 10px;
 }
 .card-img-top{
     width: 100%;
     height: 198px;
+}
+.card-title{
+    @include font;
+    margin: auto;
+    
+}
+.cart-text{
+    @include font;
 }

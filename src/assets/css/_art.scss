@@ -9,6 +9,9 @@
     background-position: center;
     background-size: cover;
 }
+@mixin border {
+    border: $darkbgc 3px solid;
+}
 .banner{
     height: 500px;
     @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/04prQya0DeT6uaLn8MKRi8N7kTG6aGv1Fp1v7Hh3gQXPqqAXLk0lSfH3HqxbvfsOEb5qCG6gMiV98a1iCMHVBZxdCRAX2ZOAMtJDd5JgftrtXKn6pZdvV3RTPeE1yq0y.jpg');

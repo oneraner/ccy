@@ -120,8 +120,7 @@
       <div class="d-flex justify-content-between">
       <b-form-checkbox
       id="is_enabled"
-      v-model="tempProduct.enabled"
-    >
+      v-model="tempProduct.enabled" >
     啟用
     </b-form-checkbox>
     <b-button @click="newProduct()">新增產品</b-button>
