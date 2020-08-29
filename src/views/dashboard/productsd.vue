@@ -156,10 +156,10 @@ export default {
         description: '',
         content: '',
         enabled: true,
-        imageUrl: [],
+        imageUrl: []
       },
       file: null,
-      pagination: {},
+      pagination: {}
     }
   },
   created () {
@@ -167,62 +167,62 @@ export default {
   },
   methods: {
     getProducts (page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/products?page=${page}`
       this.$http.get(api).then((response) => {
-        this.products = response.data.data;
+        this.products = response.data.data
       })
     },
     newModal () {
       this.tempProduct = {
         imageUrl: []
       }
-      this.$refs.newModal.show();
+      this.$refs.newModal.show()
     },
     getDetails (item) {
       this.tempProduct = { ...item }
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.get(api).then((response) => {
-        this.tempProduct = response.data.data;
+        this.tempProduct = response.data.data
       })
       this.tempProduct = { ...item }
-      this.$refs.newModal.show();
+      this.$refs.newModal.show()
     },
-    newProduct(){
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product`;
+    newProduct () {
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product`
       this.$http.post(api, this.tempProduct).then(() => {
-        this.getProducts();
-        this.$refs.newModal.hide();
-      });
+        this.getProducts()
+        this.$refs.newModal.hide()
+      })
     },
-    saveProduct(item){
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`;
+    saveProduct (item) {
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.patch(api, this.tempProduct).then(() => {
-        this.getProducts();
-        this.$refs.newModal.hide();
-      });
+        this.getProducts()
+        this.$refs.newModal.hide()
+      })
     },
-    uploadedFile(){
-      const uploadedFile = this.file;
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/storage`;
-      const formData = new FormData();
-      formData.append('file', uploadedFile);
+    uploadedFile () {
+      const uploadedFile = this.file
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/storage`
+      const formData = new FormData()
+      formData.append('file', uploadedFile)
       this.$http.post(api, formData, {
-        headers:{
-          'Content-Type': 'multipart/form-data',
-        },
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       }).then((response) => {
-        this.tempProduct.imageUrl.push(response.data.data.path);
+        this.tempProduct.imageUrl.push(response.data.data.path)
       })
     },
     delModal (item) {
       this.tempProduct = { ...item }
-      this.$refs.delModal.show();
+      this.$refs.delModal.show()
     },
     delProduct () {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.delete(api).then(() => {
-        this.$refs.delModal.hide();
-        this.getProducts();
+        this.$refs.delModal.hide()
+        this.getProducts()
       })
     }
 

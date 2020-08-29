@@ -96,53 +96,53 @@ export default {
     getProduct (id) {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`
       this.$http.get(api).then((res) => {
-        this.tempProduct = res.data.data;
-        this.tempProduct.num = 1;
-      });
+        this.tempProduct = res.data.data
+        this.tempProduct.num = 1
+      })
     },
     getCart () {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
       this.$http.get(api).then((res) => {
-        this.carts = res.data.data;
-        this.updateTotal();
-      });
+        this.carts = res.data.data
+        this.updateTotal()
+      })
     },
     updateTotal () {
-      this.cartTotal = 0;
+      this.cartTotal = 0
       this.carts.forEach((item) => {
-        this.cartTotal += item.product.price * item.quantity;
-      });
+        this.cartTotal += item.product.price * item.quantity
+      })
     },
     updateQuantity (id, quantity) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
       this.$http.get(api).then((res) => {
-        this.carts = res.data.data;
-        this.updateTotal();
-      });
+        this.carts = res.data.data
+        this.updateTotal()
+      })
     },
     addCart (id, quantity = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
       const cart = {
         product: id,
         quantity
       }
       this.$http.post(api, cart)
         .then((res) => {
-          this.getCart();
+          this.getCart()
         })
         .catch(error => {
-          console.log(error.response);
+          console.log(error.response)
         })
     },
-    deleteCart(item){
-      const api =  `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping/${item.product.id}`;
-      console.log(item.product.id);
+    deleteCart (item) {
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping/${item.product.id}`
+      console.log(item.product.id)
       this.$http.delete(api).then((response) => {
-        console.log(response);
-        this.getCart();
-      });
-    },
-  },
+        console.log(response)
+        this.getCart()
+      })
+    }
+  }
 
 }
 </script>
