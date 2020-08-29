@@ -37,6 +37,11 @@ const routes = [
         name: 'Login',
         component: () => import('../views/login.vue')
       },
+      {
+        path: '/order',
+        name: 'order',
+        component: () => import('../views/order.vue')
+      },
       // 後台
       {
         path: '/admin',

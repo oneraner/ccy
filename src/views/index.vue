@@ -1,12 +1,14 @@
 <template>
 <div class="container">
 <div class="row justify-content-center">
-  <ul class="d-flex justify-content-center col-12 mb-3">
+  <ul class="d-flex justify-content-between col-11 mb-3">
     <li class="minicard entree col-3 mr-3" @click="$bvModal.show('entreeModal')"></li>
     <li class="minicard soup col-3 mr-3" @click="$bvModal.show('soupModal')"></li>
     <li class="minicard salad col-3" @click="$bvModal.show('saladModal')"></li>
   </ul>
-  <div class="banner col-11 mb-3"></div>
+  <div class="col-11 mb-3">
+    <div class="banner"></div>
+  </div>
   <div class="d-flex justify-content-center col-11 mb-3">
     <ul class="d-flex justify-content-center align-items-center col-10">
       <li class="bg-cri d-flex justify-content-center align-items-center col-6 mr-3"><p class="minicard dessert col-10"></p></li>

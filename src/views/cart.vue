@@ -40,7 +40,7 @@
         </div>
     </div>
     </div>
-    <table class="table col-11">
+    <table class="table col-11 m-auto">
         <thead>
             <th>從購物車移除</th>
             <th>餐點</th>
@@ -53,7 +53,7 @@
                 <td><b-button fill @click="deleteCart(item)">刪除按鈕</b-button></td>
                 <td>{{item.product.title}}</td>
                 <td>
-                  <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal()"></b-form-spinbutton>
+                  <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
                 </td>
                 <td>{{item.product.price}}</td>
                 <td>{{item.product.price * item.quantity}}</td>
@@ -63,7 +63,7 @@
               <td></td>
               <td>總金額</td>
               <td>{{cartTotal}}</td>
-              <td>結帳按鈕</td>
+              <td><b-button pill to="/order">結帳</b-button></td>
             </tr>
         </tbody>
 
@@ -104,22 +104,34 @@ export default {
       })
     },
     getCart () {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
       this.$http.get(api).then((res) => {
-        this.carts = res.data.data
-        this.updateTotal()
-      })
+        this.carts = res.data.data;
+        this.updateTotal();
+      });
     },
-    updateTotal () {
+    updateTotal (id, num) {
       this.cartTotal = 0
       this.carts.forEach((item) => {
         this.cartTotal += item.product.price * item.quantity
-      })
+      });
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
+      const cart = {
+        product: id,
+        quantity: num,
+      };
+      this.$http.patch(api, cart)
+        .then((res) => {
+          
+        })
+        .catch(error => {
+          console.log(error.response);
+        });
     },
     updateQuantity (id, quantity) {
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
       this.$http.get(api).then((res) => {
-        this.carts = res.data.data
+        this.carts = res.data.data;
         this.updateTotal()
       })
     },
@@ -134,8 +146,8 @@ export default {
           this.getCart()
         })
         .catch(error => {
-          console.log(error.response)
-        })
+          console.log(error.response);
+        });
     },
     deleteCart (item) {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping/${item.product.id}`
@@ -143,9 +155,9 @@ export default {
       this.$http.delete(api).then((response) => {
         console.log(response)
         this.getCart()
-      })
-    }
-  }
+      });
+    },
+  },
 
 }
 </script>

@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-center flex-row-reverse row">
         <p class="col-4 steakImage"></p>
         <h2 class="steakContent d-flex align-items-center col-8">美國進口Prime等級牛排，經過主廚費心以30天乾式熟成之後，以專業烤箱烘烤，外脆內嫩，配上清脆的蘆筍、紅蘿蔔，
-            鹽之花、芥末仔，除了牛排本身的厚重風味，變換的味覺值得細心體會</h2>
+            鹽之花、芥末仔，除了牛排本身的厚重風味，變換的味覺值得細心體會。</h2>
     </div>
     <div class="d-flex justify-content-center row">
         <p class="col-4 dessertImage"></p>
