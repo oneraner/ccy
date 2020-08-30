@@ -52,3 +52,9 @@
 .cart-text{
     @include font;
 }
+.modal-content{
+    @include border;
+}
+.modal-body{
+    background-color: $bgc;
+}

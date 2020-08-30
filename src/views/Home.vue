@@ -13,7 +13,7 @@
       <li><router-link to="/admin" class="btn btn-danger btn-manager">管理者專用</router-link></li>
     </ul>
     <ul class="d-flex flex-column justify-content-center align-items-center col-2">
-       <li><router-link to="/cart" class="cartButton">購物車</router-link></li>
+       <li><b-button to="/cart" class="cartButton">購物車</b-button></li>
     </ul>
   </div>
   </div>

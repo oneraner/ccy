@@ -1,5 +1,11 @@
 <template>
   <div class="container">
+  <loading :active.sync="isLoading"
+  :color="loadColor"
+  :loader="load"
+  :opacity="0.5"
+  :is-full-page="false"
+  ></loading>
     <div class="d-flex justify-content-around flex-wrap">
     <div v-for="item in products" :key="item.id" class="card mb-3">
     <img :src="item.imageUrl[0]" class="card-img-top mb-3">
@@ -14,7 +20,7 @@
     </p>
     </div>
     </div>
-    <b-modal ref="productModal" :title="tempProduct.title" centered>
+    <b-modal ref="productModal" :title="tempProduct.title" centered hide-footer>
       <div class="mb-3">介紹：{{tempProduct.content}}</div>
       <div class="mb-3">成分：{{tempProduct.description}}</div>
       <p class="d-flex justify-content-around">
@@ -25,23 +31,35 @@
   </div>
 </template>
 <script>
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 export default {
   data () {
     return {
+      isLoading: false,
+      loadColor: '#ff73b3',
+      load: 'dots',
       products: [],
       tempProduct: {},
       cart: {},
       cartTotal: 0
     }
   },
+  components: {
+    Loading
+  },
   created () {
     this.getProducts()
   },
   methods: {
     getProducts (page = 1) {
+      this.isLoading = true
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`
       this.$http.get(api).then((res) => {
         this.products = res.data.data
+        this.isLoading = false
+      }).catch(error => {
+        this.isLoading = false
       })
     },
     getProduct (id) {
