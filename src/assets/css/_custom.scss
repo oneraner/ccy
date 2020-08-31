@@ -1,8 +1,10 @@
+
 .logo{
     height: 120px;
     background-image: url('~@/assets/image/ccylogo.png');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .table-width-big{
     width: 500px;
@@ -57,4 +59,7 @@
 }
 .modal-body{
     background-color: $bgc;
+}
+.underLine{
+    text-decoration: underline;
 }

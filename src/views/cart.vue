@@ -6,8 +6,8 @@
   :opacity="0.5"
   ></loading>
     <div class="row justify-content-center">
-    <div class="d-flex justify-content-between col-11 mb-3">
-         <div class="card">
+    <div class="d-flex justify-content-between flex-wrap col-11 mb-3">
+         <div class="card mb-3">
           <img :src="products[2].imageUrl[0]" class="card-img-top mb-3">
           <p class="card-title mb-3">{{products[2].title}}</p>
           <p class="d-flex justify-content-around">
@@ -19,7 +19,7 @@
             <b-button @click="addCart(products[2].id)">加入購物車</b-button>
           </p>
         </div>
-        <div class="card">
+        <div class="card mb-3">
           <img :src="products[3].imageUrl[0]" class="card-img-top mb-3">
           <p class="card-title mb-3">{{products[3].title}}</p>
           <p class="d-flex justify-content-around">
@@ -31,7 +31,7 @@
             <b-button @click="addCart(products[3].id)">加入購物車</b-button>
           </p>
         </div>
-         <div class="card">
+         <div class="card mb-3">
           <img :src="products[5].imageUrl[0]" class="card-img-top mb-3">
           <p class="card-title mb-3">{{products[5].title}}</p>
           <p class="d-flex justify-content-around">
@@ -47,15 +47,15 @@
     </div>
     <table class="table col-11 m-auto">
         <thead>
-            <th>從購物車移除</th>
-            <th>餐點</th>
-            <th>數量</th>
-            <th>單價</th>
-            <th>總價</th>
+            <th scope="col">從購物車移除</th>
+            <th scope="col" class="d-flex justify-content-center">餐點</th>
+            <th scope="col">數量</th>
+            <th scope="col">單價</th>
+            <th scope="col">總價</th>
         </thead>
         <tbody>
             <tr v-for="item in carts" :key="item.id">
-                <td><b-button fill @click="deleteCart(item)">刪除按鈕</b-button></td>
+                <td align="center"><b-button fill class="pinkBorder" @click="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
                 <td>{{item.product.title}}</td>
                 <td>
                   <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
@@ -66,8 +66,8 @@
             <tr>
               <td></td>
               <td></td>
-              <td>總金額</td>
-              <td>{{cartTotal}}</td>
+              <td>總金額：</td>
+              <td><span class="underLine">{{cartTotal}}</span></td>
               <td><b-button pill to="/order" variant="outline-primary" class="cartbutton">結帳</b-button></td>
             </tr>
         </tbody>
@@ -86,6 +86,11 @@
 <script>
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
+
 export default {
   data () {
     return {

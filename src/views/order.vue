@@ -25,8 +25,8 @@
             <tr>
               <td></td>
               <td></td>
-              <td>總金額</td>
-              <td>{{cartTotal}}</td>
+              <td>總金額：</td>
+              <td><span class="underLine">{{cartTotal}}</span></td>
             </tr>
         </tbody>
     </table>
@@ -106,25 +106,25 @@ export default {
     }
   },
   created () {
-    this.getCart()
+    this.getCart();
   },
   methods: {
     getCart () {
-      this.isLoading = true
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
+      this.isLoading = true;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`;
       this.$http.get(api).then((response) => {
-        this.carts = response.data.data
+        this.carts = response.data.data;
         this.carts.forEach((item) => {
-          this.cartTotal += item.product.price * item.quantity
+          this.cartTotal += item.product.price * item.quantity;
         })
-        this.isLoading = false
+        this.isLoading = false;
       }).catch(error => {
-        this.isLoading = false
+        this.isLoading = false;
       })
     },
     postOrder () {
-      this.isLoading = true
-      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/orders`
+      this.isLoading = true;
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/orders`;
       const order = {
         name: this.name,
         email: this.email,
@@ -135,12 +135,12 @@ export default {
         message: this.message
       }
       this.$http.post(api, order).then((res) => {
-        this.isLoading = false
+        this.isLoading = false;
         this.$router.push('/products')
       }).catch(error => {
-        this.isLoading = false
-      })
-    }
+        this.isLoading = false;
+      });
+    },
 
   }
 

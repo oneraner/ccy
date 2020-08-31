@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center row">
         <p class="col-4 managerImage"></p>
         <h1 class="managerContent d-flex justify-content-start align-items-center col-8">CCY Steak 是由創辦人趙先生於 2020 年在台北創立，
-           但趙先生仍然為了理想，以溫馨近人的室內空間、琅琅上口的經典菜色、不辭辛勞的特選食材三大原則，創立了旗艦店。</h1>
+           趙先生立意打造一個與眾不同的牛排館，以溫馨近人的室內空間、琅琅上口的經典菜色、不辭辛勞的特選食材三大原則，創立了旗艦店。</h1>
     </div>
     <div class="d-flex justify-content-center flex-row-reverse row">
         <p class="col-4 steakImage"></p>

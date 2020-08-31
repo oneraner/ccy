@@ -66,6 +66,11 @@
 .posterImage{
     @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/mfMfulcQOA3Y9JQzx53dt57qtwoUnHsKkgnDgWkDyS7MZ5bloAmJW2jIemnXu3v4X3MGEXoGA3FefGHx8BBGF1BB31BZ4edd12SkgHRiiJBzkIKJ9O0Bpmgj9Hb8OLbA.png');
     height: 1400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @include pad{
+        height: 1000px;
+    }
 }
 .pinkBorder{
     @include border;

@@ -4,6 +4,9 @@
 .nav{
     height: 130px;
     border-radius: 10px;
+    @include pad{
+        height: 250px;
+    }
 }
 .navButton{
     font-family:'Noto Sans TC', sans-serif;
@@ -22,6 +25,13 @@
     color: #fff;
     text-decoration: none;
 }
+.iconButton{
+    border-radius: $border-radius;
+    padding: 20px;
+    color: #000;
+    background-color: $bgc;
+
+}
 .cartButton{
     font-family:'Noto Sans TC', sans-serif;
     font-size: $font-size-base;
@@ -38,6 +48,9 @@
 }
 .footer{
     height: 130px;
+    @include pad{
+        height: 300px;
+    }
 }
 .contact{
     @include font;

@@ -1,3 +1,23 @@
 body{
     font-family: 'Coiny' , 'Noto Sans TC', sans-serif , cursive;
 }
+@mixin pad {
+    @media screen and (max-width: 1199px) {
+        @content;  
+    }  
+};
+@mixin board {
+    @media screen and (min-width:1200px){
+        @content;  
+    }
+}
+.nonePad{
+    @media screen and (max-width: 1199px) {
+        display: none;
+    };  
+}
+.noneBoard{
+    @media screen and (min-width:1200px){
+        display: none;  
+    };
+}
