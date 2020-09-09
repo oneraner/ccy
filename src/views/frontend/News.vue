@@ -1,9 +1,13 @@
 <template>
 <div class="container">
-  <div class="posterImage col-12 mb-3"></div>
-  <div class="d-flex justify-content-center">
-  <b-button pill variant="outline-primary" class="cartButton mb-3" @click="orderMeal">立刻訂餐</b-button>
+<div class="row justify-content-center">
+  <div class="d-flex flex-column justify-content-center align-items-center col-10">
+    <div>img</div>
+    <div>九月新菜</div>
+    <div>活動內容</div>
+    <div>立刻訂餐</div>
   </div>
+</div>
 </div>
 </template>
 

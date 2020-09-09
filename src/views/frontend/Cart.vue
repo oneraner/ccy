@@ -1,10 +1,10 @@
 <template>
 <div class="container">
-  <loading :active.sync="isLoading"
-  :color="loadColor"
-  :loader="load"
-  :opacity="0.5"
-  ></loading>
+  <Loading :active.sync="isLoading">
+      <div class="loadingio-spinner-rolling-pk2fn1fr5ha"><div class="ldio-8hp1gnnwoky">
+      <div></div>
+      </div></div>
+  </Loading>
     <div class="row justify-content-center">
     <div class="d-flex justify-content-between flex-wrap col-11 mb-3">
          <div class="card mb-3">
@@ -15,8 +15,8 @@
             <span class="card-text">特價：{{products[2].price}}</span>
           </p>
           <p class="d-flex justify-content-around darkbgc p-3">
-            <b-button @click="getProduct(products[2].id)">查看詳情</b-button>
-            <b-button @click="addCart(products[2].id)">加入購物車</b-button>
+            <b-button @click.prevent="getProduct(products[2].id)">查看詳情</b-button>
+            <b-button @click.prevent="addCart(products[2].id)">加入購物車</b-button>
           </p>
         </div>
         <div class="card mb-3">
@@ -27,8 +27,8 @@
             <span class="card-text">特價：{{products[3].price}}</span>
           </p>
           <p class="d-flex justify-content-around darkbgc p-3">
-            <b-button @click="getProduct(products[3].id)">查看詳情</b-button>
-            <b-button @click="addCart(products[3].id)">加入購物車</b-button>
+            <b-button @click.prevent="getProduct(products[3].id)">查看詳情</b-button>
+            <b-button @click.prevent="addCart(products[3].id)">加入購物車</b-button>
           </p>
         </div>
          <div class="card mb-3">
@@ -39,8 +39,8 @@
             <span class="card-text">特價：{{products[5].price}}</span>
           </p>
           <p class="d-flex justify-content-around darkbgc p-3">
-            <b-button @click="getProduct(products[5].id)">查看詳情</b-button>
-            <b-button @click="addCart(products[5].id)">加入購物車</b-button>
+            <b-button @click.prevent="getProduct(products[5].id)">查看詳情</b-button>
+            <b-button @click.prevent="addCart(products[5].id)">加入購物車</b-button>
           </p>
         </div>
     </div>
@@ -55,7 +55,7 @@
         </thead>
         <tbody>
             <tr v-for="item in carts" :key="item.id">
-                <td align="center"><b-button fill class="pinkBorder" @click="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
+                <td align="center"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
                 <td>{{item.product.title}}</td>
                 <td>
                   <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
@@ -95,8 +95,6 @@ export default {
   data () {
     return {
       isLoading: false,
-      loadColor: '#ff73b3',
-      load: 'dots',
       products: [],
       carts: {},
       cartTotal: 0,

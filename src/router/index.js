@@ -6,68 +6,66 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: () => import('../views/Home.vue'),
+    component: () => import('../views/frontend/Layout.vue'),
     children: [
       // 前台
       {
         path: '',
-        component: () => import('../views/index.vue')
+        component: () => import('../views/frontend/Index.vue')
       },
       {
         path: '/news',
-        component: () => import('../views/news.vue')
+        component: () => import('../views/frontend/News.vue')
       },
       {
         path: '/core',
         name: 'Core',
-        component: () => import('../views/core.vue')
+        component: () => import('../views/frontend/Core.vue')
       },
       {
         path: '/products',
         name: 'Products',
-        component: () => import('../views/products.vue')
+        component: () => import('../views/frontend/Products.vue')
       },
       {
         path: '/cart',
         name: 'Cart',
-        component: () => import('../views/cart.vue')
-      },
-      {
-        path: '/login',
-        name: 'Login',
-        component: () => import('../views/login.vue')
+        component: () => import('../views/frontend/Cart.vue')
       },
       {
         path: '/order',
         name: 'order',
-        component: () => import('../views/order.vue')
+        component: () => import('../views/frontend/Order.vue')
       },
-      // 後台
+    ]
+  },    // 後台
+  {
+    path: '/admin',
+    component: () => import('../views/dashboard/Dashboard.vue'),
+    children: [
       {
-        path: '/admin',
-        name: 'admin',
-        component: () => import('../views/dashboard/dashboard.vue'),
-        children: [
-          {
-            path: 'products',
-            component: () => import('../views/dashboard/productsd.vue')
-          },
-          {
-            path: 'discount',
-            component: () => import('../views/dashboard/discount.vue')
-          },
-          {
-            path: 'order',
-            component: () => import('../views/dashboard/order.vue')
-          },
-          {
-            path: 'image',
-            component: () => import('../views/dashboard/image.vue')
-          }
-        ]
+        path: '/login',
+        name: 'Login',
+        component: () => import('../views/dashboard/Login.vue')
+      },
+      {
+        path: 'products',
+        component: () => import('../views/dashboard/Productsd.vue')
+      },
+      {
+        path: 'discount',
+        component: () => import('../views/dashboard/Discount.vue')
+      },
+      {
+        path: 'order',
+        component: () => import('../views/dashboard/Orderd.vue')
+      },
+      {
+        path: 'image',
+        component: () => import('../views/dashboard/Image.vue')
       }
     ]
-  }
+  },
 ]
 
 const router = new VueRouter({

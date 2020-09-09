@@ -25,7 +25,7 @@
       </tbody>
     </table>
     <!-- 分頁 -->
-    <b-pagination v-model="currentPage" pills :total-rows="rows" :per-page="perPage" align="center" aria-controls="imageTable"></b-pagination>
+    <b-pagination v-model="currentPage" pills :per-page="perPage" align="center" aria-controls="imageTable"></b-pagination>
     <!-- Modal -->
     <b-modal id="deleteModal" ref="deleteModal" class="modal-dialog modal-dialog-centered" tabindex="-1" role="dialog" centered title="刪除圖片" hide-footer>
       <div class="modal-body">
