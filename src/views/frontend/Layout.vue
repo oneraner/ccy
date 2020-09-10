@@ -25,7 +25,7 @@
     <ul class="d-flex flex-column justify-content-center align-items-center col-4 col-xl-2">
       <li>
         <b-button to="/cart" class="iconButton noneBoard"><font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:black; width:32px; height:25px;"/></b-button>
-        <b-button to="/cart" class="cartButton nonePad"><font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:black; width:32px; height:25px;"/></b-button>
+        <b-button to="/cart" class="cartButton nonePad"><font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:white; width:32px; height:25px;"/></b-button>
       </li>
     </ul>
   </nav>
@@ -37,8 +37,8 @@
   <div class="darkbgc">
   <footer class="container">
     <div class="row justify-content-between align-items-center footer">
-    <router-link to="/" class="logo col-4 col-xl-4"></router-link>
-    <ul class="col-4 d-xl-flex nonePad justify-content-center align-items-center flex-column">
+     <b-link to="/" class="logo col-3 col-xl-3"></b-link>
+    <ul class="col-5 d-xl-flex nonePad justify-content-center align-items-center flex-column">
       <li class="address rounded bgc p-2 mb-3 nonePad">餐廳地址：台北市信義區光復南路888號</li>
       <li class="address rounded bgc d-xl-flex justify-content-center p-1 nonePad">本網站由ccysteak公司所有</li>
     </ul>
@@ -69,8 +69,8 @@ export default {
   data () {
     return {
       isLoading: false,
-      fullPage: true,
+      fullPage: true
     }
-  },
+  }
 }
 </script>

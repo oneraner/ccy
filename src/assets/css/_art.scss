@@ -11,6 +11,7 @@
 @mixin border {
     border: $darkbgc 3px solid;
 }
+// index img
 .banner{
     height: 500px;
     @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/04prQya0DeT6uaLn8MKRi8N7kTG6aGv1Fp1v7Hh3gQXPqqAXLk0lSfH3HqxbvfsOEb5qCG6gMiV98a1iCMHVBZxdCRAX2ZOAMtJDd5JgftrtXKn6pZdvV3RTPeE1yq0y.jpg');
@@ -70,4 +71,18 @@
     @include border;
     border-radius: 25px;
 }
-
+// news img
+.activityImage{
+    width: 550px;
+    @include pad {
+        width: 300px;
+    }
+}
+.activity{
+    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/roH2gNvWHzyNvHfYsuotNWV2MxlvFtEJExm1sOeHSmM0CtQTvPF8GJfihpiT2PKSl69Z14pTM53NAlQwg4WRE84eIFpHNIx7g22o7UOCjmtRa5wPKBEdxQJwHLXwPXRk.jpg');
+    height: 250px;
+}
+.activitysteak{
+    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
+    height: 250px;
+}

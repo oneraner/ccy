@@ -25,7 +25,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/orders?page=${page}`
       this.$http.get(api).then((response) => {
         this.orders = response.data.data
-      }).catch(error => {
+      }).catch((error) => {
         console.log(response)
       })
     }

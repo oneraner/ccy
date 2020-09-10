@@ -36,9 +36,9 @@ const routes = [
         path: '/order',
         name: 'order',
         component: () => import('../views/frontend/Order.vue')
-      },
+      }
     ]
-  },    // 後台
+  }, // 後台
   {
     path: '/admin',
     component: () => import('../views/dashboard/Dashboard.vue'),
@@ -65,7 +65,7 @@ const routes = [
         component: () => import('../views/dashboard/Image.vue')
       }
     ]
-  },
+  }
 ]
 
 const router = new VueRouter({

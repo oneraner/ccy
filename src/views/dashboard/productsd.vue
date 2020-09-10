@@ -110,12 +110,12 @@
       </div>
       </div>
        <div class="form-group">
-        <label>產品說明</label>
-        <b-form-textarea rows="3" max-rows="3" v-model="tempProduct.description" placeholder="請輸入產品說明"></b-form-textarea>
+        <label>產品詳細</label>
+        <b-form-textarea rows="3" max-rows="3" v-model="tempProduct.description" placeholder="請輸入產品詳細"></b-form-textarea>
       </div>
        <div class="form-group">
-        <label>產品描述</label>
-        <b-form-textarea rows="3" max-rows="3"  v-model="tempProduct.content" placeholder="請輸入產品描述"></b-form-textarea>
+        <label>產品簡介</label>
+        <b-form-textarea rows="3" max-rows="3"  v-model="tempProduct.content" placeholder="請輸入產品簡介(限20字以內)"></b-form-textarea>
       </div>
       <div class="d-flex justify-content-between">
       <b-form-checkbox
