@@ -1,8 +1,8 @@
-// @import '../../../node_modules/bootstrap/scss/bootstrap';
 @import "~bootstrap/scss/functions"; // 官方的
 @import 'variables'; // 自己的
 @import "~bootstrap/scss/bootstrap"; // 官方的
 @import 'node_modules/bootstrap-vue/src/index.scss';
+@import '~swiper/swiper-bundle.css';
 @import 'reset';
 @import 'base';
 @import 'art';

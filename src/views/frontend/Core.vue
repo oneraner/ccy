@@ -1,18 +1,60 @@
 <template>
 <div class="container">
-    <div class="d-flex justify-content-center row">
-        <p class="col-4 managerImage"></p>
-        <h1 class="managerContent d-flex justify-content-start align-items-center col-8">CCY Steak 是由創辦人趙先生於 2020 年在台北創立，
-           趙先生立意打造一個與眾不同的牛排館，以溫馨近人的室內空間、琅琅上口的經典菜色、不辭辛勞的特選食材三大原則，創立了旗艦店。</h1>
+ <div class="row justify-content-center mb-3">
+  <h1 class="col-8 d-flex justify-content-center chefTitle mt-3 mb-3">經營理念</h1>
+  <div class="mb-3">
+    <b-card-group deck>
+      <b-card bg-variant="white" text-variant="black" header="誠實" class="text-center">
+        <b-card-text>CCY Steak 以誠實為信念，帶給消費者良好的食材，絕無任何非法添加物，讓消費者吃得安心。</b-card-text>
+      </b-card>
+
+      <b-card bg-variant="white" text-variant="black" header="美味" class="text-center">
+        <b-card-text>CCY Steak 每一道菜皆會不停思考，如何才能創造最大的美味？如何搭配才能夠發揮食材的價值？</b-card-text>
+      </b-card>
+
+      <b-card bg-variant="white" text-variant="black" header="專注" class="text-center">
+        <b-card-text>CCY Steak 秉持專注的精神，即使前菜或飲品，也專注在每一個細節，不斷尋找及研究更好的展現方式。</b-card-text>
+      </b-card>
+    </b-card-group>
+  </div>
+ </div>
+  <div class="row justify-content-center mb-3">
+    <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">主廚</h2>
+    <div class="w-100 d-flex justify-content-center">
+    <div class="chef col-6"></div>
+      <div class="col-6 bg-secondary text-white p-3">
+        <p class="activityTitle d-flex justify-content-center">Chef Chao</p>
+        <p class="activityBody p-3">15歲學徒出身，經歷多家知名牛排餐廳洗禮，擷取各家之長，擅長發揮牛肉不同部位不同風味，經典料理上也很嚴謹，靈活多變不墨守成規。</p>
+        <div class="d-flex justify-content-center align-items-center flex-column">
+        <p class="xol-12 col-xl-8 d-flex justify-content-start">經歷：</p>
+        <p class="col-12 col-xl-4 d-flex justify-content-between"><span>B Cut</span> <span>主廚</span></p>
+        <p class="col-12 col-xl-4 d-flex justify-content-between"><span>Mature</span> <span>主廚</span></p>
+        <p class="col-12 col-xl-4 d-flex justify-content-between"><span>教母牛排</span> <span>主廚</span></p>
+      </div>
     </div>
-    <div class="d-flex justify-content-center flex-row-reverse row">
-        <p class="col-4 steakImage"></p>
-        <h2 class="steakContent d-flex align-items-center col-8">美國進口Prime等級牛排，經過主廚費心以30天乾式熟成之後，以專業烤箱烘烤，外脆內嫩，配上清脆的蘆筍、紅蘿蔔，
-            鹽之花、芥末仔，搭配牛排本身的濃厚風味，豐富的味覺值得細心體會。</h2>
     </div>
-    <div class="d-flex justify-content-center row">
-        <p class="col-4 dessertImage"></p>
-        <h3 class="dessertcontent d-flex align-items-center col-8">精緻特別的附餐，多種口味馬卡龍，以及中式茶品，使光臨牛排餐廳增添許多溫馨甜蜜的氣息。</h3>
-    </div>
+  </div>
+ <div class="row justify-content-center mb-3">
+  <div class="mb-3">
+    <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">食材產地</h2>
+    <b-card-group deck>
+      <b-card title="牛肉" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/3Hyj17COnt4dKjEwAirrqYtQ24AGrjiyDY3lVGQxaiviw9CVG35RWSvLq0UMz2qon0KHBEeOwZJpxxmHLQuZNZECEGpxrkURupObieXWfqKYiJnpV9kCxjlio21w4wmm.jpg" img-alt="Image" img-top>
+        <b-card-text>
+          CCY Steak 的優質牛肉皆從美國進口 USDA 認證之 Prime 等級牛肉，並且利用乾式熟成處理，在嚴格管控溫、濕度之下，牛肉更顯多汁可口。
+        </b-card-text>
+      </b-card>
+      <b-card title="蔬菜" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/UuITOZY5ekCLvql7OSwR0wdWkmJjZab5kW2kt6M2AuYwtpCWe1GQjYaXjqnnlIpwuYJwaNAL2hpcNBYQDjM9BvAJDNjCUAijkflGvZO1iPbW0Gj25kkKmemt3tfD2NbS.jpg" img-alt="Image" img-top>
+        <b-card-text>
+          CCY Steak 的蔬菜皆與台灣中南部的農友簽約，這些農友皆經營有機農業，並且嚴格管控蔬菜之品質，讓各位客人吃的到在地的精緻味道。
+        </b-card-text>
+      </b-card>
+      <b-card title="茶" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/hZLxgXLbgdl3rGiG4vvb5N1jilmwZJvwQtAqWCVCc1GcHWl75NcJmRlOtR3gdaYgxENFzlwtRrMO9CNJDG2ALpII1IN5aNzwwGwRtIpWSien00qJUJTjOLmqBiqeEik8.jpg" img-alt="Image" img-top>
+        <b-card-text>
+          CCY Steak 的茶葉皆為台灣茶，台灣茶遠近馳名，各式茶葉皆從特色茶農處進口，香氣宜人，清新淡雅，值得您細細品味。
+        </b-card-text>
+      </b-card>
+    </b-card-group>
+  </div>
+ </div>
 </div>
 </template>

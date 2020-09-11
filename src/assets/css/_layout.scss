@@ -13,7 +13,7 @@
     font-size: $font-size-base;
     font-weight: 400;
     font-style: italic;
-    color: #000;
+    color: $primary;
     text-decoration:none;
     padding: 20px 10px 20px 10px;
     border-radius: $border-radius;
@@ -21,19 +21,11 @@
 .iconButton{
     border-radius: $border-radius;
     padding: 10px;
-    color: #000;
+    color: $primary;
     background-color: $bgc;
-
 }
 .cartButton{
-    font-family:'Noto Sans TC', sans-serif;
-    font-size: $font-size-base;
-    font-weight: 400;
-    font-style: italic;
-    background-color: $secondary;
-    text-decoration:none;
     padding: 15px;
-    border-radius: $border-radius;
 }
 .btn-manager{
     font-size: 0.8rem;
@@ -46,8 +38,9 @@
 }
 .contact{
     @include font;
-    color: #000;
+    color: $primary;
 }
 .address{
     @include font;
+    color: $primary;
 }

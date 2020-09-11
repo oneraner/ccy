@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <table id="imageTable" class="table mt-3" width="1200px">
+    <table id="imageTable" class="table mt-3 text-primary" width="1200px">
       <thead>
         <tr>
           <th scope="col">圖片縮圖</th>
@@ -70,8 +70,21 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/storage/${this.tempData.id}`
 
       this.$http.delete(url).then(() => {
+        this.$swal({
+          icon: 'success',
+          title: '',
+          text: '刪除成功',
+          button: 'OK'
+        })
         this.$refs.deleteModal.hide()
         this.getData()
+      }).catch((error) => {
+        this.$swal({
+          icon: 'error',
+          title: '刪除失敗!',
+          text: '請稍微再試一次',
+          button: 'OK'
+        })
       })
     }
   }

@@ -4,6 +4,8 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+// Swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 // sweetAlert
 import VueSweetalert2 from 'vue-sweetalert2'
 
@@ -39,11 +41,11 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('ValidationProvider', ValidationProvider)
 Vue.component('ValidationObserver', ValidationObserver)
 
-// Vue.use(bootstrap)
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueSweetalert2)
+Vue.use(VueAwesomeSwiper /* { default options with global component } */)
 
 extend('secret', {
   validate: value => value === 'example',

@@ -102,11 +102,16 @@ export default {
       this.$http.get(api).then((res) => {
         this.products = res.data.data
         const entree = this.products.filter(function (item, index, array) {
-          return item.category == '前菜'
+          return item.category === '前菜'
         })
         this.entree = entree
       }).catch((error) => {
-        console.log(error.response)
+        this.$swal({
+          icon: 'error',
+          title: '取得產品資料失敗!',
+          text: '請重新整理頁面',
+          button: 'OK'
+        })
       })
     },
     getProduct (id) {
@@ -126,6 +131,12 @@ export default {
         this.isLoading = false
       }).catch(error => {
         this.isLoading = false
+        this.$swal({
+          icon: 'error',
+          title: '讀取購物車資料失敗!',
+          text: '請重新整理頁面',
+          button: 'OK'
+        })
       })
     },
     updateTotal (id, num) {
@@ -163,9 +174,20 @@ export default {
       this.$http.post(api, cart)
         .then((res) => {
           this.getCart()
+          this.$swal({
+            icon: 'success',
+            title: '加入購物車成功!',
+            text: '可以繼續選購其他商品',
+            button: 'OK'
+          })
         })
         .catch((error) => {
-          console.log(error.response)
+          this.$swal({
+            icon: 'error',
+            title: '加入購物車失敗!',
+            text: '請重新選購',
+            button: 'OK'
+          })
         })
     },
     deleteCart (item) {
@@ -173,10 +195,21 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping/${item.product.id}`
       console.log(item.product.id)
       this.$http.delete(api).then((response) => {
-        console.log(response)
+        this.$swal({
+          icon: 'success',
+          title: '刪除成功!',
+          text: '可以繼續選購',
+          button: 'OK'
+        })
         this.getCart()
       }).catch((error) => {
         this.isLoading = false
+        this.$swal({
+          icon: 'error',
+          title: '刪除商品失敗!',
+          text: '請稍後再試一次',
+          button: 'OK'
+        })
       })
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="pinkBorder row p-3">
-      <div v-for="item in orders" :key="item.id">
+      <div class="text-white" v-for="item in orders" :key="item.id">
           <p class="col-6">訂單編號：{{item.id}}</p>
           <p class="col-6">訂單時間：{{item.updated.datetime}}</p>
           <p class="col-6">訂單總價: {{item.amount}}</p>
@@ -26,7 +26,12 @@ export default {
       this.$http.get(api).then((response) => {
         this.orders = response.data.data
       }).catch((error) => {
-        console.log(response)
+        this.$swal({
+          icon: 'error',
+          title: '取得訂單失敗!',
+          text: '請稍後重新整理頁面',
+          button: 'OK'
+        })
       })
     }
   }

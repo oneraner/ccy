@@ -3,7 +3,7 @@
     <nav class="d-flex justify-content-end mt-3 mb-3">
         <b-button pill variant="primary" @click="newModal">建立新產品</b-button>
     </nav>
-    <table class="table mt-4">
+    <table class="table mt-4 text-white">
       <thead>
         <tr>
           <th>
@@ -53,7 +53,7 @@
                 編輯
               </b-button>
               <button
-                class="btn btn-outline-danger btn-sm"
+                class="btn btn-danger btn-sm"
                 @click="delModal(item)"
               >
                 刪除
@@ -190,6 +190,12 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product`
       this.$http.post(api, this.tempProduct).then(() => {
         this.getProducts()
+        this.$swal({
+          icon: 'success',
+          title: '新增商品成功!',
+          text: '請繼續操作',
+          button: 'OK'
+        })
         this.$refs.newModal.hide()
       })
     },
@@ -197,6 +203,12 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.patch(api, this.tempProduct).then(() => {
         this.getProducts()
+        this.$swal({
+          icon: 'success',
+          title: '編輯商品成功!',
+          text: '請繼續操作',
+          button: 'OK'
+        })
         this.$refs.newModal.hide()
       })
     },
@@ -211,6 +223,12 @@ export default {
         }
       }).then((response) => {
         this.tempProduct.imageUrl.push(response.data.data.path)
+        this.$swal({
+          icon: 'success',
+          title: '上傳圖片成功!',
+          text: '請繼續操作',
+          button: 'OK'
+        })
       })
     },
     delModal (item) {
@@ -220,18 +238,16 @@ export default {
     delProduct () {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.delete(api).then(() => {
+        this.$swal({
+          icon: 'success',
+          title: '刪除商品成功!',
+          text: '請繼續操作',
+          button: 'OK'
+        })
         this.$refs.delModal.hide()
         this.getProducts()
       })
     }
-
-  //   delProduct () {
-  //     const url = `${process.env.VUE_APP_APIPATH}/api/${this.uuid}/admin/ec/product/${this.tempProduct.id}`
-  //     this.$http.delete(url).then(() => {
-  //       $('#delModal').modal('hide')
-  //       this.getProducts()
-  //     })
-  //   },
   }
 }
 </script>

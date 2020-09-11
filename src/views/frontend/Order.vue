@@ -87,7 +87,7 @@
             <b-form-textarea v-model="message" placeholder="請輸入備註" no-resize rows="2"></b-form-textarea>
           </b-form-group>
         <div class="d-flex justify-content-center align-items-center col-4">
-            <b-button size="lg" variant="outline-primary" class="cartButton" @click.prevent="validate().then(postOrder)">送出訂單</b-button>
+            <b-button pill size="lg" variant="secondary" class="cartButton" @click.prevent="validate().then(postOrder)">送出訂單</b-button>
         </div>
         </div>
       </b-form>
@@ -143,7 +143,7 @@ export default {
           this.cartTotal += item.product.price * item.quantity
         })
         this.isLoading = false
-      }).catch(error => {
+      }).catch((error) => {
         this.isLoading = false
       })
     },
@@ -167,7 +167,7 @@ export default {
           text: '謝謝光臨!歡迎繼續選購其他商品',
           button: 'OK'
         })
-      }).catch(error => {
+      }).catch((error) => {
         this.isLoading = false
       })
     }
