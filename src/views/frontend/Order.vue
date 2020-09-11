@@ -169,6 +169,12 @@ export default {
         })
       }).catch((error) => {
         this.isLoading = false
+        this.$swal({
+          icon: 'error',
+          title: '結帳失敗!',
+          text: '請確認資料是否正確',
+          button: 'OK'
+        })
       })
     }
   }
