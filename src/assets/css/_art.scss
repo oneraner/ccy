@@ -13,7 +13,9 @@
 }
 // index img
 .banner{
-    height: 500px;
+    max-width: 1920px;
+    height: 100vh;
+    position: relative;
     @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/04prQya0DeT6uaLn8MKRi8N7kTG6aGv1Fp1v7Hh3gQXPqqAXLk0lSfH3HqxbvfsOEb5qCG6gMiV98a1iCMHVBZxdCRAX2ZOAMtJDd5JgftrtXKn6pZdvV3RTPeE1yq0y.jpg');
 }
 .steakImage{
@@ -66,15 +68,16 @@
 }
 .restaurantImage{
     @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
-    height: 650px;
+    padding-bottom: 50%;
 }
 .pinkBorder{
     @include border;
     border-radius: 25px;
 }
 .chef{
-    @include bgi('~@/assets/image/hemant-latawa-RKdkETvcYn4-unsplash.jpg');
-    height: 400px;
+    @include bgi('~@/assets/image/chef-4625935_1280.jpg');
+    padding-bottom: 50%;
+    background-position: right;
 }
 // news img
 .activityImage{

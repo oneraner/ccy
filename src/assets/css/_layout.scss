@@ -10,7 +10,7 @@
 }
 .navButton{
     font-family:'Noto Sans TC', sans-serif;
-    font-size: $font-size-base;
+    font-size: $font-size-lg;
     font-weight: 400;
     font-style: italic;
     color: $primary;
@@ -19,18 +19,21 @@
     border-radius: $border-radius;
 }
 .iconButton{
-    border-radius: $border-radius;
+    border: 1px solid $primary;
     padding: 10px;
     color: $primary;
-    background-color: $bgc;
 }
 .cartButton{
     padding: 15px;
+}
+.hoverWhite :hover{
+    background-color: #fff;
 }
 .btn-manager{
     font-size: 0.8rem;
 }
 .footer{
+    font-size: $font-size-lg;
     height: 150px;
     @include pad{
         height: 80px;
@@ -39,8 +42,16 @@
 .contact{
     @include font;
     color: $primary;
+    font-size: $font-size-lg;
 }
 .address{
     @include font;
     color: $primary;
+    font-size: $font-size-lg;
+}
+.bigtopSpacing{
+    margin-top: 80px;
+}
+.bigbotSpacing{
+    margin-bottom: 80px;
 }

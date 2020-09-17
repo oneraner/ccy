@@ -5,6 +5,7 @@
       <div></div>
       </div></div>
   </Loading>
+  <div class="row">
     <div class="d-flex justify-content-center col-12">購餐明細</div>
     <table class="table col-11 m-auto">
         <thead>
@@ -30,6 +31,7 @@
             </tr>
         </tbody>
     </table>
+  </div>
     <div class="pinkBorder mb-3">
       <p class="d-flex justify-content-center mb-3" >請填寫付款資料</p>
       <validation-observer ref="observer">

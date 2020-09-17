@@ -5,7 +5,7 @@
       <div></div>
       </div></div>
     </Loading>
-    <div class="row">
+    <div class="row bigtopSpacing bigbotSpacing">
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">套餐</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in setMenu" :key="item.id" class="animateMenu customCard d-flex justify-content-start mb-3 position-relative">

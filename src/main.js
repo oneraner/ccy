@@ -36,6 +36,11 @@ localize('tw', tw)
 
 Vue.config.productionTip = false
 
+const options = {
+  confirmButtonColor: '#443425',
+  cancelButtonColor: '#443425',
+};
+
 Vue.component('Loading', Loading)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('ValidationProvider', ValidationProvider)
@@ -44,7 +49,7 @@ Vue.component('ValidationObserver', ValidationObserver)
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(VueSweetalert2)
+Vue.use(VueSweetalert2, options)
 Vue.use(VueAwesomeSwiper /* { default options with global component } */)
 
 extend('secret', {

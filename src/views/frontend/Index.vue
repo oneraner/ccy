@@ -1,9 +1,14 @@
 <template>
-<div class="container">
-  <div class="row justify-content-center mb-3">
-    <div class="col-12 mb-3">
-      <div class="banner"></div>
+<div>
+  <b-link to="/products">
+    <div class="banner d-flex align-items-center text-white mb-3">
+      <div class="banner-text">
+      <h1 class="mb-5">Perfect Steak</h1>
+      <p class="border d-flex justify-content-center align-items-center ml-5 p-3">Go to watch menu</p>
+      </div>
     </div>
+  </b-link>
+<div class="container">
     <swiper class="swiper mb-3" :options="swiperOption">
       <swiper-slide class="entree"></swiper-slide>
       <swiper-slide class="soup"></swiper-slide>
@@ -15,12 +20,11 @@
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
-  </div>
  <div class="row justify-content-center">
     <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">主廚</h2>
-    <div class="w-100 d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center">
     <div class="chef col-6"></div>
-      <div class="col-6 bg-secondary text-white p-3">
+      <div class="col-6 bg-secondary text-white p-4">
         <p class="activityTitle d-flex justify-content-center">Chef Chao</p>
         <p class="activityBody p-3">15歲學徒出身，經歷多家知名牛排餐廳洗禮，擷取各家之長，擅長發揮牛肉不同部位不同風味，經典料理上也很嚴謹，靈活多變不墨守成規。</p>
         <div class="d-flex justify-content-center align-items-center flex-column">
@@ -33,7 +37,8 @@
     </div>
   </div>
   <div class="row mb-3">
-    <ul class="businessHours d-flex flex-column align-items-start col-6 bg-secondary text-white p-3">
+    <div class="col-12 d-flex">
+    <ul class="businessHours d-flex flex-column align-items-start col-6 bg-secondary text-white p-4">
       <li class="activityTitle w-100 d-flex justify-content-center mb-5">營業時間 Business Hours</li>
       <li class="mb-5">午餐 Lunch： 11；00~14：00(最後點餐時間為13：00)</li>
       <li class="mb-5">晚餐 Dinner：17：00~22：00(最後點餐時間為21：00)</li>
@@ -43,6 +48,7 @@
       <li class="mb-5">小費請由簽帳單自行勾選5%~20%不等之金額</li>
     </ul>
     <div class="restaurantImage col-6"></div>
+    </div>
   </div>
   <div class="mb-3">
   <b-card-group deck>
@@ -64,6 +70,7 @@
       </b-card-text>
     </b-card>
   </b-card-group>
+</div>
 </div>
 </div>
 </template>
