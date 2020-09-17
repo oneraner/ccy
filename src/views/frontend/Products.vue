@@ -230,25 +230,25 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`
       this.$http.get(api).then((res) => {
         this.products = res.data.data
-        const setMenu = this.products.filter(function (item, index, array) {
+        const setMenu = this.products.filter(function (item) {
           return item.category === '套餐'
         })
-        const entree = this.products.filter(function (item, index, array) {
+        const entree = this.products.filter(function (item) {
           return item.category === '前菜'
         })
-        const salad = this.products.filter(function (item, index, array) {
+        const salad = this.products.filter(function (item) {
           return item.category === '沙拉'
         })
-        const soup = this.products.filter(function (item, index, array) {
+        const soup = this.products.filter(function (item) {
           return item.category === '湯'
         })
-        const meat = this.products.filter(function (item, index, array) {
+        const meat = this.products.filter(function (item) {
           return item.category === '主餐'
         })
-        const sweets = this.products.filter(function (item, index, array) {
+        const sweets = this.products.filter(function (item) {
           return item.category === '甜點'
         })
-        const beverage = this.products.filter(function (item, index, array) {
+        const beverage = this.products.filter(function (item) {
           return item.category === '飲品'
         })
         this.setMenu = setMenu
@@ -260,7 +260,9 @@ export default {
         this.beverage = beverage
         this.isLoading = false
       }).catch((error) => {
-        this.isLoading = false
+        if (error) {
+          this.isLoading = false
+        }
       })
     },
     getProduct (id) {
@@ -287,13 +289,15 @@ export default {
           button: 'OK'
         })
       }).catch((error) => {
-        this.isLoading = false
-        this.$swal({
-          icon: 'error',
-          title: '加入購物車失敗!',
-          text: '請重新選購',
-          button: 'OK'
-        })
+        if (error) {
+          this.isLoading = false
+          this.$swal({
+            icon: 'error',
+            title: '加入購物車失敗!',
+            text: '請重新選購',
+            button: 'OK'
+          })
+        }
       })
     }
   }

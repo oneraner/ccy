@@ -4,10 +4,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '*', redirect: '/' },
   {
     path: '/',
     component: () => import('../views/frontend/Layout.vue'),
-    path: '*', redirect: '/' ,
     children: [
       // 前台
       {

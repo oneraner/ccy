@@ -144,7 +144,9 @@ export default {
         })
         this.isLoading = false
       }).catch((error) => {
-        this.isLoading = false
+        if (error) {
+          this.isLoading = false
+        }
       })
     },
     postOrder () {
@@ -168,13 +170,15 @@ export default {
           button: 'OK'
         })
       }).catch((error) => {
-        this.isLoading = false
-        this.$swal({
-          icon: 'error',
-          title: '結帳失敗!',
-          text: '請確認資料是否正確',
-          button: 'OK'
-        })
+        if (error) {
+          this.isLoading = false
+          this.$swal({
+            icon: 'error',
+            title: '結帳失敗!',
+            text: '請確認資料是否正確',
+            button: 'OK'
+          })
+        }
       })
     }
   }

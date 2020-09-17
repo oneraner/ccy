@@ -70,10 +70,10 @@
 <script>
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fas)
+// library.add(fas)
 
 export default {
   data () {
@@ -106,12 +106,14 @@ export default {
         })
         this.entree = entree
       }).catch((error) => {
-        this.$swal({
-          icon: 'error',
-          title: '取得產品資料失敗!',
-          text: '請重新整理頁面',
-          button: 'OK'
-        })
+        if (error) {
+          this.$swal({
+            icon: 'error',
+            title: '取得產品資料失敗!',
+            text: '請重新整理頁面',
+            button: 'OK'
+          })
+        }
       })
     },
     getProduct (id) {
@@ -130,13 +132,15 @@ export default {
         this.updateTotal()
         this.isLoading = false
       }).catch(error => {
-        this.isLoading = false
-        this.$swal({
-          icon: 'error',
-          title: '讀取購物車資料失敗!',
-          text: '請重新整理頁面',
-          button: 'OK'
-        })
+        if (error) {
+          this.isLoading = false
+          this.$swal({
+            icon: 'error',
+            title: '讀取購物車資料失敗!',
+            text: '請重新整理頁面',
+            button: 'OK'
+          })
+        }
       })
     },
     updateTotal (id, num) {
@@ -155,7 +159,9 @@ export default {
           this.isLoading = false
         })
         .catch((error) => {
-          this.isLoading = false
+          if (error) {
+            this.isLoading = false
+          }
         })
     },
     updateQuantity (id, quantity) {
@@ -182,12 +188,14 @@ export default {
           })
         })
         .catch((error) => {
-          this.$swal({
-            icon: 'error',
-            title: '加入購物車失敗!',
-            text: '請重新選購',
-            button: 'OK'
-          })
+          if (error) {
+            this.$swal({
+              icon: 'error',
+              title: '加入購物車失敗!',
+              text: '請重新選購',
+              button: 'OK'
+            })
+          }
         })
     },
     deleteCart (item) {
@@ -203,13 +211,15 @@ export default {
         })
         this.getCart()
       }).catch((error) => {
-        this.isLoading = false
-        this.$swal({
-          icon: 'error',
-          title: '刪除商品失敗!',
-          text: '請稍後再試一次',
-          button: 'OK'
-        })
+        if (error) {
+          this.isLoading = false
+          this.$swal({
+            icon: 'error',
+            title: '刪除商品失敗!',
+            text: '請稍後再試一次',
+            button: 'OK'
+          })
+        }
       })
     }
   }

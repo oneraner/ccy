@@ -36,13 +36,16 @@ export default {
         document.cookie = `hextoken=${token}; expires=${new Date(expired * 1000)};`
         this.$router.push('/admin/image')
       }).catch((error) => {
-        console.log(error)
+        if (error) {
+          this.$swal({
+            icon: 'error',
+            title: '登入失敗!',
+            text: '請稍後再試一次',
+            button: 'OK'
+          })
+        }
       })
     }
   }
-  // created(){
-  //   this.token = document.cookie.replace(/(?:(?:^|.*;\s*)hextoken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-  //   this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`;
-  // },
 }
 </script>

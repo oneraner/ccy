@@ -26,12 +26,14 @@ export default {
       this.$http.get(api).then((response) => {
         this.orders = response.data.data
       }).catch((error) => {
-        this.$swal({
-          icon: 'error',
-          title: '取得訂單失敗!',
-          text: '請稍後重新整理頁面',
-          button: 'OK'
-        })
+        if (error) {
+          this.$swal({
+            icon: 'error',
+            title: '取得訂單失敗!',
+            text: '請稍後重新整理頁面',
+            button: 'OK'
+          })
+        }
       })
     }
   }

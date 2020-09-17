@@ -199,7 +199,7 @@ export default {
         this.$refs.newModal.hide()
       })
     },
-    saveProduct (item) {
+    saveProduct () {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/admin/ec/product/${this.tempProduct.id}`
       this.$http.patch(api, this.tempProduct).then(() => {
         this.getProducts()

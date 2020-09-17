@@ -79,12 +79,14 @@ export default {
         this.$refs.deleteModal.hide()
         this.getData()
       }).catch((error) => {
-        this.$swal({
-          icon: 'error',
-          title: '刪除失敗!',
-          text: '請稍微再試一次',
-          button: 'OK'
-        })
+        if (error) {
+          this.$swal({
+            icon: 'error',
+            title: '刪除失敗!',
+            text: '請稍微再試一次',
+            button: 'OK'
+          })
+        }
       })
     }
   }
