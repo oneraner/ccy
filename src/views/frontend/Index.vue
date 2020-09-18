@@ -4,7 +4,7 @@
     <div class="banner d-flex align-items-center text-white mb-3">
       <div class="banner-text">
       <h1 class="mb-5">Perfect Steak</h1>
-      <p class="border d-flex justify-content-center align-items-center ml-5 p-3">Go to watch menu</p>
+      <p class="border rounded d-flex justify-content-center align-items-center ml-5 p-3">Go to watch menu</p>
       </div>
     </div>
   </b-link>
@@ -50,21 +50,21 @@
     <div class="restaurantImage col-6"></div>
     </div>
   </div>
-  <div class="mb-3">
+  <div class="bigbotSpacing">
   <b-card-group deck>
-    <b-card title="牛肉" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/3Hyj17COnt4dKjEwAirrqYtQ24AGrjiyDY3lVGQxaiviw9CVG35RWSvLq0UMz2qon0KHBEeOwZJpxxmHLQuZNZECEGpxrkURupObieXWfqKYiJnpV9kCxjlio21w4wmm.jpg" img-alt="Image" img-top>
+    <b-card title="牛肉" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/dIGe6WZllAFQZl8AgI5xAg4mPf94qlxdD2KLK4FsO27q4yyi8ovmt9S885sxflNPIB811oKBVjuUuVGKqar2pDKMR10wqAVoiACdcK4mjODKKTbYNlvzxdi9h3XpyjYk.jpg" img-alt="Image" img-top>
       <b-card-text>
         CCY Steak 的優質牛肉皆從美國進口 USDA 認證之 Prime 等級牛肉，並且利用乾式熟成處理，在嚴格管控溫、濕度之下，牛肉更顯多汁可口。
       </b-card-text>
     </b-card>
 
-    <b-card title="蔬菜" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/UuITOZY5ekCLvql7OSwR0wdWkmJjZab5kW2kt6M2AuYwtpCWe1GQjYaXjqnnlIpwuYJwaNAL2hpcNBYQDjM9BvAJDNjCUAijkflGvZO1iPbW0Gj25kkKmemt3tfD2NbS.jpg" img-alt="Image" img-top>
+    <b-card title="蔬菜" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7gsaWd1gWgMirXurCXhjtRAVejZyDxDLJeCBxRs9ODBUdIQ2mnvXnFb3ESXiLNMCBvsWZTEYGXmjB6BD5tuAqUXI5gWA9lTCRsf9L5ufcqiX2KZVW7jzxUhvpaVxM1ni.jpg" img-alt="Image" img-top>
       <b-card-text>
         CCY Steak 的蔬菜皆與台灣中南部的農友簽約，這些農友皆經營有機農業，並且嚴格管控蔬菜之品質，讓各位客人吃的到在地的精緻味道。
       </b-card-text>
     </b-card>
 
-    <b-card title="茶" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/hZLxgXLbgdl3rGiG4vvb5N1jilmwZJvwQtAqWCVCc1GcHWl75NcJmRlOtR3gdaYgxENFzlwtRrMO9CNJDG2ALpII1IN5aNzwwGwRtIpWSien00qJUJTjOLmqBiqeEik8.jpg" img-alt="Image" img-top>
+    <b-card title="茶" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/4ru8CnlbiZjSKZuM8HaHPvzIWBafjcJ10BzooVAZCJJFEXeRitqD1tBC4If16x5jjTRnEP6EfJSkF7oJDkIS7V0DiDVzPLJQracP62FhIGteCHrWTQF9Ibwn6yWkwp1w.jpg" img-alt="Image" img-top>
       <b-card-text>
         CCY Steak 的茶葉皆為台灣茶，台灣茶遠近馳名，各式茶葉皆從特色茶農處進口，香氣宜人，清新淡雅，值得您細細品味。
       </b-card-text>

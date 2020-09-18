@@ -1,9 +1,11 @@
 <template>
   <div class="container min-vh">
      <Loading :active.sync="isLoading">
-      <div class="loadingio-spinner-rolling-pk2fn1fr5ha"><div class="ldio-8hp1gnnwoky">
-      <div></div>
-      </div></div>
+      <div class="loadingSet d-flex justify-content-center align-items-center min-vh">
+        <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div></div>
+      </div>
     </Loading>
     <div class="row bigtopSpacing bigbotSpacing">
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">套餐</div>
@@ -59,7 +61,7 @@
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">湯</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in soup" :key="item.id" class="animateMenu customCard d-flex justify-content-start position-relative mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
+        <div class="custom-cardleft col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
           <img :src="item.imageUrl[0]" class="card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
@@ -197,14 +199,11 @@
   </div>
 </template>
 <script>
-
-import Loading from 'vue-loading-overlay'
-import 'vue-loading-overlay/dist/vue-loading.css'
-
 export default {
   data () {
     return {
       isLoading: false,
+      fullPage: true,
       products: [],
       setMenu: [],
       entree: [],
@@ -217,9 +216,6 @@ export default {
       cart: {},
       cartTotal: 0
     }
-  },
-  components: {
-    Loading
   },
   created () {
     this.getProducts()

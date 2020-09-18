@@ -1,9 +1,11 @@
 <template>
 <div class="container">
   <Loading :active.sync="isLoading">
-      <div class="loadingio-spinner-rolling-pk2fn1fr5ha"><div class="ldio-8hp1gnnwoky">
-      <div></div>
+    <div class="loadingSet d-flex justify-content-center align-items-center min-vh">
+      <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
       </div></div>
+    </div>
   </Loading>
   <div class="row justify-content-around flex-wrap">
   <div class="menuTitle col-8 d-flex justify-content-center mb-3">我的購物車</div>
@@ -68,8 +70,6 @@
 </template>
 
 <script>
-import Loading from 'vue-loading-overlay'
-import 'vue-loading-overlay/dist/vue-loading.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
@@ -88,9 +88,6 @@ export default {
         quantity: 1
       }
     }
-  },
-  components: {
-    Loading
   },
   created () {
     this.getProducts()

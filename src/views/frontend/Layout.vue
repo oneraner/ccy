@@ -47,6 +47,7 @@
       <li class="rounded p-1 mb-3"><a href="tel:+#" class="contact">Tel：(02)34567890</a></li>
       <li class="rounded p-1"><a href="mailto:#" class="contact">E-mail：ccysteak@gmail.com</a></li>
     </ul>
+    <!-- pad footer -->
     <ul class="col-9 noneBoard d-flex justify-content-around align-items-center">
       <li class="p-1 noneBoard"><font-awesome-icon :icon="['fas', 'map']" style="color:#ddac56; width:32px; height:25px;"/></li>
       <li class="p-1 noneBoard"><a href="tel:+#" class="contact"><font-awesome-icon :icon="['fas', 'phone-alt']" style="color:#ddac56; width:32px; height:25px;"/></a></li>
