@@ -38,8 +38,8 @@ Vue.config.productionTip = false
 
 const options = {
   confirmButtonColor: '#443425',
-  cancelButtonColor: '#443425',
-};
+  cancelButtonColor: '#443425'
+}
 
 Vue.component('Loading', Loading)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
