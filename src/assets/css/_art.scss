@@ -70,9 +70,9 @@
     @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
     padding-bottom: 50%;
 }
-.pinkBorder{
+.formBorder{
     @include border;
-    border-radius: 25px;
+    border-radius: 8px;
 }
 .chef{
     @include bgi('~@/assets/image/chef-4625935_1280.jpg');

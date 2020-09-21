@@ -7,180 +7,159 @@
         </div></div>
       </div>
     </Loading>
-    <div class="row bigtopSpacing bigbotSpacing">
+    <div class="row justify-content-center bigtopSpacing bigbotSpacing">
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">套餐</div>
-      <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in setMenu" :key="item.id" class="animateMenu customCard d-flex justify-content-start mb-3 position-relative">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div class="col-12 flex-wrap">
+      <div v-for="item in setMenu" :key="item.id" class="animateMenu w-100 d-flex justify-content-start mb-3 overflow-hidden position-relative">
+        <div class="menuimg d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
-          <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
-          <p class="custom-cardbody">{{item.content}}</p>
-          <p class="d-flex justify-content-around">
-            <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
-            <span class="card-text">特價：{{item.price}}</span>
-          </p>
-          <p class="d-flex justify-content-around">
+        <div class="menu w-100 d-flex justify-content-between bg-white">
+          <div class="col-3" @click.prevent="getProduct(item.id)">
+            <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
+            <p class="custom-cardbody">{{item.content}}</p>
+            <p class="d-flex justify-content-around">
+              <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
+              <span class="card-text">特價：{{item.price}}</span>
+            </p>
+          </div>
+          <div class="col-4 d-flex flex-column justify-content-around align-items-center">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
-          </p>
+          </div>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">前菜</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start position-relative mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">湯</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in soup" :key="item.id" class="animateMenu customCard d-flex justify-content-start position-relative mb-3">
-        <div class="custom-cardleft col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in soup" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="custom-cardleft col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">沙拉</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in salad" :key="item.id" class="animateMenu customCard d-flex justify-content-start position-relative mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in salad" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">主餐</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in meat" :key="item.id" class="animateMenu position-relative customCard d-flex justify-content-start mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in meat" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">甜點</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in sweets" :key="item.id" class="animateMenu position-relative customCard d-flex justify-content-start mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in sweets" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
       <div class="menuTitle col-8 ml-auto mr-auto mb-3">飲料</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
-      <div v-for="item in beverage" :key="item.id" class="animateMenu position-relative customCard d-flex justify-content-start mb-3">
-        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-          <img :src="item.imageUrl[0]" class="card-img">
+      <div v-for="item in beverage" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
         <div class="custom-cardright col-6 bg-white">
+          <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
+          </div>
           <p class="d-flex justify-content-around">
             <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
-      <div class="animate col-12 d-flex flex-column justify-content-center align-items-center bg-secondary text-primary">
-        <p class="activityTitle mb-3">{{item.title}}</p>
-        <p class="activityBody mb-3">特價：{{item.price}}</p>
-        <p>點擊加入購物車</p>
-      </div>
       </div>
       </div>
     <b-modal ref="productModal" :title="tempProduct.title" centered hide-footer>

@@ -24,6 +24,9 @@ body{
 .min-vh{
     min-height: calc(100vh - 230px);
 }
+.z-index2{
+  z-index: 5;
+}
 // loadcss
 .loadingSet{
   width: 80%;

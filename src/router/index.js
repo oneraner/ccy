@@ -7,7 +7,7 @@ const routes = [
   { path: '*', redirect: '/' },
   {
     path: '/',
-    component: () => import('../views/frontend/Layout.vue'),
+    component: () => import('../views/layout/Layout.vue'),
     children: [
       // 前台
       {

@@ -3,58 +3,65 @@
   <Loading :active.sync="isLoading">
     <div class="loadingSet d-flex justify-content-center align-items-center min-vh">
       <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      </div></div>
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div></div></div>
     </div>
   </Loading>
   <div class="row justify-content-around flex-wrap">
-  <div class="menuTitle col-8 d-flex justify-content-center mb-3">我的購物車</div>
-    <table class="table col-11 m-auto">
-        <thead>
-            <th style="text-align:center;">從購物車移除</th>
-            <th style="text-align:center;">餐點</th>
-            <th style="text-align:center;">數量</th>
-            <th style="text-align:center;">單價</th>
-            <th style="text-align:center;">總價</th>
-        </thead>
-        <tbody>
-            <tr v-for="item in carts" :key="item.id">
-                <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
-                <td style="text-align:center;">{{item.product.title}}</td>
-                <td>
-                  <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
-                </td>
-                <td style="text-align:center;">{{item.product.price}}</td>
-                <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>總金額：</td>
-              <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
-              <td style="text-align:center;" v-if="carts.length > 0"><b-button pill size="lg" variant="secondary" class="cartbutton" to="/order">結帳</b-button></td>
-              <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
-            </tr>
-        </tbody>
+  <div class="menuTitle col-8 d-flex justify-content-center bigtopSpacing mb-3">我的購物車</div>
+    <table class="table col-11 m-auto" v-if="carts.length >= 1">
+      <thead>
+        <th style="text-align:center;">從購物車移除</th>
+        <th style="text-align:center;">餐點</th>
+        <th style="text-align:center;">數量</th>
+        <th style="text-align:center;">單價</th>
+        <th style="text-align:center;">總價</th>
+      </thead>
+      <tbody>
+      <tr v-for="item in carts" :key="item.id">
+        <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
+        <td style="text-align:center;">{{item.product.title}}</td>
+        <td>
+          <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
+        </td>
+        <td style="text-align:center;">{{item.product.price}}</td>
+        <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>總金額：</td>
+        <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
+        <td style="text-align:center;" v-if="carts.length > 0"><b-button pill size="lg" variant="secondary" class="cartbutton" to="/order">結帳</b-button></td>
+        <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
+      </tr>
+      </tbody>
     </table>
+    <div class="col-11 d-flex justify-content-center align-items-center flex-column" v-if="carts.length < 1">
+      <h3 class="mb-3">購物車空的喔，看看我們的菜單吧！</h3>
+      <p class="card-text">也可以從下面立刻加購我們的優惠單品</p>
+      <p><b-button to="/products">去看菜單</b-button></p>
+    </div>
   </div>
-   <div class="row justify-content-around flex-wrap">
-   <div class="menuTitle col-8 d-flex justify-content-center mb-3">本日優惠</div>
-    <div v-for="item in entree" :key="item.id" class="customCard d-flex justify-content-start mb-3">
-      <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden">
-        <img :src="item.imageUrl[0]" class="card-img">
+  <div class="row justify-content-around flex-wrap bigbotSpacing">
+    <div class="menuTitle col-8 d-flex justify-content-center mb-3">本日優惠</div>
+    <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+      <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+        <img :src="item.imageUrl[0]" class="animateimg card-img">
       </div>
       <div class="custom-cardright col-6 bg-white">
-        <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
-        <p class="custom-cardbody">{{item.content}}</p>
-        <p class="d-flex justify-content-around">
-          <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
-          <span class="card-text">特價：{{item.price}}</span>
-        </p>
-        <p class="d-flex justify-content-around">
-          <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
-          <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
-        </p>
+        <div @click.prevent="getProduct(item.id)">
+          <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
+          <p class="custom-cardbody">{{item.content}}</p>
+          <p class="d-flex justify-content-around">
+            <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
+            <span class="card-text">特價：{{item.price}}</span>
+          </p>
+        </div>
+          <p class="d-flex justify-content-around">
+            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+          </p>
       </div>
     </div>
   </div>
@@ -169,6 +176,7 @@ export default {
       })
     },
     addCart (id, quantity = 1) {
+      this.isLoading = true
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
       const cart = {
         product: id,
@@ -176,6 +184,7 @@ export default {
       }
       this.$http.post(api, cart)
         .then((res) => {
+          this.isLoading = false
           this.getCart()
           this.$swal({
             icon: 'success',
@@ -186,6 +195,7 @@ export default {
         })
         .catch((error) => {
           if (error) {
+            this.isLoading = false
             this.$swal({
               icon: 'error',
               title: '加入購物車失敗!',
@@ -198,7 +208,6 @@ export default {
     deleteCart (item) {
       this.isLoading = true
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping/${item.product.id}`
-      console.log(item.product.id)
       this.$http.delete(api).then((response) => {
         this.$swal({
           icon: 'success',

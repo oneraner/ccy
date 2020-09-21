@@ -24,8 +24,13 @@
         </tr>
       </tbody>
     </table>
-    <!-- 分頁 -->
-    <b-pagination v-model="currentPage" pills :per-page="perPage" align="center" aria-controls="imageTable"></b-pagination>
+    <!-- pagination -->
+    <div class="d-flex justify-content-center">
+    <Pagination
+      :pages="pagination"
+      @emitPages="getData"
+    />
+    </div>
     <!-- Modal -->
     <b-modal id="deleteModal" ref="deleteModal" class="modal-dialog modal-dialog-centered" tabindex="-1" role="dialog" centered title="刪除圖片" hide-footer>
       <div class="modal-body">
@@ -40,19 +45,22 @@
 </template>
 
 <script>
+import Pagination from '@/components/Pagination.vue'
+
 export default {
   name: 'pic',
   data () {
     return {
       storages: {},
       tempData: {},
-      pagination: {},
-      currentPage: 1,
-      perPage: '3'
+      pagination: {}
     }
   },
   created () {
     this.getData()
+  },
+  components: {
+    Pagination
   },
   methods: {
     getData (page = 1) {

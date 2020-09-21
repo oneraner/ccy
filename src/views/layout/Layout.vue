@@ -4,7 +4,7 @@
     <div class="darkbgc">
     <div class="container">
     <nav class="nav row justify-content-between align-items-center">
-      <div class="col-12 col-xl-3">
+      <div class="col-12 col-xl-3 pl-0">
       <b-link to="/" ><div class="logo"></div></b-link>
       </div>
      <ul class="d-flex justify-content-between align-items-center col-9 col-xl-7">
@@ -35,7 +35,7 @@
   </div>
   <div class="darkbgc">
   <footer class="container">
-    <div class="row footer align-items-center">
+    <div class="row footer align-items-center pl-0">
      <b-link to="/" class="logo col-3"></b-link>
     <ul class="col-5 nonePad">
       <li class="address rounded d-flex justify-content-center p-2 mb-3 nonePad">餐廳地址：台北市信義區光復南路888號</li>
