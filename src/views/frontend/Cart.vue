@@ -7,7 +7,7 @@
       <div></div><div></div><div></div><div></div></div></div>
     </div>
   </Loading>
-  <div class="row justify-content-around flex-wrap">
+  <div class="row justify-content-around flex-wrap mb-4">
   <div class="menuTitle col-8 d-flex justify-content-center bigtopSpacing mb-3">我的購物車</div>
     <table class="table col-11 m-auto" v-if="carts.length >= 1">
       <thead>
@@ -18,29 +18,31 @@
         <th style="text-align:center;">總價</th>
       </thead>
       <tbody>
-      <tr v-for="item in carts" :key="item.id">
-        <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
-        <td style="text-align:center;">{{item.product.title}}</td>
-        <td>
-          <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
-        </td>
-        <td style="text-align:center;">{{item.product.price}}</td>
-        <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td>總金額：</td>
-        <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
-        <td style="text-align:center;" v-if="carts.length > 0"><b-button pill size="lg" variant="secondary" class="cartbutton" to="/order">結帳</b-button></td>
-        <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
-      </tr>
+        <tr v-for="item in carts" :key="item.id">
+          <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
+          <td style="text-align:center;">{{item.product.title}}</td>
+          <td>
+            <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
+          </td>
+          <td style="text-align:center;">{{item.product.price}}</td>
+          <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>總金額：</td>
+          <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
+          <td style="text-align:center;" v-if="carts.length > 0"><b-button pill size="lg" variant="secondary" class="cartbutton" to="/order">結帳</b-button></td>
+          <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
+        </tr>
       </tbody>
     </table>
     <div class="col-11 d-flex justify-content-center align-items-center flex-column" v-if="carts.length < 1">
       <h3 class="mb-3">購物車空的喔，看看我們的菜單吧！</h3>
       <p class="card-text">也可以從下面立刻加購我們的優惠單品</p>
-      <p><b-button to="/products">去看菜單</b-button></p>
+      <p>
+        <b-button to="/products">去看菜單</b-button>
+      </p>
     </div>
   </div>
   <div class="row justify-content-around flex-wrap bigbotSpacing">
@@ -77,10 +79,6 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-
-library.add(fas)
 
 export default {
   data () {

@@ -1,7 +1,7 @@
 <template>
 <div>
   <b-link to="/products">
-    <div class="banner d-flex align-items-center text-white mb-3">
+    <div class="banner d-flex align-items-center text-white mb-4">
       <div class="banner-text">
       <h1 class="mb-5">Perfect Steak</h1>
       <p class="border rounded d-flex justify-content-center align-items-center ml-5 p-3">Go to watch menu</p>
@@ -9,13 +9,13 @@
     </div>
   </b-link>
 <div class="container">
-    <swiper class="swiper mb-3" :options="swiperOption">
-      <swiper-slide class="entree"></swiper-slide>
-      <swiper-slide class="soup"></swiper-slide>
-      <swiper-slide class="salad"></swiper-slide>
-      <swiper-slide class="dessert"></swiper-slide>
-      <swiper-slide class="tea"></swiper-slide>
-      <swiper-slide class="sausage"></swiper-slide>
+    <swiper class="swiper overflow-hidden mb-4" :options="swiperOption">
+      <swiper-slide class="entree rounded"></swiper-slide>
+      <swiper-slide class="soup rounded"></swiper-slide>
+      <swiper-slide class="salad rounded"></swiper-slide>
+      <swiper-slide class="dessert rounded"></swiper-slide>
+      <swiper-slide class="tea rounded"></swiper-slide>
+      <swiper-slide class="sausage rounded"></swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
@@ -24,7 +24,7 @@
     <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">主廚</h2>
     <div class="col-12 d-flex justify-content-center">
     <div class="chef col-6"></div>
-      <div class="col-6 bg-secondary text-white p-4">
+      <div class="chefright col-6 bg-secondary text-white p-4">
         <p class="activityTitle d-flex justify-content-center">Chef Chao</p>
         <p class="activityBody p-3">15歲學徒出身，經歷多家知名牛排餐廳洗禮，擷取各家之長，擅長發揮牛肉不同部位不同風味，經典料理上也很嚴謹，靈活多變不墨守成規。</p>
         <div class="d-flex justify-content-center align-items-center flex-column">
@@ -36,7 +36,7 @@
     </div>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row mb-4">
     <div class="col-12 d-flex">
     <ul class="businessHours d-flex flex-column align-items-start col-6 bg-secondary text-white p-4">
       <li class="activityTitle w-100 d-flex justify-content-center mb-5">營業時間 Business Hours</li>

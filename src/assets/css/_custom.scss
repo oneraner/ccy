@@ -38,6 +38,12 @@
     font-weight: 900;
     border-bottom: 3px solid #000;
 }
+.chefright{
+    border-radius: 0 $border-radius 0 0;
+}
+.businessHours{
+    border-radius: 0 0 0 $border-radius;
+}
 .managerContent{
     @include font;
 }
@@ -111,6 +117,9 @@
     font-size: 1rem;
     font-weight: 400;
 }
+.card-header{
+    font-size: $font-size-lg;
+}
 // swiper css
 .swiper-slide{
     height: 300px;
@@ -128,4 +137,17 @@
 .animateMenu:hover .animateimg{
     transform: translate(0, 0) scale(1.2);
     transition-duration: 3s;
+}
+
+//modal css
+.modal-title{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.modal-img{
+    width: 225px;
+    height: 150px;
 }

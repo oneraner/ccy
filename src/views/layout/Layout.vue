@@ -1,5 +1,5 @@
 <template>
-<div class="bgc">
+<div id="top" class="bgc">
   <div class="home">
     <div class="darkbgc">
     <div class="container">

@@ -7,7 +7,7 @@
       </div></div>
     </div>
   </Loading>
-  <div class="row bigtopSpacing justify-content-center mb-3">
+  <div class="row bigtopSpacing justify-content-center mb-4">
     <h1 class="menuTitle d-flex justify-content-center col-8 mb-3">購餐明細</h1>
     <table class="table col-11 m-auto">
         <thead>

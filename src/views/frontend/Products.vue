@@ -162,16 +162,32 @@
         </div>
       </div>
       </div>
-    <b-modal ref="productModal" :title="tempProduct.title" centered hide-footer>
-      <b-img :src="tempProduct.imageUrl" fluid class="mb-3" ></b-img>
-      <div class="mb-3">詳細介紹：</div>
-      <div class="mb-3">{{tempProduct.description}}</div>
-      <p>
+    <b-modal ref="productModal" :title="tempProduct.title" size="xl" centered hide-footer>
+      <div class="row justify-content-between mb-4">
+        <b-img :src="tempProduct.imageUrl" fluid class="mb-3" ></b-img>
+        <div class="d-flex flex-column align-items-center col-5">
+          <div class="activityTitle mb-3">常見問題</div>
+          <p class="w-100">Q：素食者可否食用？</p>
+          <p class="w-100">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
+          <p class="w-100">Q：CCY如何包裝產品？</p>
+          <p class="w-100">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
+          <p class="w-100">Q：CCY的付款方式？</p>
+          <p class="w-100">A：可選常見的信用卡以及行動支付。</p>
+          <p class="w-100">Q：CCY的送貨方式？</p>
+          <p class="w-100">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
+        </div>
+      </div>
+      <div class="activityTitle d-flex justify-content-center mb-3">詳細介紹：</div>
+      <div class="d-flex justify-content-center mb-3">{{tempProduct.description}}</div>
+      <p class="d-flex justify-content-center">
         各式料理皆可以優惠價線上點餐，貨到付款，或是訂位在CCY Steak店內享有優惠套餐。
       </p>
-      <p class="d-flex justify-content-around">
+      <p class="d-flex justify-content-around mb-4">
       <span>原價：<del>{{tempProduct.origin_price}}</del></span>
       <span>特價：{{tempProduct.price}}</span>
+      </p>
+      <p class="d-flex justify-content-end">
+      <b-button class="mr-3" @click.prevent="addCart(tempProduct.id)">加入購物車</b-button>
       </p>
     </b-modal>
     </div>
