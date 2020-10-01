@@ -8,7 +8,7 @@
       <li><router-link class="text-primary" to="/admin/discount">discount</router-link></li>
       <li><router-link class="text-primary" to="/admin/image">image</router-link></li>
     </ul>
-  <router-view></router-view>
+  <router-view :token="token" v-if="checkSuccess"></router-view>
   </div>
 </div>
 </template>
@@ -20,7 +20,6 @@ export default {
       checkSuccess: false
     }
   },
-  // props:['token'],
   created () {
     this.checkLogin()
   },
@@ -33,10 +32,9 @@ export default {
         api_token: this.token
       })
         .then((res) => {
-          console.log(res)
+          this.checkSuccess = true
         })
         .catch((error) => {
-          console.log(error.response)
           this.$router.push('/login')
         })
     }

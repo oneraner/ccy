@@ -48,7 +48,6 @@
 import Pagination from '@/components/Pagination.vue'
 
 export default {
-  name: 'pic',
   data () {
     return {
       storages: {},
@@ -56,6 +55,7 @@ export default {
       pagination: {}
     }
   },
+  props:['token'],
   created () {
     this.getData()
   },

@@ -8,7 +8,7 @@
       </div>
     </Loading>
     <div class="row justify-content-center bigtopSpacing bigbotSpacing">
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">套餐</div>
+      <div class="menuTitle col-12 mb-3">套餐</div>
       <div class="col-12 flex-wrap">
       <div v-for="item in setMenu" :key="item.id" class="animateMenu w-100 d-flex justify-content-start mb-3 overflow-hidden position-relative">
         <div class="menuimg d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
@@ -24,19 +24,19 @@
             </p>
           </div>
           <div class="col-4 d-flex flex-column justify-content-around align-items-center">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </div>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">前菜</div>
+      <div class="menuTitle col-12 mb-3">前菜</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -46,19 +46,19 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">湯</div>
+      <div class="menuTitle col-12 mb-3">湯</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in soup" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="custom-cardleft col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -68,19 +68,19 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">沙拉</div>
+      <div class="menuTitle col-12 mb-3">沙拉</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in salad" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -90,19 +90,19 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">主餐</div>
+      <div class="menuTitle col-12 mb-3">主餐</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in meat" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -112,19 +112,19 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">甜點</div>
+      <div class="menuTitle col-12 mb-3">甜點</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in sweets" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -134,19 +134,19 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
       </div>
       </div>
-      <div class="menuTitle col-8 ml-auto mr-auto mb-3">飲料</div>
+      <div class="menuTitle col-12 mb-3">飲料</div>
       <div class="col-12 d-flex justify-content-around flex-wrap">
       <div v-for="item in beverage" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
           <div @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
@@ -156,7 +156,7 @@
           </p>
           </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
             <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
           </p>
         </div>
@@ -164,7 +164,7 @@
       </div>
     <b-modal ref="productModal" :title="tempProduct.title" size="xl" centered hide-footer>
       <div class="row justify-content-between mb-4">
-        <b-img :src="tempProduct.imageUrl" fluid class="mb-3" ></b-img>
+        <b-img :src="tempProduct.imageUrl[0]" fluid class="mb-3" ></b-img>
         <div class="d-flex flex-column align-items-center col-5">
           <div class="activityTitle mb-3">常見問題</div>
           <p class="w-100">Q：素食者可否食用？</p>
@@ -193,6 +193,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data () {
@@ -207,7 +208,9 @@ export default {
       meat: [],
       sweets: [],
       beverage: [],
-      tempProduct: {},
+      tempProduct: {
+        imageUrl :[]
+      },
       cart: {},
       cartTotal: 0
     }
@@ -221,34 +224,27 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`
       this.$http.get(api).then((res) => {
         this.products = res.data.data
-        const setMenu = this.products.filter(function (item) {
-          return item.category === '套餐'
-        })
-        const entree = this.products.filter(function (item) {
-          return item.category === '前菜'
-        })
-        const salad = this.products.filter(function (item) {
-          return item.category === '沙拉'
-        })
-        const soup = this.products.filter(function (item) {
-          return item.category === '湯'
-        })
-        const meat = this.products.filter(function (item) {
-          return item.category === '主餐'
-        })
-        const sweets = this.products.filter(function (item) {
-          return item.category === '甜點'
-        })
-        const beverage = this.products.filter(function (item) {
-          return item.category === '飲品'
-        })
-        this.setMenu = setMenu
-        this.salad = salad
-        this.soup = soup
-        this.meat = meat
-        this.entree = entree
-        this.sweets = sweets
-        this.beverage = beverage
+        this.setMenu = this.products.filter((item) =>
+          item.category === '套餐'
+        )
+        this.entree = this.products.filter((item) =>
+          item.category === '前菜'
+        )
+        this.salad = this.products.filter((item) =>
+          item.category === '沙拉'
+        )
+        this.soup = this.products.filter((item) =>
+          item.category === '湯'
+        )
+        this.meat = this.products.filter((item) =>
+          item.category === '主餐'
+        )
+        this.sweets = this.products.filter((item) =>
+          item.category === '甜點'
+        )
+        this.beverage = this.products.filter((item) =>
+          item.category === '飲品'
+        )
         this.isLoading = false
       }).catch((error) => {
         if (error) {

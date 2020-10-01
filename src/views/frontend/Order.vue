@@ -145,6 +145,12 @@ export default {
       }).catch((error) => {
         if (error) {
           this.isLoading = false
+          this.$swal({
+            icon: 'error',
+            title: '取得購物車資料失敗!',
+            text: '請稍後重新整理頁面',
+            button: 'OK'
+          })
         }
       })
     },

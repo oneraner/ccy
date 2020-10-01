@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="pinkBorder row p-3">
-      <div class="text-white" v-for="item in orders" :key="item.id">
+      <div class="col-12 border text-white mb-3" v-for="item in orders" :key="item.id">
           <p class="col-6">訂單編號：{{item.id}}</p>
           <p class="col-6">訂單時間：{{item.updated.datetime}}</p>
           <p class="col-6">訂單總價: {{item.amount}}</p>

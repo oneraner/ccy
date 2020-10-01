@@ -45,11 +45,6 @@ const routes = [
     component: () => import('../views/dashboard/Dashboard.vue'),
     children: [
       {
-        path: '/login',
-        name: 'Login',
-        component: () => import('../views/dashboard/Login.vue')
-      },
-      {
         path: 'products',
         component: () => import('../views/dashboard/Productsd.vue')
       },
@@ -62,6 +57,10 @@ const routes = [
         component: () => import('../views/dashboard/Image.vue')
       }
     ]
+  },
+  {
+    path:'/login',
+    component: () => import('../views/dashboard/Login.vue'),
   }
 ]
 

@@ -144,7 +144,6 @@
 export default {
   data () {
     return {
-      token: '',
       products: [],
       tempProduct: {
         title: '',
@@ -155,12 +154,14 @@ export default {
         description: '',
         content: '',
         enabled: true,
-        imageUrl: []
+        imageUrl: [],
       },
       file: null,
-      pagination: {}
+      pagination: {},
+      token:'',
     }
   },
+  props:['token'],
   created () {
     this.getProducts()
   },

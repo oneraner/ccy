@@ -3,20 +3,21 @@
   <b-link to="/products">
     <div class="banner d-flex align-items-center text-white mb-4">
       <div class="banner-text">
-      <h1 class="mb-5">Perfect Steak</h1>
-      <p class="border rounded d-flex justify-content-center align-items-center ml-5 p-3">Go to watch menu</p>
+      <h1 class="mb-5">一客完美的牛排</h1>
+      <p class="border rounded d-flex justify-content-center align-items-center p-3">前往我們的菜單</p>
       </div>
     </div>
   </b-link>
 <div class="container">
-    <swiper class="swiper overflow-hidden mb-4" :options="swiperOption">
+    <swiper ref="indexSwiper" class="swiper overflow-hidden mb-4" :options="swiperOption">
       <swiper-slide class="entree rounded"></swiper-slide>
       <swiper-slide class="soup rounded"></swiper-slide>
       <swiper-slide class="salad rounded"></swiper-slide>
       <swiper-slide class="dessert rounded"></swiper-slide>
       <swiper-slide class="tea rounded"></swiper-slide>
       <swiper-slide class="sausage rounded"></swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination" slot="pagination">
+      </div>
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
@@ -74,17 +75,21 @@
 </div>
 </div>
 </template>
+
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 export default {
   data () {
     return {
       swiperOption: {
+        autoplay: {
+          delay: 5000,
+        },
+        freeMode:true,
         slidesPerView: 3,
         spaceBetween: 30,
         slidesPerGroup: 3,
-        loop: true,
         loopFillGroupWithBlank: true,
+        paginationClickable: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -96,12 +101,5 @@ export default {
       }
     }
   },
-  components: {
-    Swiper,
-    SwiperSlide
-  },
-  directives: {
-    swiper: directive
-  }
 }
 </script>

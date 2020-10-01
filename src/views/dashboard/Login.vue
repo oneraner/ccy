@@ -9,7 +9,7 @@
         <label for="InputPassword">Password</label>
         <input v-model="user.password" type="password" class="form-control" id="InputPassword" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-primary mb-5">登入</button>
+      <button type="submit" class="btn btn-secondary mb-5">登入</button>
     </form>
 </div>
 </template>
@@ -21,7 +21,6 @@ export default {
         email: '',
         password: ''
       },
-      token: ''
     }
   },
   methods: {
@@ -30,8 +29,6 @@ export default {
       this.$http.post(api, this.user).then((response) => {
         const { token } = response.data
         const { expired } = response.data
-        console.log(token)
-        console.log(expired)
         document.cookie = `hextoken=${token}; expires=${new Date(expired * 1000)};`
         this.$router.push('/admin/image')
       }).catch((error) => {
