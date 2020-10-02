@@ -10,6 +10,14 @@
 }
 .banner-text{
     margin-left: 20%;
+    background: #000;
+    opacity: .5;
+}
+.bannerbutton{
+    color: #fff;
+}
+.bannerbutton:hover{
+    background: $secondary;
 }
 .table-width-big{
     width: 500px;
@@ -51,12 +59,6 @@
 }
 .dessertcontent{
     @include font;
-}
-.modal-content{
-    @include border;
-}
-.modal-body{
-    background-color: $bgc;
 }
 .underLine{
     text-decoration: underline;
@@ -106,7 +108,10 @@
 .menuimg{
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 0%;
+}
+.setMenuCard{
+    margin-right: 20%;
 }
 .activityTitle{
     font-size: 1.5rem;
@@ -125,8 +130,9 @@
 }
 .swiper-container{
     --swiper-theme-color: $bgc;/* 设置Swiper风格 */
-    --swiper-navigation-color: $sencondary;/* 单独设置按钮颜色 */
+    --swiper-navigation-color: #ddac56;/* 单独设置按钮颜色 */
     --swiper-navigation-size: 30px;/* 设置按钮大小 */
+    --swiper-pagination-color: #ddac56;
 }
 // hover animate
 .animateMenu:hover{
@@ -137,8 +143,64 @@
     transform: translate(0, 0) scale(1.2);
     transition-duration: 0.4s;
 }
+// swiper animate
+.entree:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.soup:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.salad:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.dessert:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.tea:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.sausage:hover{
+    .swiperanimate{
+        opacity: .8;
+        transition-duration: 0.4s;
+    }
+}
+.swiperanimate{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-lg;
+    color: $primary;
+    background: $secondary;
+    opacity: 0;
+}
 
 //modal css
+.modal-dialog-centered{
+    justify-content: center;
+}
+.modal-content{
+    @include border;
+    width: 83.33%;
+}
 .modal-title{
     width: 90%;
     display: flex;
@@ -149,4 +211,19 @@
 .modal-img{
     width: 225px;
     height: 150px;
+}
+.modalBotline{
+    border-bottom: 1px solid $secondary;
+}
+.modal-body{
+    position: relative;
+    padding: 36px;
+}
+.xButton{
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    right: -20px;
+    background: $secondary;
+    padding: 5px;
 }

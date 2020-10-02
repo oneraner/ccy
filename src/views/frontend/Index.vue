@@ -1,31 +1,39 @@
 <template>
 <div>
-  <b-link to="/products">
-    <div class="banner d-flex align-items-center text-white mb-4">
+    <div class="banner d-flex align-items-center text-white sectionSpcing">
       <div class="banner-text">
       <h1 class="mb-5">一客完美的牛排</h1>
-      <p class="border rounded d-flex justify-content-center align-items-center p-3">前往我們的菜單</p>
+      <b-link to="/products" class="bannerbutton border rounded d-flex justify-content-center align-items-center p-3">前往我們的菜單</b-link>
       </div>
     </div>
-  </b-link>
 <div class="container">
-    <swiper ref="indexSwiper" class="swiper overflow-hidden mb-4" :options="swiperOption">
-      <swiper-slide class="entree rounded"></swiper-slide>
-      <swiper-slide class="soup rounded"></swiper-slide>
-      <swiper-slide class="salad rounded"></swiper-slide>
-      <swiper-slide class="dessert rounded"></swiper-slide>
-      <swiper-slide class="tea rounded"></swiper-slide>
-      <swiper-slide class="sausage rounded"></swiper-slide>
+    <swiper ref="indexSwiper" class="swiper overflow-hidden sectionSpcing" :options="swiperOption">
+      <swiper-slide class="entree rounded position-relative">
+        <div class="swiperanimate">綜合刺身</div>
+      </swiper-slide>
+      <swiper-slide class="soup rounded position-relative">
+        <div class="swiperanimate">法式洋蔥湯</div>
+      </swiper-slide>
+      <swiper-slide class="salad rounded position-relative">
+        <div class="swiperanimate">凱薩沙拉</div>
+      </swiper-slide>
+      <swiper-slide class="dessert rounded position-relative">
+        <div class="swiperanimate">法式馬卡龍</div>
+      </swiper-slide>
+      <swiper-slide class="tea rounded position-relative">
+        <div class="swiperanimate">名間冬片仔</div>
+      </swiper-slide>
+      <swiper-slide class="sausage rounded position-relative">
+        <div class="swiperanimate">墨魚香腸</div>
+      </swiper-slide>
       <div class="swiper-pagination" slot="pagination">
       </div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
     </swiper>
  <div class="row justify-content-center">
     <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">主廚</h2>
     <div class="col-12 d-flex justify-content-center">
     <div class="chef col-6"></div>
-      <div class="chefright col-6 bg-secondary text-white p-4">
+      <div class="chefright d-flex flex-column justify-content-center col-6 bg-secondary text-white p-4">
         <p class="activityTitle d-flex justify-content-center">Chef Chao</p>
         <p class="activityBody p-3">15歲學徒出身，經歷多家知名牛排餐廳洗禮，擷取各家之長，擅長發揮牛肉不同部位不同風味，經典料理上也很嚴謹，靈活多變不墨守成規。</p>
         <div class="d-flex justify-content-center align-items-center flex-column">
@@ -37,7 +45,7 @@
     </div>
     </div>
   </div>
-  <div class="row mb-4">
+  <div class="row sectionSpcing">
     <div class="col-12 d-flex">
     <ul class="businessHours d-flex flex-column align-items-start col-6 bg-secondary text-white p-4">
       <li class="activityTitle w-100 d-flex justify-content-center mb-5">營業時間 Business Hours</li>
@@ -59,7 +67,7 @@
       </b-card-text>
     </b-card>
 
-    <b-card title="蔬菜" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7gsaWd1gWgMirXurCXhjtRAVejZyDxDLJeCBxRs9ODBUdIQ2mnvXnFb3ESXiLNMCBvsWZTEYGXmjB6BD5tuAqUXI5gWA9lTCRsf9L5ufcqiX2KZVW7jzxUhvpaVxM1ni.jpg" img-alt="Image" img-top>
+    <b-card title="蔬菜" img-height="300px" img-src="https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Qa5tPmad92gcKZGZErneQwJPfuZfnszBenOzVdvhWzRWBXfzPYzm2sJsn9m0DNKGXw02ji40IoLTr3I3TUMHDxJ6Rtup9kYWwQqD4mRGLENO8npPUX6qtPePN7S8WNcQ.jpg" img-alt="Image" img-top>
       <b-card-text>
         CCY Steak 的蔬菜皆與台灣中南部的農友簽約，這些農友皆經營有機農業，並且嚴格管控蔬菜之品質，讓各位客人吃的到在地的精緻味道。
       </b-card-text>

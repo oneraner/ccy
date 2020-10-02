@@ -1,13 +1,11 @@
 <template>
 <div class="container">
-  <Loading :active.sync="isLoading">
-    <div class="loadingSet d-flex justify-content-center align-items-center min-vh">
-      <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
-      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div></div></div>
-    </div>
+  <Loading :active.sync="isLoading" :is-full-page="true">
+    <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div></div></div>
   </Loading>
-  <div class="row justify-content-around flex-wrap mb-4">
+  <div class="row justify-content-around flex-wrap sectionSpcing">
   <div class="menuTitle col-8 d-flex justify-content-center bigtopSpacing mb-3">我的購物車</div>
     <table class="table col-11 m-auto" v-if="carts.length >= 1">
       <thead>
