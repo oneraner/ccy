@@ -188,23 +188,36 @@
              <span class="mr-3"><small>原價：<del>{{tempProduct.origin_price}}</del></small></span>
              <span>特價：{{tempProduct.price}}</span>
             </p>
-            <p class="d-flex justify-content-end">
-              <b-button class="mr-3" @click.prevent="addCart(tempProduct.id)">加入購物車</b-button>
-            </p>
+            <div class="col-12 d-flex justify-content-end">
+              <div class="w-50 d-flex">
+                <b-button class="addButton" @click.prevent="tempProduct.num --;updateQ()">-</b-button>
+                <div class="productNum">{{tempProduct.num}}</div>
+                <b-button class="lessButton" @click.prevent="tempProduct.num ++;updateQ()">+</b-button>
+              </div>
+              <b-button class="w-50 mr-3" @click.prevent="addCart(tempProduct.id, tempProduct.num)">加入購物車</b-button>
+            </div>
          </div>
       </div>
       <div class="col-12 modalBotline mb-3"></div>
       <div class="row">
         <div class="d-flex flex-column col-12">
           <div class="activityTitle mb-3">常見問題</div>
-          <p class="w-100 p-3 bgc position-relative">Q：素食者可否食用？</p>
-          <p class="w-100 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
-          <p class="w-100 p-3 bgc position-relative">Q：CCY如何包裝產品？</p>
-          <p class="w-100 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
-          <p class="w-100 p-3 bgc position-relative">Q：CCY的付款方式？</p>
-          <p class="w-100 p-3">A：可選常見的信用卡以及行動支付。</p>
-          <p class="w-100 p-3 bgc position-relative">Q：CCY的送貨方式？</p>
-          <p class="w-100 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
+          <details>
+            <summary class="w-100 p-3 bgc position-relative">Q：素食者可否食用？</summary>
+            <p class="w-100 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
+          </details>
+          <details>
+            <summary class="w-100 p-3 bgc position-relative">Q：CCY如何包裝產品？</summary>
+            <p class="w-100 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
+          </details>
+          <details>
+            <summary class="w-100 p-3 bgc position-relative">Q：CCY的付款方式？</summary>
+            <p class="w-100 p-3">A：可選常見的信用卡以及行動支付。</p>
+          </details>
+          <details>
+            <summary class="w-100 p-3 bgc position-relative">Q：CCY的送貨方式？</summary>
+            <p class="w-100 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
+          </details>
         </div>
       </div>
     </b-modal>
@@ -227,6 +240,7 @@ export default {
       sweets: [],
       beverage: [],
       tempProduct: {
+        num: 1,
         imageUrl: []
       },
       cart: {},
@@ -304,6 +318,9 @@ export default {
           })
         }
       })
+    },
+    updateQ(){
+      this.$forceUpdate();
     }
   }
 

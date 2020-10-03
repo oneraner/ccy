@@ -9,19 +9,19 @@
         </div>
         <ul class="d-flex justify-content-between align-items-center col-9 col-xl-7">
           <li class="col-4 col-xl-3 center">
-            <router-link to="/news" class="iconButton rounded-circle noneBoard">
+            <router-link to="/news" class="iconButton noneBoard">
               <font-awesome-icon :icon="['fas', 'gift']" style="color:#ddac56; width:32px; height:25px;"/>
             </router-link>
             <router-link to="/news" class="navButton nonePad">最新消息</router-link>
           </li>
           <li class="col-4 col-xl-3 center">
-            <router-link to="/core" class="iconButton rounded-circle noneBoard">
+            <router-link to="/core" class="iconButton noneBoard">
               <font-awesome-icon :icon="['fas', 'info']" style="color:#ddac56; width:32px; height:25px;"/>
             </router-link>
             <router-link to="/core" class="navButton nonePad">關於CCY</router-link>
           </li>
           <li class="col-4 col-xl-3 center">
-            <router-link to="/products" class="iconButton rounded-circle noneBoard">
+            <router-link to="/products" class="iconButton noneBoard">
               <font-awesome-icon :icon="['fas', 'list-alt']" style="color:#ddac56; width:32px; height:25px;"/>
             </router-link>
             <router-link to="/products" class="navButton nonePad">美食饗宴</router-link>
@@ -29,10 +29,7 @@
         </ul>
         <ul class="d-flex justify-content-center justify-content-xl-end align-items-center col-3 col-xl-2">
           <li class="hoverWhite">
-            <b-button to="/cart" class="iconButton rounded-circle noneBoard">
-              <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:32px; height:25px;"/>
-            </b-button>
-            <b-button to="/cart" variant="outline-primary" class="cartButton d-flex justify-content-center align-items-center rounded-circle nonePad">
+            <b-button to="/cart" variant="outline-primary" class="cartButton nonePad">
               <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:32px; height:25px; border-radius:50%;"/>
             </b-button>
           </li>
@@ -52,7 +49,7 @@
           <router-link to="/admin/image" class="btn btn-manager nonePad"><font-awesome-icon :icon="['fas', 'tools']" style="color:#ddac56; width:27px; height:20px;"/></router-link>
         </li>
       </ul>
-      <ul class="col-5 d-flex justify-content-end nonePad">
+      <ul class="col-5 d-xl-flex justify-content-end nonePad">
         
       </ul>
       <ul class="col-4 nonePad pl-5">
