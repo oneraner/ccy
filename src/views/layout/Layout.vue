@@ -45,16 +45,16 @@
     <div class="row footer justify-content-around align-items-center pl-0">
       <ul class="col-3">
         <b-link to="/"><div class="logo"></div></b-link>
-        <li class="address rounded p-1 nonePad">本網站由ccysteak公司所有
+        <li class="address rounded p-1 nonePad d-xl-flex align-items-center">本網站由ccysteak公司所有
           <router-link to="/admin/image" class="btn btn-manager nonePad"><font-awesome-icon :icon="['fas', 'tools']" style="color:#ddac56; width:27px; height:20px;"/></router-link>
         </li>
       </ul>
-      <ul class="col-4 nonePad">
+      <ul class="col-4 d-xl-flex flex-column justify-content-center nonePad">
         <li class="address rounded p-1 mb-1 nonePad">餐廳地址：台北市信義區光復南路888號</li>
         <li class="rounded p-1 mb-1">
           <a href="tel:+#" class="contact">Tel：(02)34567890</a>
         </li>
-        <li class="rounded p-1 mb-3">
+        <li class="rounded p-1 mb-1">
            <a href="mailto:#" class="contact">E-mail：ccysteak@gmail.com</a>
         </li>
       </ul>
@@ -86,7 +86,7 @@ library.add(fas)
 export default {
   data () {
     return {
-      
+
     }
   }
 }
