@@ -50,8 +50,8 @@
         </li>
       </ul>
       <ul class="col-4 nonePad">
-        <li class="address rounded p-1 mb-3 nonePad">餐廳地址：台北市信義區光復南路888號</li>
-        <li class="rounded p-1 mb-3">
+        <li class="address rounded p-1 mb-1 nonePad">餐廳地址：台北市信義區光復南路888號</li>
+        <li class="rounded p-1 mb-1">
           <a href="tel:+#" class="contact">Tel：(02)34567890</a>
         </li>
         <li class="rounded p-1 mb-3">
