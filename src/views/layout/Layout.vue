@@ -42,18 +42,15 @@
   </div>
   <div class="darkbgc">
   <footer class="container">
-    <div class="row footer justify-content-between align-items-center pl-0">
+    <div class="row footer justify-content-around align-items-center pl-0">
       <ul class="col-3">
         <b-link to="/"><div class="logo"></div></b-link>
         <li class="address rounded p-1 nonePad">本網站由ccysteak公司所有
           <router-link to="/admin/image" class="btn btn-manager nonePad"><font-awesome-icon :icon="['fas', 'tools']" style="color:#ddac56; width:27px; height:20px;"/></router-link>
         </li>
       </ul>
-      <ul class="col-5 d-xl-flex justify-content-end nonePad">
-        
-      </ul>
-      <ul class="col-4 nonePad pl-5">
-        <li class="address rounded p-2 mb-3 nonePad">餐廳地址：台北市信義區光復南路888號</li>
+      <ul class="col-4 nonePad">
+        <li class="address rounded p-1 mb-3 nonePad">餐廳地址：台北市信義區光復南路888號</li>
         <li class="rounded p-1 mb-3">
           <a href="tel:+#" class="contact">Tel：(02)34567890</a>
         </li>

@@ -1,9 +1,11 @@
 <template>
 <div>
-    <div class="banner d-flex align-items-center text-white sectionSpcing">
+    <div class="banner d-flex align-items-center text-white sectionSpcing position-relative">
+      <div class="bannerGradient h-100 w-50 position-absolute"></div>
       <div class="banner-text">
-      <h1 class="mb-5">一客完美的牛排</h1>
-      <b-link to="/products" class="bannerbutton border rounded d-flex justify-content-center align-items-center p-3">前往我們的菜單</b-link>
+      <h1 class="mb-3">一客完美的牛排</h1>
+      <p>創新熟成技術，歲月的琢磨打造自信的牛排，<br>東西方經典甜點。</p>
+      <b-link to="/products" class="bannerbutton border rounded d-flex justify-content-center align-items-center p-3">瀏覽菜單</b-link>
       </div>
     </div>
 <div class="container">
@@ -90,7 +92,7 @@ export default {
     return {
       swiperOption: {
         autoplay: {
-          delay: 5000,
+          delay: 5000
         },
         freeMode:true,
         slidesPerView: 3,
@@ -108,6 +110,6 @@ export default {
         }
       }
     }
-  },
+  }
 }
 </script>
