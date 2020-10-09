@@ -53,6 +53,7 @@
                 編輯
               </b-button>
               <button
+                type="button"
                 class="btn btn-danger btn-sm"
                 @click="delModal(item)"
               >
@@ -154,14 +155,13 @@ export default {
         description: '',
         content: '',
         enabled: true,
-        imageUrl: [],
+        imageUrl: []
       },
       file: null,
       pagination: {},
-      token:'',
+      token: ''
     }
   },
-  props:['token'],
   created () {
     this.getProducts()
   },

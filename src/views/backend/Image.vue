@@ -55,7 +55,6 @@ export default {
       pagination: {}
     }
   },
-  props:['token'],
   created () {
     this.getData()
   },

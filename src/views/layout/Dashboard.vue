@@ -26,16 +26,18 @@ export default {
   methods: {
     checkLogin () {
       this.token = document.cookie.replace(/(?:(?:^|.*;\s*)hextoken\s*=\s*([^;]*).*$)|^.*$/, '$1')
-      this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`
       const api = `${process.env.VUE_APP_APIPATH}/api/auth/check`
       this.$http.post(api, {
         api_token: this.token
       })
         .then((res) => {
           this.checkSuccess = true
+          this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`
         })
         .catch((error) => {
-          this.$router.push('/login')
+          if (error) {
+            this.$router.push('/login')
+          }
         })
     }
   }

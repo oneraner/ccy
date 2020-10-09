@@ -11,6 +11,7 @@
 }
 .banner-text{
     margin-left: 20%;
+    z-index: 2;
 }
 .bannerGradient{
     top: 0;
@@ -73,6 +74,10 @@
     justify-content: center;
     align-items: center;
 }
+.setMenu-img{
+    width: auto;
+    height: 400px;
+}
 .card-img{
     width: auto;
     height: 300px;
@@ -85,9 +90,11 @@
 }
 .custom-cardleft{
     height: 300px;
+    cursor: pointer;
 }
 .custom-cardright{
     height: 300px;
+    cursor: pointer;
 }
 .card-title{
     font-size: 1.5rem;
@@ -103,20 +110,17 @@
     height: 100px;
 }
 .menu{
-    height: 300px;
+    height: 400px;
 }
 .menuTitle{
     font-size: 36px;
     font-weight: 900;
     border-bottom: 3px solid #000;
 }
-.menuimg{
-    position: absolute;
-    top: 0;
-    left: 0%;
-}
-.setMenuCard{
-    margin-right: 20%;
+.setMenu{
+    min-width: 300px;
+    max-width: 1050px;
+    cursor: pointer;
 }
 .activityTitle{
     font-size: 1.5rem;
@@ -128,6 +132,9 @@
 }
 .card-header{
     font-size: $font-size-lg;
+}
+.a2,.a3,.a4{
+    display: none;
 }
 // swiper css
 .swiper-slide{

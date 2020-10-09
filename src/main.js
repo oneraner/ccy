@@ -5,7 +5,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 // Swiper
-import Swiper, { Navigation, Pagination, Autoplay} from 'swiper'
+import Swiper, { Navigation, Pagination, Autoplay } from 'swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // sweetAlert
 import VueSweetalert2 from 'vue-sweetalert2'

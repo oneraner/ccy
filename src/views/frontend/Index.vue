@@ -94,7 +94,7 @@ export default {
         autoplay: {
           delay: 5000
         },
-        freeMode:true,
+        freeMode: true,
         slidesPerView: 3,
         spaceBetween: 30,
         slidesPerGroup: 3,

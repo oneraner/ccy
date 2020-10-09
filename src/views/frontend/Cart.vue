@@ -30,7 +30,7 @@
           <td></td>
           <td>總金額：</td>
           <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
-          <td style="text-align:center;" v-if="carts.length > 0"><b-button pill size="lg" variant="secondary" class="cartbutton" to="/order">結帳</b-button></td>
+          <td style="text-align:center;" v-if="carts.length > 0"><b-button pill variant="secondary" class="cartbutton h-100 w-75" to="/order">結帳</b-button></td>
           <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
         </tr>
       </tbody>
@@ -49,18 +49,16 @@
       <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
         <img :src="item.imageUrl[0]" class="animateimg card-img">
       </div>
-      <div class="custom-cardright col-6 bg-white">
-        <div @click.prevent="getProduct(item.id)">
+      <div class="custom-cardright col-6 bg-white" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-        </div>
           <p class="d-flex justify-content-around">
-            <b-button @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
       </div>
     </div>

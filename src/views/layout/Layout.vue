@@ -42,7 +42,7 @@
   </div>
   <div class="darkbgc">
   <footer class="container">
-    <div class="row footer justify-content-around align-items-center pl-0">
+    <div class="row footer justify-content-between align-items-center pl-0">
       <ul class="col-3">
         <b-link to="/"><div class="logo"></div></b-link>
         <li class="address rounded p-1 nonePad d-xl-flex align-items-center">本網站由ccysteak公司所有

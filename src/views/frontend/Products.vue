@@ -8,22 +8,22 @@
     <div class="row justify-content-center bigtopSpacing bigbotSpacing">
       <div class="col-12 sectionSpcing">
       <div class="menuTitle col-12 mb-3">套餐</div>
-      <div class="col-12 flex-wrap">
-      <div v-for="item in setMenu" :key="item.id" class="animateMenu w-100 d-flex justify-content-start mb-3 overflow-hidden position-relative">
-        <div class="menuimg d-flex justify-content-start align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
-          <img :src="item.imageUrl[0]" class="animateimg card-img">
-        </div>
-        <div class="menu w-100 d-flex justify-content-end bg-white">
-          <div class="setMenuCard col-3" @click.prevent="getProduct(item.id)">
+      <div class="col-12 d-flex justify-content-center flex-wrap">
+      <div v-for="item in setMenu" :key="item.id" class="animateMenu d-flex justify-content-start mb-3 overflow-hidden position-relative">
+        <div class="setMenu d-flex justify-content-start align-items-center rounded pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <div class="col-6 d-flex justify-content-center align-items-center overflow-hidden">
+            <img :src="item.imageUrl[0]" class="animateimg setMenu-img">
+          </div>
+          <div class="menu col-6 d-flex flex-column justify-content-between bg-white">
             <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
-            <p class="custom-cardbody">{{item.content}}</p>
+            <p class="custom-cardbody d-flex justify-content-center">{{item.content}}</p>
             <p class="d-flex justify-content-around">
               <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
               <span class="card-text">特價：{{item.price}}</span>
             </p>
-            <p class="d-flex justify-content-around">
+            <p class="d-flex justify-content-around" >
               <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-              <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+              <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
             </p>
           </div>
         </div>
@@ -37,18 +37,16 @@
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between"  @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -61,18 +59,16 @@
         <div class="custom-cardleft col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -85,18 +81,16 @@
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -109,18 +103,16 @@
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -133,18 +125,16 @@
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -156,18 +146,16 @@
         <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
           <img :src="item.imageUrl[0]" class="animateimg card-img">
         </div>
-        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between">
-          <div @click.prevent="getProduct(item.id)">
+        <div class="custom-cardright col-6 bg-white d-flex flex-column justify-content-between" @click.prevent="getProduct(item.id)">
           <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
           <p class="custom-cardbody">{{item.content}}</p>
           <p class="d-flex justify-content-around">
             <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
             <span class="card-text">特價：{{item.price}}</span>
           </p>
-          </div>
           <p class="d-flex justify-content-around">
             <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <b-button @click.prevent="addCart(item.id)">加入購物車</b-button>
+            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
           </p>
         </div>
       </div>
@@ -190,7 +178,7 @@
             </p>
             <div class="col-12 d-flex justify-content-end">
               <div class="w-50 d-flex">
-                <b-button class="addButton" @click.prevent="tempProduct.num --;updateQ()">-</b-button>
+                <b-button class="addButton" @click.prevent="updateSubtract()">-</b-button>
                 <div class="productNum">{{tempProduct.num}}</div>
                 <b-button class="lessButton" @click.prevent="tempProduct.num ++;updateQ()">+</b-button>
               </div>
@@ -202,22 +190,14 @@
       <div class="row">
         <div class="d-flex flex-column col-12">
           <div class="activityTitle mb-3">常見問題</div>
-          <details>
-            <summary class="w-100 p-3 bgc position-relative">Q：素食者可否食用？</summary>
-            <p class="w-100 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
-          </details>
-          <details>
-            <summary class="w-100 p-3 bgc position-relative">Q：CCY如何包裝產品？</summary>
-            <p class="w-100 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
-          </details>
-          <details>
-            <summary class="w-100 p-3 bgc position-relative">Q：CCY的付款方式？</summary>
-            <p class="w-100 p-3">A：可選常見的信用卡以及行動支付。</p>
-          </details>
-          <details>
-            <summary class="w-100 p-3 bgc position-relative">Q：CCY的送貨方式？</summary>
-            <p class="w-100 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
-          </details>
+            <p class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</p>
+            <p class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
+            <p class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</p>
+            <p class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
+            <p class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</p>
+            <p class="a3 p-3">A：可選常見的信用卡以及行動支付。</p>
+            <p class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</p>
+            <p class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
         </div>
       </div>
     </b-modal>
@@ -319,8 +299,77 @@ export default {
         }
       })
     },
-    updateQ(){
-      this.$forceUpdate();
+    updateSubtract () {
+      if (this.tempProduct.num > 1) {
+        this.tempProduct.num--
+        this.$forceUpdate()
+      } else {
+        this.$swal({
+          icon: 'error',
+          title: '數量不可小於1!',
+          text: '請重新調整',
+          button: 'OK'
+        })
+      }
+    },
+    updateQ () {
+      this.$forceUpdate()
+    },
+    QA1 () {
+      const a1 = document.querySelector('.a1')
+      const a2 = document.querySelector('.a2')
+      const a3 = document.querySelector('.a3')
+      const a4 = document.querySelector('.a4')
+      if (a1.style.display === 'none') {
+        a1.style.display = 'block'
+        a2.style.display = 'none'
+        a3.style.display = 'none'
+        a4.style.display = 'none'
+      } else {
+        a1.style.display = 'none'
+      }
+    },
+    QA2 () {
+      const a1 = document.querySelector('.a1')
+      const a2 = document.querySelector('.a2')
+      const a3 = document.querySelector('.a3')
+      const a4 = document.querySelector('.a4')
+      if (a2.style.display === 'none') {
+        a2.style.display = 'block'
+        a1.style.display = 'none'
+        a3.style.display = 'none'
+        a4.style.display = 'none'
+      } else {
+        a2.style.display = 'none'
+      }
+    },
+    QA3 () {
+      const a1 = document.querySelector('.a1')
+      const a2 = document.querySelector('.a2')
+      const a3 = document.querySelector('.a3')
+      const a4 = document.querySelector('.a4')
+      if (a3.style.display === 'none') {
+        a3.style.display = 'block'
+        a2.style.display = 'none'
+        a1.style.display = 'none'
+        a4.style.display = 'none'
+      } else {
+        a3.style.display = 'none'
+      }
+    },
+    QA4 () {
+      const a1 = document.querySelector('.a1')
+      const a2 = document.querySelector('.a2')
+      const a3 = document.querySelector('.a3')
+      const a4 = document.querySelector('.a4')
+      if (a4.style.display === 'none') {
+        a4.style.display = 'block'
+        a2.style.display = 'none'
+        a3.style.display = 'none'
+        a1.style.display = 'none'
+      } else {
+        a4.style.display = 'none'
+      }
     }
   }
 

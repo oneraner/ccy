@@ -42,25 +42,25 @@ const routes = [
   }, // 後台
   {
     path: '/admin',
-    component: () => import('../views/dashboard/Dashboard.vue'),
+    component: () => import('../views/layout/Dashboard.vue'),
     children: [
       {
         path: 'products',
-        component: () => import('../views/dashboard/Productsd.vue')
+        component: () => import('../views/backend/Productsd.vue')
       },
       {
         path: 'order',
-        component: () => import('../views/dashboard/Orderd.vue')
+        component: () => import('../views/backend/Orderd.vue')
       },
       {
         path: 'image',
-        component: () => import('../views/dashboard/Image.vue')
+        component: () => import('../views/backend/Image.vue')
       }
     ]
   },
   {
-    path:'/login',
-    component: () => import('../views/dashboard/Login.vue'),
+    path: '/login',
+    component: () => import('../views/backend/Login.vue')
   }
 ]
 
