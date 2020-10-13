@@ -11,6 +11,11 @@ body{
         @content;  
     }
 }
+@mixin moilbe {
+  @media screen and (min-width:576px){
+    @content;  
+  }
+}
 .nonePad{
     @media screen and (max-width: 1199px) {
         display: none;

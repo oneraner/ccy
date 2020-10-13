@@ -82,6 +82,9 @@
     width: auto;
     height: 300px;
 }
+.card-img-top{
+    object-fit:cover;
+}
 .customCard{
     min-width: 300px;
     max-width: 500px;
@@ -132,6 +135,9 @@
 }
 .card-header{
     font-size: $font-size-lg;
+}
+.q1,.q2,.q3,.q4{
+    cursor: pointer;
 }
 .a2,.a3,.a4{
     display: none;
@@ -203,6 +209,7 @@
     color: $primary;
     background: $secondary;
     opacity: 0;
+    cursor: pointer;
 }
 
 //modal css
@@ -212,6 +219,9 @@
 .modal-content{
     @include border;
     width: 83.33%;
+    @include moilbe {
+        width: 100vw;
+    }
 }
 .modal-title{
     width: 90%;

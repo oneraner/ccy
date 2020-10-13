@@ -1,6 +1,6 @@
 <template>
   <div class="container min-vh">
-     <Loading :active.sync="isLoading" :is-full-page="true">
+    <Loading :active.sync="isLoading" :is-full-page="true">
       <div class="loadingio-spinner-spinner-jz9qo78s5j"><div class="ldio-9d27yb1g2eu">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
       </div></div>
@@ -162,11 +162,11 @@
       </div>
     <b-modal id="productModal" ref="productModal" size="xl" centered hide-header hide-footer>
       <b-button class="xButton d-flex justify-content-center align-items-center rounded-circle position-absolute" @click="$bvModal.hide('productModal')">x</b-button>
-      <div class="row justify-content-between mb-4">
-        <div class="col-6">
+      <div class="row justify-content-between flex-wrap mb-4">
+        <div class="col-12 col-md-6">
         <b-img :src="tempProduct.imageUrl[0]" fluid class="mb-3"></b-img>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="activityTitle d-flex mb-3">{{tempProduct.title}}</div>
           <div class="d-flex justify-content-center mb-3">{{tempProduct.description}}</div>
             <p class="d-flex justify-content-center">
@@ -292,7 +292,7 @@ export default {
           this.isLoading = false
           this.$swal({
             icon: 'error',
-            title: '加入購物車失敗!',
+            title: error.response.data.errors[0],
             text: '請重新選購',
             button: 'OK'
           })

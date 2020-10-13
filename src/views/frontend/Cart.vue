@@ -156,17 +156,34 @@ export default {
         .then((res) => {
           this.isLoading = false
         })
-        .catch((error) => {
-          if (error) {
-            this.isLoading = false
-          }
-        })
+        // 這個BSV的套件太靈敏，畫面載入會跑一次，動到也會跑一次，會不斷跳錯誤
+        // .catch((error) => {
+        //   if (error) {
+        //     this.isLoading = false
+        //     this.$swal({
+        //       icon: 'error',
+        //       title: '更新總價失敗!',
+        //       text: '請再試一次',
+        //       button: 'OK'
+        //     })
+        //   }
+        // })
     },
     updateQuantity (id, quantity) {
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/shopping`
       this.$http.get(api).then((res) => {
         this.carts = res.data.data
         this.updateTotal()
+      })
+      .catch((error) => {
+        if (error) {
+          this.$swal({
+            icon: 'error',
+            title: '更新數量失敗!',
+            text: '請再試一次',
+            button: 'OK'
+          })
+        }
       })
     },
     addCart (id, quantity = 1) {
@@ -192,7 +209,7 @@ export default {
             this.isLoading = false
             this.$swal({
               icon: 'error',
-              title: '加入購物車失敗!',
+              title: error.response.data.errors[0],
               text: '請重新選購',
               button: 'OK'
             })

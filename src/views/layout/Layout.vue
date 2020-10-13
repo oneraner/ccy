@@ -30,7 +30,7 @@
         <ul class="d-flex justify-content-center justify-content-xl-end align-items-center col-3 col-xl-2">
           <li class="hoverWhite">
             <b-button to="/cart" variant="outline-primary" class="cartButton nonePad">
-              <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:32px; height:25px; border-radius:50%;"/>
+              <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:30px; height:30px; border-radius:50%;"/>
             </b-button>
           </li>
         </ul>
