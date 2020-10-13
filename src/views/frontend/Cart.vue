@@ -6,35 +6,35 @@
     <div></div><div></div><div></div><div></div></div></div>
   </Loading>
   <div class="row justify-content-around flex-wrap sectionSpcing">
-  <div class="menuTitle col-8 d-flex justify-content-center bigtopSpacing mb-3">我的購物車</div>
-    <table class="table col-11 m-auto" v-if="carts.length >= 1">
-      <thead>
-        <th style="text-align:center;">從購物車移除</th>
-        <th style="text-align:center;">餐點</th>
-        <th style="text-align:center;">數量</th>
-        <th style="text-align:center;">單價</th>
-        <th style="text-align:center;">總價</th>
-      </thead>
-      <tbody>
-        <tr v-for="item in carts" :key="item.id">
-          <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
-          <td style="text-align:center;">{{item.product.title}}</td>
-          <td>
-            <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
-          </td>
-          <td style="text-align:center;">{{item.product.price}}</td>
-          <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>總金額：</td>
-          <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
-          <td style="text-align:center;" v-if="carts.length > 0"><b-button pill variant="secondary" class="cartbutton h-100 w-75" to="/order">結帳</b-button></td>
-          <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="menuTitle col-8 d-flex justify-content-center bigtopSpacing mb-3">我的購物車</div>
+      <table class="table col-11 m-auto" v-if="carts.length >= 1">
+        <thead>
+          <th style="text-align:center;">從購物車移除</th>
+          <th style="text-align:center;">餐點</th>
+          <th style="text-align:center;">數量</th>
+          <th style="text-align:center;">單價</th>
+          <th style="text-align:center;">總價</th>
+        </thead>
+        <tbody>
+          <tr v-for="item in carts" :key="item.id">
+            <td style="text-align:center;"><b-button fill class="pinkBorder" @click.prevent="deleteCart(item)"><font-awesome-icon :icon="['fas', 'trash-alt']"/></b-button></td>
+            <td style="text-align:center;">{{item.product.title}}</td>
+            <td>
+              <b-form-spinbutton  v-model="item.quantity" min="1" max="100" @change="updateTotal(item.product.id, item.quantity)"></b-form-spinbutton>
+            </td>
+            <td style="text-align:center;">{{item.product.price}}</td>
+            <td style="text-align:center;">{{item.product.price * item.quantity}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>總金額：</td>
+            <td style="text-align:center;"><span class="underLine">{{cartTotal}}</span></td>
+            <td style="text-align:center;" v-if="carts.length > 0"><b-button pill variant="secondary" class="cartbutton h-100 w-75" to="/order">結帳</b-button></td>
+            <td style="text-align:center;" v-else><b-button pill size="lg" variant="secondary" class="cartbutton" to="/products">返回購物</b-button></td>
+          </tr>
+        </tbody>
+      </table>
     <div class="col-11 d-flex justify-content-center align-items-center flex-column" v-if="carts.length < 1">
       <h3 class="mb-3">購物車空的喔，看看我們的菜單吧！</h3>
       <p class="card-text">也可以從下面立刻加購我們的優惠單品</p>
@@ -45,24 +45,24 @@
   </div>
   <div class="row justify-content-around flex-wrap bigbotSpacing">
     <div class="menuTitle col-8 d-flex justify-content-center mb-3">本日優惠</div>
-    <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
-      <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
-        <img :src="item.imageUrl[0]" class="animateimg card-img">
-      </div>
-      <div class="custom-cardright col-6 bg-white" @click.prevent="getProduct(item.id)">
-          <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
-          <p class="custom-cardbody">{{item.content}}</p>
-          <p class="d-flex justify-content-around">
-            <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
-            <span class="card-text">特價：{{item.price}}</span>
-          </p>
-          <p class="d-flex justify-content-around">
-            <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-            <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
-          </p>
+      <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex justify-content-start overflow-hidden mb-3">
+        <div class="col-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+          <img :src="item.imageUrl[0]" class="animateimg card-img">
+        </div>
+        <div class="custom-cardright col-6 bg-white" @click.prevent="getProduct(item.id)">
+            <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
+            <p class="custom-cardbody">{{item.content}}</p>
+            <p class="d-flex justify-content-around">
+              <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
+              <span class="card-text">特價：{{item.price}}</span>
+            </p>
+            <p class="d-flex justify-content-around">
+              <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+              <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+            </p>
+        </div>
       </div>
     </div>
-  </div>
   <b-modal ref="productModal" :title="tempProduct.title" centered hide-footer>
       <div class="mb-3">介紹：{{tempProduct.content}}</div>
       <div class="mb-3">成分：{{tempProduct.description}}</div>
@@ -175,16 +175,16 @@ export default {
         this.carts = res.data.data
         this.updateTotal()
       })
-      .catch((error) => {
-        if (error) {
-          this.$swal({
-            icon: 'error',
-            title: '更新數量失敗!',
-            text: '請再試一次',
-            button: 'OK'
-          })
-        }
-      })
+        .catch((error) => {
+          if (error) {
+            this.$swal({
+              icon: 'error',
+              title: '更新數量失敗!',
+              text: '請再試一次',
+              button: 'OK'
+            })
+          }
+        })
     },
     addCart (id, quantity = 1) {
       this.isLoading = true
