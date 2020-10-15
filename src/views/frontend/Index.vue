@@ -112,22 +112,22 @@
           <b-button class="w-50 mr-3" @click.prevent="addCart(tempProduct.id, tempProduct.num)">加入購物車</b-button>
         </div>
       </div>
-      </div>
-      <div class="col-12 modalBotline mb-3"></div>
-      <div class="row">
-        <div class="d-flex flex-column col-12">
-          <div class="activityTitle mb-3">常見問題</div>
-            <p class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</p>
-            <p class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
-            <p class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</p>
-            <p class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
-            <p class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</p>
-            <p class="a3 p-3">A：可選常見的信用卡以及行動支付。</p>
-            <p class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</p>
-            <p class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
+    </div>
+    <div class="col-12 modalBotline mb-3"></div>
+    <div class="row">
+      <div class="d-flex flex-column col-12">
+        <div class="activityTitle mb-3">常見問題</div>
+          <p class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</p>
+          <p class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
+          <p class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</p>
+          <p class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
+          <p class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</p>
+          <p class="a3 p-3">A：可選常見的信用卡以及行動支付。</p>
+          <p class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</p>
+          <p class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
         </div>
       </div>
-    </b-modal>
+  </b-modal>
   </div>
 </div>
 </template>
