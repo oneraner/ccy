@@ -195,7 +195,7 @@ export default {
               text: '請再試一次',
               button: 'OK'
             })
-          }   
+          }
         })
     },
     addCart (id, quantity = 1) {
