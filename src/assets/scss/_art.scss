@@ -1,129 +1,126 @@
 @mixin font {
-    font-size: $font-size-base;
-    line-height: $line-height-lg;
-    font-weight: 400;
+  font-size: $font-size-base;
+  line-height: $line-height-lg;
+  font-weight: 400;
 }
 @mixin bgi($url) {
-    background-image: url($url);
-    background-position: center;
-    background-size: cover;
+  background-image: url($url);
+  background-position: center;
+  background-size: cover;
 }
 @mixin border {
-    border: $darkbgc 3px solid;
+  border: $darkbgc 3px solid;
 }
-.botradius{
-    border-radius: 0 0 $border-radius $border-radius;
+.botradius {
+  border-radius: 0 0 $border-radius $border-radius;
 }
 // index img
-.banner{
-    max-width: 1920px;
-    height: 100vh;
-    position: relative;
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/04prQya0DeT6uaLn8MKRi8N7kTG6aGv1Fp1v7Hh3gQXPqqAXLk0lSfH3HqxbvfsOEb5qCG6gMiV98a1iCMHVBZxdCRAX2ZOAMtJDd5JgftrtXKn6pZdvV3RTPeE1yq0y.jpg');
+.banner {
+  max-width: 1920px;
+  height: 100vh;
+  position: relative;
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/04prQya0DeT6uaLn8MKRi8N7kTG6aGv1Fp1v7Hh3gQXPqqAXLk0lSfH3HqxbvfsOEb5qCG6gMiV98a1iCMHVBZxdCRAX2ZOAMtJDd5JgftrtXKn6pZdvV3RTPeE1yq0y.jpg');
 }
-.steakImage{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
-    height: 250px;
-    border-radius: 25px;
-    border: $darkbgc 3px solid;
+.steakImage {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
+  height: 250px;
+  border-radius: 25px;
+  border: $darkbgc 3px solid;
 }
-.dessertImage{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/mrwLz0ajrH9zWn4aHx9W6mNXjtdMAoN2DUPqK2ep7nFGUrQACBnvUqxXiIawUhZxSZt6kWBgJgrpBbhGSmzhJ4jI0TpjtJaR6HNoeo5V5lj5kdKrGtTR9qc4TCvwjb1j.jpg');
-    height: 250px;
-    border-radius: 25px;
-    border: $darkbgc 3px solid;
+.dessertImage {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/mrwLz0ajrH9zWn4aHx9W6mNXjtdMAoN2DUPqK2ep7nFGUrQACBnvUqxXiIawUhZxSZt6kWBgJgrpBbhGSmzhJ4jI0TpjtJaR6HNoeo5V5lj5kdKrGtTR9qc4TCvwjb1j.jpg');
+  height: 250px;
+  border-radius: 25px;
+  border: $darkbgc 3px solid;
 }
-.entree{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/0B2XL6Bo37FTGgQXiKZuTHbHLADcgSe5laEPxMJnNGvWo0oxDWHDkE9HZCbSfew3d61PkNfp8lb4UqnHi1t3d29k77emPu0gkkRCU9a7MYnC9i5nBQO4qhlnvUbZZZc2.jpg');
+.entree {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/0B2XL6Bo37FTGgQXiKZuTHbHLADcgSe5laEPxMJnNGvWo0oxDWHDkE9HZCbSfew3d61PkNfp8lb4UqnHi1t3d29k77emPu0gkkRCU9a7MYnC9i5nBQO4qhlnvUbZZZc2.jpg');
 }
-.entreeBig{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/rNgpIgw7p8aOFz1N7H6yGxm7X5KIqseQ9kwFfxGfPNKzZCOUoNJMAmGbpPJSmjDDoKvsF3KKa1GEslkGMw6xKZMUJa3GSbtB2mJkjFubqeBZgtfPHT5LA5BCztJZnqG4.jpg');
-    height: 80vh;
+.entreeBig {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/rNgpIgw7p8aOFz1N7H6yGxm7X5KIqseQ9kwFfxGfPNKzZCOUoNJMAmGbpPJSmjDDoKvsF3KKa1GEslkGMw6xKZMUJa3GSbtB2mJkjFubqeBZgtfPHT5LA5BCztJZnqG4.jpg');
+  height: 80vh;
 }
-.soup{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/25wyvaylxgwrA5GYBSDM5TttebqCpGF1WVHgBSCq3DexshNKhWP03PVZpDmFmVtMyIJ2zUQdWwpiHTJ6ch4oImqljWsnOrioaQCrvjkfa0lq983F1pLfKz8VHYPt2Wc9.jpg');
+.soup {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/25wyvaylxgwrA5GYBSDM5TttebqCpGF1WVHgBSCq3DexshNKhWP03PVZpDmFmVtMyIJ2zUQdWwpiHTJ6ch4oImqljWsnOrioaQCrvjkfa0lq983F1pLfKz8VHYPt2Wc9.jpg');
 }
-.soupBig{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/GGEhpoV1kPg629sYnmwrYX8fOuGSmmEvBnQalxTdj4VqjOCPayoIzkyn4TznmwMI3RreFhNKHmkcRoy3vFazbljU3FvRziMFqnlkRCwrVcrGZoZyWfcohCRB3KFfQqc7.jpg');
-    height: 80vh;
+.soupBig {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/GGEhpoV1kPg629sYnmwrYX8fOuGSmmEvBnQalxTdj4VqjOCPayoIzkyn4TznmwMI3RreFhNKHmkcRoy3vFazbljU3FvRziMFqnlkRCwrVcrGZoZyWfcohCRB3KFfQqc7.jpg');
+  height: 80vh;
 }
-.salad{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/W8mMM1G5RTMgrHYkVe6876XpJOlJ3386wisqo6hpZmoDdNx6jQj9h9uSYAAx9qEGka3MnJlZLHHDIJNdpYARlwOY40ZEZTeFCUJVQ18fYWQhuCg7hP3oe86mEKQ2KLqo.jpg');
+.salad {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/W8mMM1G5RTMgrHYkVe6876XpJOlJ3386wisqo6hpZmoDdNx6jQj9h9uSYAAx9qEGka3MnJlZLHHDIJNdpYARlwOY40ZEZTeFCUJVQ18fYWQhuCg7hP3oe86mEKQ2KLqo.jpg');
 }
-.saladBig{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Qa5tPmad92gcKZGZErneQwJPfuZfnszBenOzVdvhWzRWBXfzPYzm2sJsn9m0DNKGXw02ji40IoLTr3I3TUMHDxJ6Rtup9kYWwQqD4mRGLENO8npPUX6qtPePN7S8WNcQ.jpg');
-    height: 80vh;
+.saladBig {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Qa5tPmad92gcKZGZErneQwJPfuZfnszBenOzVdvhWzRWBXfzPYzm2sJsn9m0DNKGXw02ji40IoLTr3I3TUMHDxJ6Rtup9kYWwQqD4mRGLENO8npPUX6qtPePN7S8WNcQ.jpg');
+  height: 80vh;
 }
-.dessert{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/12TBlKwKtjzaeTxWFjufmKclrqIfegqobYiGcSbSJdfyICY4FBnm13LcLNunP7tV3h93brv1nTJV8BK4hXtJNgC984WfBrqHMhQOnAnudMTwOsr9ZLFpA8o2iEi9Ueay.jpg');
+.dessert {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/12TBlKwKtjzaeTxWFjufmKclrqIfegqobYiGcSbSJdfyICY4FBnm13LcLNunP7tV3h93brv1nTJV8BK4hXtJNgC984WfBrqHMhQOnAnudMTwOsr9ZLFpA8o2iEi9Ueay.jpg');
 }
-.tea{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/1EuZu3fYAH3cSdNtB7dkHkW9iGBVSMR2kSY1jwyu7UnbBpMP29c1Q27rAOtzS6EhEVlW4Cyre1SGFOpdsmxwMmRXM2EDQmHrACVi7Yn6Dd7SkqAzE50FQyPeDX7aUb6u.jpg');
+.tea {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/1EuZu3fYAH3cSdNtB7dkHkW9iGBVSMR2kSY1jwyu7UnbBpMP29c1Q27rAOtzS6EhEVlW4Cyre1SGFOpdsmxwMmRXM2EDQmHrACVi7Yn6Dd7SkqAzE50FQyPeDX7aUb6u.jpg');
 }
-.sausage{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nzrh9yK25C6cQZM7Qp3RRulwRwOX87IeucXar0kyi9bpOJaBxjiCoTu4qbgWwVFqUjVgq4iz5hV2Jp5bzdfEdtNzESjWJGh43iEnFV6k2IMBNDZA4jPlcI1hL1Iw3qYj.jpg')
+.sausage {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nzrh9yK25C6cQZM7Qp3RRulwRwOX87IeucXar0kyi9bpOJaBxjiCoTu4qbgWwVFqUjVgq4iz5hV2Jp5bzdfEdtNzESjWJGh43iEnFV6k2IMBNDZA4jPlcI1hL1Iw3qYj.jpg')
 }
-.managerImage{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Za7P6zOaaxKhzufKX3fj9zbuV5tEjAMzEvBYZsphixgb08a4CzAwfIrPpqNkDRyN8hzmgYw0CtDzIgEcbxiUaN3iYUroM1qxg0V9gncQ5dotL3ypiPjLlmbZKgyhz4Cs.jpg'); 
-    height: 250px;
-    border-radius: 25px;
-    border: $darkbgc 3px solid;
+.managerImage {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Za7P6zOaaxKhzufKX3fj9zbuV5tEjAMzEvBYZsphixgb08a4CzAwfIrPpqNkDRyN8hzmgYw0CtDzIgEcbxiUaN3iYUroM1qxg0V9gncQ5dotL3ypiPjLlmbZKgyhz4Cs.jpg'); 
+  height: 250px;
+  border-radius: 25px;
+  border: $darkbgc 3px solid;
 }
-.restaurantImage{
-    @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
-    padding-bottom: 50%;
-    border-radius: 0 0 $border-radius 0;
+.restaurantImage {
+  @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
+  padding-bottom: 50%;
+  border-radius: 0 0 $border-radius 0;
 }
-.formBorder{
-    @include border;
-    border-radius: $border-radius;
+.formBorder {
+  @include border;
+  border-radius: $border-radius;
 }
-.chef{
-    @include bgi('~@/assets/image/chef-4625935_1280.jpg');
-    padding-bottom: 50%;
-    background-position: right;
-    border-radius: $border-radius 0 0 0;
+.chef {
+  @include bgi('~@/assets/image/chef-4625935_1280.jpg');
+  padding-bottom: 50%;
+  background-position: right;
+  border-radius: $border-radius 0 0 0;
 }
 // news img
-.activityImage{
-    width: 550px;
-    @include pad {
-        width: 300px;
-    }
+.activityImage {
+  width: 550px;
+  @include pad {
+    width: 300px;
+  }
 }
-.activity{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nzrh9yK25C6cQZM7Qp3RRulwRwOX87IeucXar0kyi9bpOJaBxjiCoTu4qbgWwVFqUjVgq4iz5hV2Jp5bzdfEdtNzESjWJGh43iEnFV6k2IMBNDZA4jPlcI1hL1Iw3qYj.jpg');
+.activity {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/nzrh9yK25C6cQZM7Qp3RRulwRwOX87IeucXar0kyi9bpOJaBxjiCoTu4qbgWwVFqUjVgq4iz5hV2Jp5bzdfEdtNzESjWJGh43iEnFV6k2IMBNDZA4jPlcI1hL1Iw3qYj.jpg');
     height: 250px;
     border-radius: $border-radius $border-radius 0 0;
 }
-.activitysteak{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
+.activitysteak {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
     height: 250px;
     border-radius: $border-radius $border-radius 0 0;
 }
-.activityLemon{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Yp2yorrvphkFn1CCBS9EKhu9JUVfC641SyvsunqCz3RTQ6gZlouTYiaPXRQT7Q9MPa3GBNw2c6OR1BD1gNMYEcLfmX8R0Q4Da4YsGAm2hW626RY0j2xsoE33PIuPG4t8.jpg');
+.activityLemon {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Yp2yorrvphkFn1CCBS9EKhu9JUVfC641SyvsunqCz3RTQ6gZlouTYiaPXRQT7Q9MPa3GBNw2c6OR1BD1gNMYEcLfmX8R0Q4Da4YsGAm2hW626RY0j2xsoE33PIuPG4t8.jpg');
     height: 250px;
     border-radius: $border-radius $border-radius 0 0;
 }
-.activityTsteak{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/B5QktpwgyJY6hZhb3gRzmbP57OFA4H4OorZ1mCSqmnZWPZJLPWVxmhGMQNpXk272qZqDzU3LY6MQXNQB7FLqiE0cgBXsxPuFUeBXjP3TCyXC5QBF5u31dqdmNyKIhN7e.jpg');
+.activityTsteak {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/B5QktpwgyJY6hZhb3gRzmbP57OFA4H4OorZ1mCSqmnZWPZJLPWVxmhGMQNpXk272qZqDzU3LY6MQXNQB7FLqiE0cgBXsxPuFUeBXjP3TCyXC5QBF5u31dqdmNyKIhN7e.jpg');
     height: 250px;
     border-radius: $border-radius $border-radius 0 0;
 }
 //core img
-.kitchenimg{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/U39QROFDl6eylGjsAnqczSsbLPqyTQg06ObhOThPvWDlnPb3VTL6i079iRhBYb7KCLRZnklACfWDWQeWE8ydwT6moqrq5CrA3dVbXgQS54MfH8ITyYxPVsPP3PpPyOhH.jpg');
+.kitchenimg {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/U39QROFDl6eylGjsAnqczSsbLPqyTQg06ObhOThPvWDlnPb3VTL6i079iRhBYb7KCLRZnklACfWDWQeWE8ydwT6moqrq5CrA3dVbXgQS54MfH8ITyYxPVsPP3PpPyOhH.jpg');
     height: 500px;
-    border-radius: $border-radius;
 }
-.cityimg{
-    @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/5tZX9agZmm9bcEL4TpctpJ59tXFp79MR6BAW7NaxFxQcFm47GBkRcKlj88BRsaYAvsr5f6GGDfnOzH0CtWHI2h9PiZtfnIoUaGmiA7HmzfjScpY30znlNVVRuh16LBBV.jpg');
+.cityimg {
+  @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/5tZX9agZmm9bcEL4TpctpJ59tXFp79MR6BAW7NaxFxQcFm47GBkRcKlj88BRsaYAvsr5f6GGDfnOzH0CtWHI2h9PiZtfnIoUaGmiA7HmzfjScpY30znlNVVRuh16LBBV.jpg');
     height: 500px;
-    border-radius: $border-radius;
 }
-.corerestaurant{
-    @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
+.corerestaurant {
+  @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
     height: 500px;
-    border-radius: $border-radius;
 }

@@ -29,13 +29,13 @@
           v-for="(item) in products"
           :key="item.id"
         >
-          <td>{{ item.category }}</td>
-          <td>{{ item.title }}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.title}}</td>
           <td>
-            {{ item.origin_price }}
+            {{item.origin_price}}
           </td>
           <td>
-            {{ item.price }}
+            {{item.price}}
           </td>
           <td>
             <span

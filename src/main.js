@@ -54,10 +54,10 @@ Vue.use(VueSweetalert2, options)
 Vue.use(VueAwesomeSwiper /* { default options with global component } */)
 Swiper.use([Navigation, Pagination, Autoplay])
 
-extend('secret', {
-  validate: value => value === 'example',
-  message: 'This is not the magic word'
-})
+// extend('secret', {
+//   validate: value => value === 'example',
+//   message: 'This is not the magic word'
+// })
 
 new Vue({
   router,

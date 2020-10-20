@@ -14,16 +14,16 @@
               <div class="col-6 d-flex justify-content-center align-items-center overflow-hidden">
                 <img :src="item.imageUrl[0]" class="animateimg setMenu-img">
               </div>
-              <div class="menu col-6 d-flex flex-column justify-content-between bg-white">
+              <div class="menu col-6 d-flex flex-column justify-content-between bg-white pt-5 pb-5">
                 <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
                 <p class="custom-cardbody d-flex justify-content-center">{{item.content}}</p>
                 <p class="d-flex justify-content-around">
                   <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
                   <span class="card-text">特價：{{item.price}}</span>
                 </p>
-                <p class="d-flex justify-content-around" >
-                  <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
-                  <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+                <p class="d-flex justify-content-between">
+                  <span class="col-6"><b-button class="w-100" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button></span>
+                  <span class="col-6" onclick="event.cancelBubble = true"><b-button class="w-100" @click.prevent="addCart(item.id)">加入購物車</b-button></span>
                 </p>
               </div>
             </div>
@@ -188,17 +188,17 @@
       </div>
       <div class="col-12 modalBotline mb-3"></div>
       <div class="row">
-        <div class="d-flex flex-column col-12">
-          <div class="activityTitle mb-3">常見問題</div>
-            <p class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</p>
-            <p class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</p>
-            <p class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</p>
-            <p class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</p>
-            <p class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</p>
-            <p class="a3 p-3">A：可選常見的信用卡以及行動支付。</p>
-            <p class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</p>
-            <p class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</p>
-        </div>
+        <ul class="d-flex flex-column col-12">
+          <li class="activityTitle mb-3">常見問題</li>
+          <li class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</li>
+          <li class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</li>
+          <li class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</li>
+          <li class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</li>
+          <li class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</li>
+          <li class="a3 p-3">A：可選常見的信用卡以及行動支付。</li>
+          <li class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</li>
+          <li class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</li>
+        </ul>
       </div>
     </b-modal>
     </div>
@@ -265,12 +265,26 @@ export default {
       })
     },
     getProduct (id) {
+      this.isLoading = true
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`
-      this.$http.get(api).then((res) => {
-        this.tempProduct = res.data.data
-        this.tempProduct.num = 1
-        this.$refs.productModal.show()
-      })
+      this.$http.get(api)
+        .then((res) => {
+          this.tempProduct = res.data.data
+          this.tempProduct.num = 1
+          this.$refs.productModal.show()
+          this.isLoading = false
+        })
+        .catch((error) => {
+          if (error) {
+            this.isLoading = false
+            this.$swal({
+              icon: 'error',
+              title: '取得商品資料失敗!',
+              text: '請再試一次',
+              button: 'OK'
+            })
+          }
+        })
     },
     addCart (id, quantity = 1) {
       this.isLoading = true

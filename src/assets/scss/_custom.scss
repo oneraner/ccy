@@ -1,286 +1,285 @@
-.logo{
-    width: 100%;
-    height: 80px;
-    background-image: url('~@/assets/image/logo.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-radius: 25px;
-    padding: 0;
-    margin-left: -20px;
+.logo {
+  width: 100%;
+  height: 80px;
+  background-image: url('~@/assets/image/logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  padding: 0;
+  margin-left: -20px;
 }
-.banner-text{
-    margin-left: 20%;
-    z-index: 2;
+.banner-text {
+  margin-left: 20%;
+  z-index: 2;
 }
-.bannerGradient{
-    top: 0;
-    left: 0;
-    background-image: linear-gradient(to right,rgba(#000,.8),rgba(#000,0));
-    pointer-events: none;
+.bannerGradient {
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right,rgba(#000,.8),rgba(#000,0));
+  pointer-events: none;
 }
-.bannerbutton{
-    color: #fff;
+.bannerbutton {
+  color: #fff;
 }
-.bannerbutton:hover{
-    background: $secondary;
+.bannerbutton:hover {
+  background: $secondary;
 }
-.table-width-big{
-    width: 500px;
-    max-width: 500px;
-    word-wrap: break-word;
-    word-break: break-all;
+.table-width-big {
+  width: 500px;
+  max-width: 500px;
+  word-wrap: break-word;
+  word-break: break-all;
 }
-.bgc{
-    background-color: $bgc;
+.bgc {
+  background-color: $bgc;
 }
 .table-width-mid{
-    width: 250px;
-    max-width: 250px;
+  width: 250px;
+  max-width: 250px;
 }
-.bg-cri{
-    color: 000;
+.bg-cri {
+  color: 000;
 }
-.minicard{
-    height: 200px;
-    border: $darkbgc 3px solid;
-    border-radius: 25px;
+.minicard {
+  height: 200px;
+  border: $darkbgc 3px solid;
+  border-radius: 25px;
 }
-.chefTitle{
-    font-size: 36px;
-    font-weight: 900;
-    border-bottom: 3px solid #000;
+.chefTitle {
+  font-size: 36px;
+  font-weight: 900;
+  border-bottom: 3px solid #000;
 }
-.chefright{
-    border-radius: 0 $border-radius 0 0;
+.chefright {
+  border-radius: 0 $border-radius 0 0;
 }
-.businessHours{
-    border-radius: 0 0 0 $border-radius;
+.businessHours {
+  border-radius: 0 0 0 $border-radius;
 }
-.managerContent{
-    @include font;
+.managerContent {
+  @include font;
 }
-.steakContent{
-    @include font;
+.steakContent {
+  @include font;
 }
-.dessertcontent{
-    @include font;
+.dessertcontent {
+  @include font;
 }
-.underLine{
-    text-decoration: underline;
+.underLine {
+  text-decoration: underline;
 }
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.setMenu-img{
-    width: auto;
-    height: 400px;
+.setMenu-img {
+  width: auto;
+  height: 400px;
 }
-.card-img{
-    width: auto;
-    height: 300px;
+.card-img {
+  width: auto;
+  height: 300px;
 }
-.card-img-top{
-    object-fit:cover;
+.card-img-top {
+  object-fit:cover;
 }
-.customCard{
-    min-width: 300px;
-    max-width: 500px;
-    border: 1px solid $secondary;
-    border-radius: 8px;
+.customCard {
+  min-width: 300px;
+  max-width: 500px;
+  border: 1px solid $secondary;
+  border-radius: 8px;
 }
-.custom-cardleft{
-    height: 300px;
-    cursor: pointer;
+.custom-cardleft {
+  height: 300px;
+  cursor: pointer;
 }
-.custom-cardright{
-    height: 300px;
-    cursor: pointer;
+.custom-cardright {
+  height: 300px;
+  cursor: pointer;
 }
-.card-title{
-    font-size: 1.5rem;
-    font-weight: 900;
-    height: 70px;
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  height: 70px;
 }
-.card-text{
-    font-size: 1rem;
+.card-text {
+  font-size: 1rem;
 }
-.custom-cardbody{
-    font-size: 1rem;
-    font-weight: 200;
-    height: 100px;
+.custom-cardbody {
+  font-size: 1rem;
+  font-weight: 200;
+  height: 100px;
 }
-.menu{
-    height: 400px;
+.menu {
+  height: 400px;
 }
-.menuTitle{
-    font-size: 36px;
-    font-weight: 900;
-    border-bottom: 3px solid #000;
+.menuTitle {
+  font-size: 36px;
+  font-weight: 900;
+  border-bottom: 3px solid #000;
 }
-.setMenu{
-    min-width: 300px;
-    max-width: 1050px;
-    cursor: pointer;
+.setMenu {
+  min-width: 300px;
+  max-width: 1050px;
+  cursor: pointer;
 }
-.activityTitle{
-    font-size: 1.5rem;
-    font-weight: 900;
+.activityTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
 }
-.activityBody{
-    font-size: 1rem;
-    font-weight: 400;
+.activityBody {
+  font-size: 1rem;
+  font-weight: 400;
 }
-.card-header{
-    font-size: $font-size-lg;
+.card-header {
+  font-size: $font-size-lg;
 }
-.q1,.q2,.q3,.q4{
-    cursor: pointer;
+.q1,.q2,.q3,.q4 {
+  cursor: pointer;
 }
-.a2,.a3,.a4{
-    display: none;
+.a2,.a3,.a4 {
+  display: none;
 }
 // swiper css
-.swiper-slide{
-    height: 300px;
+.swiper-slide {
+  height: 300px;
 }
-.swiper-container{
-    --swiper-theme-color: $bgc;/* 设置Swiper风格 */
-    --swiper-navigation-color: #ddac56;/* 单独设置按钮颜色 */
-    --swiper-navigation-size: 30px;/* 设置按钮大小 */
-    --swiper-pagination-color: #ddac56;
+.swiper-container {
+  --swiper-theme-color: $bgc;
+  --swiper-navigation-color: #ddac56;
+  --swiper-navigation-size: 30px;
+  --swiper-pagination-color: #ddac56;
 }
 // hover animate
-.animateMenu:hover{
-    border: 1px solid $primary;
-    border-radius: 8px;
+.animateMenu:hover {
+  border: 1px solid $primary;
+  border-radius: 8px;
 }
-.animateMenu:hover .animateimg{
-    transform: translate(0, 0) scale(1.2);
-    transition-duration: 0.4s;
+.animateMenu:hover .animateimg {
+  transform: translate(0, 0) scale(1.2);
+  transition-duration: 0.4s;
 }
 // swiper animate
-.entree:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.entree:hover {
+  .swiperanimate {
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.soup:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.soup:hover {
+  .swiperanimate {
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.salad:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.salad:hover {
+  .swiperanimate {
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.dessert:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.dessert:hover {
+  .swiperanimate{
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.tea:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.tea:hover {
+  .swiperanimate {
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.sausage:hover{
-    .swiperanimate{
-        opacity: .8;
-        transition-duration: 0.4s;
+.sausage:hover {
+  .swiperanimate {
+      opacity: .8;
+      transition-duration: 0.4s;
     }
 }
-.swiperanimate{
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: $font-size-lg;
-    color: $primary;
-    background: $secondary;
-    opacity: 0;
-    cursor: pointer;
+.swiperanimate {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-lg;
+  color: $primary;
+  background: $secondary;
+  opacity: 0;
+  cursor: pointer;
 }
 
 //modal css
-.modal-dialog-centered{
-    justify-content: center;
+.modal-dialog {
+  max-width: 83.33%;
 }
-.modal-content{
-    @include border;
-    width: 83.33%;
-    @include moilbe {
-        width: 100vw;
-    }
+.modal-dialog-centered {
+  justify-content: center;
 }
-.modal-title{
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 900;
+.modal-content {
+  @include border;
 }
-.modal-img{
-    width: 225px;
-    height: 150px;
+.modal-title {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
-.modalBotline{
-    border-bottom: 1px solid $secondary;
+.modal-img {
+  width: 225px;
+  height: 150px;
 }
-.modal-body{
-    position: relative;
-    padding: 36px;
+.modalBotline {
+  border-bottom: 1px solid $secondary;
 }
-.xButton{
-    width: 40px;
-    height: 40px;
-    top: -20px;
-    right: -20px;
-    background: $secondary;
-    padding: 5px;
+.modal-body {
+  position: relative;
+  padding: 36px;
 }
-.addButton{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    border-width: 1px 0 1px 1px;
-    color: $secondary;
-    border-color: $secondary;
-    border-radius: $border-radius 0 0 $border-radius;
+.xButton {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  right: -20px;
+  background: $secondary;
+  padding: 5px;
 }
-.productNum{
-    width: 33%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-width: 1px 0 1px 0;
-    border-style: solid;
-    color: $secondary;
-    border-color: $secondary;
+.addButton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-width: 1px 0 1px 1px;
+  color: $secondary;
+  border-color: $secondary;
+  border-radius: $border-radius 0 0 $border-radius;
 }
-.lessButton{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffffff;
-    border-width: 1px 1px 1px 0;
-    color: $secondary;
-    border-color: $secondary;
-    border-radius: 0 $border-radius $border-radius 0 ;
+.productNum {
+  width: 33%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  color: $secondary;
+  border-color: $secondary;
+}
+.lessButton {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-width: 1px 1px 1px 0;
+  color: $secondary;
+  border-color: $secondary;
+  border-radius: 0 $border-radius $border-radius 0 ;
 }

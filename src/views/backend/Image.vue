@@ -37,8 +37,8 @@
         <p>確定刪除所選的圖片</p>
       </div>
       <div class="modal-footer">
-        <b-button type="button" class="btn btn-primary" @click="$bvModal.hide('deleteModal')">取消</b-button>
-        <b-button type="button" class="btn btn-danger" @click="deleteImage">確認刪除</b-button>
+        <b-button class="btn btn-primary" @click="$bvModal.hide('deleteModal')">取消</b-button>
+        <b-button class="btn btn-danger" @click="deleteImage">確認刪除</b-button>
       </div>
     </b-modal>
   </div>
@@ -70,8 +70,8 @@ export default {
       })
     },
     openModal (item) {
-      this.$refs.deleteModal.show()
       this.tempData = { ...item }
+      this.$refs.deleteModal.show()
     },
     deleteImage () {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_UUID}/admin/storage/${this.tempData.id}`

@@ -8,7 +8,7 @@
       <li><router-link class="text-primary" to="/admin/discount">discount</router-link></li>
       <li><router-link class="text-primary" to="/admin/image">image</router-link></li>
     </ul>
-  <router-view :token="token" v-if="checkSuccess"></router-view>
+  <router-view v-if="checkSuccess"></router-view>
   </div>
 </div>
 </template>

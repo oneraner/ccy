@@ -1,54 +1,54 @@
-.darkbgc{
-    background-color: $darkbgc;
+.darkbgc {
+  background-color: $darkbgc;
 }
-.nav{
+.nav {
+  height: 80px;
+  border-radius: 10px;
+  @include pad{
+    height: 160px;
+  }
+}
+.navButton {
+  font-family:'Noto Sans TC', sans-serif;
+  font-size: $font-size-lg;
+  font-weight: 400;
+  font-style: italic;
+  color: $primary;
+  text-decoration:none;
+  padding: 20px 10px 20px 10px;
+  border-radius: $border-radius;
+}
+.iconButton {
+  border: 1px solid $primary;
+  padding: 10px;
+  color: $primary;
+  border-radius: 50%;
+}
+.cartButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 15px;
+}
+.hoverWhite :hover {
+  background-color: #fff;
+}
+.btn-manager {
+  font-size: 0.8rem;
+}
+.footer {
+  font-size: $font-size-lg;
+  height: 150px;
+  @include pad{
     height: 80px;
-    border-radius: 10px;
-    @include pad{
-        height: 160px;
-    }
+  }
 }
-.navButton{
-    font-family:'Noto Sans TC', sans-serif;
-    font-size: $font-size-lg;
-    font-weight: 400;
-    font-style: italic;
-    color: $primary;
-    text-decoration:none;
-    padding: 20px 10px 20px 10px;
-    border-radius: $border-radius;
+.contact {
+  @include font;
+  color: $primary;
 }
-.iconButton{
-    border: 1px solid $primary;
-    padding: 10px;
-    color: $primary;
-    border-radius: 50%;
-}
-.cartButton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    padding: 15px;
-}
-.hoverWhite :hover{
-    background-color: #fff;
-}
-.btn-manager{
-    font-size: 0.8rem;
-}
-.footer{
-    font-size: $font-size-lg;
-    height: 150px;
-    @include pad{
-        height: 80px;
-    }
-}
-.contact{
-    @include font;
-    color: $primary;
-}
-.address{
-    @include font;
-    color: $primary;
+.address {
+  @include font;
+  color: $primary;
 }
