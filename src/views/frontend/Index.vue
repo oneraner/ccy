@@ -117,13 +117,13 @@
     <div class="row">
       <ul class="d-flex flex-column col-12">
         <li class="activityTitle mb-3">常見問題</li>
-        <li class="q1 w-100 p-3 bgc" @click.prevent="QA1()">Q：素食者可否食用？</li>
+        <li class="q1 w-100 p-3 light-color" @click.prevent="QA1()">Q：素食者可否食用？</li>
         <li class="a1 p-3">A：CCY大部分的產品為動物製品，若需純素食品請電洽為您特製。</li>
-        <li class="q2 w-100 p-3 bgc" @click.prevent="QA2()">Q：CCY如何包裝產品？</li>
+        <li class="q2 w-100 p-3 light-color" @click.prevent="QA2()">Q：CCY如何包裝產品？</li>
         <li class="a2 p-3">A：大廚料理完放涼之後真空無菌包裝，讓您吃得安心。</li>
-        <li class="q3 w-100 p-3 bgc" @click.prevent="QA3()">Q：CCY的付款方式？</li>
+        <li class="q3 w-100 p-3 light-color" @click.prevent="QA3()">Q：CCY的付款方式？</li>
         <li class="a3 p-3">A：可選常見的信用卡以及行動支付。</li>
-        <li class="q4 w-100 p-3 bgc" @click.prevent="QA4()">Q：CCY的送貨方式？</li>
+        <li class="q4 w-100 p-3 light-color" @click.prevent="QA4()">Q：CCY的送貨方式？</li>
         <li class="a4 p-3">A：與物流業者合作，可送至住家周圍的超商或直接送貨到府。</li>
       </ul>
     </div>

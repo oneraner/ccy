@@ -31,8 +31,8 @@
   word-wrap: break-word;
   word-break: break-all;
 }
-.bgc {
-  background-color: $bgc;
+.light-color {
+  background-color: $light-color;
 }
 .table-width-mid{
   width: 250px;
@@ -43,7 +43,7 @@
 }
 .minicard {
   height: 200px;
-  border: $darkbgc 3px solid;
+  border: $dark-color 3px solid;
   border-radius: 25px;
 }
 .chefTitle {

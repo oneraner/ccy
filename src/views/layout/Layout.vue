@@ -1,7 +1,7 @@
 <template>
-  <div id="top" class="bgc">
+  <div id="top" class="light-color">
     <div class="home">
-      <div class="darkbgc">
+      <div class="dark-color">
         <div class="container">
           <nav class="nav row justify-content-between align-items-center">
             <div class="col-12 col-xl-3 pl-0">
@@ -40,7 +40,7 @@
   <div class="min-vh">
     <router-view></router-view>
   </div>
-      <div class="darkbgc">
+      <div class="dark-color">
         <footer class="container">
           <div class="row footer justify-content-between align-items-center pl-0">
             <ul class="col-3">

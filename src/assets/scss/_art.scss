@@ -9,7 +9,7 @@
   background-size: cover;
 }
 @mixin border {
-  border: $darkbgc 3px solid;
+  border: $dark-color 3px solid;
 }
 .botradius {
   border-radius: 0 0 $border-radius $border-radius;
@@ -25,13 +25,13 @@
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/7NLyByPFKYPzKlTR0AkRlWHN7yQDyP7UrjEGTjNccenk7JHgRJDSxmBdU0dbBGCKbfQfrnudxxeKv9yDUpHMzwfm55yXIm8ZURmlROfEo5g5EZr4gNPA0N0GyDh0l3CW.jpg');
   height: 250px;
   border-radius: 25px;
-  border: $darkbgc 3px solid;
+  border: $dark-color 3px solid;
 }
 .dessertImage {
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/mrwLz0ajrH9zWn4aHx9W6mNXjtdMAoN2DUPqK2ep7nFGUrQACBnvUqxXiIawUhZxSZt6kWBgJgrpBbhGSmzhJ4jI0TpjtJaR6HNoeo5V5lj5kdKrGtTR9qc4TCvwjb1j.jpg');
   height: 250px;
   border-radius: 25px;
-  border: $darkbgc 3px solid;
+  border: $dark-color 3px solid;
 }
 .entree {
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/0B2XL6Bo37FTGgQXiKZuTHbHLADcgSe5laEPxMJnNGvWo0oxDWHDkE9HZCbSfew3d61PkNfp8lb4UqnHi1t3d29k77emPu0gkkRCU9a7MYnC9i5nBQO4qhlnvUbZZZc2.jpg');
@@ -67,7 +67,7 @@
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/Za7P6zOaaxKhzufKX3fj9zbuV5tEjAMzEvBYZsphixgb08a4CzAwfIrPpqNkDRyN8hzmgYw0CtDzIgEcbxiUaN3iYUroM1qxg0V9gncQ5dotL3ypiPjLlmbZKgyhz4Cs.jpg'); 
   height: 250px;
   border-radius: 25px;
-  border: $darkbgc 3px solid;
+  border: $dark-color 3px solid;
 }
 .restaurantImage {
   @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
