@@ -2,29 +2,38 @@ body{
     font-family: 'Kite One', 'Noto Sans TC', sans-serif;
 }
 @mixin pad {
-  @media screen and (max-width: 1199px) {
+  @media screen and (min-width: 576px) and (max-width: 991px) {
     @content;  
   }  
 };
 @mixin board {
-  @media screen and (min-width:1200px){
+  @media screen and (min-width:992px){
     @content;  
   }
 }
 @mixin moilbe {
-  @media screen and (min-width:576px){
+  @media screen and (max-width:575px){
     @content;  
   }
 }
+.moilbe {
+  display: none;
+  @include moilbe {
+    display: flex;
+  }
+}
 .nonePad {
-  @media screen and (max-width: 1199px) {
+  @include pad {
     display: none;
-  };  
+  }
+  @include moilbe {
+    display: none;
+  }
 }
 .noneBoard {
-  @media screen and (min-width:1200px){
-    display: none;  
-  };
+  @include board {
+    display: none;
+  }
 }
 .min-vh {
   min-height: calc(100vh - 230px);
@@ -34,9 +43,15 @@ body{
 }
 .bigtopSpacing {
   margin-top: 80px;
+  @include moilbe {
+    margin-top: 48px;
+  }
 }
 .bigbotSpacing {
   margin-bottom: 80px;
+  @include moilbe {
+    margin-bottom: 48px;
+  }
 }
 .sectionSpcing {
   margin-bottom: 64px;

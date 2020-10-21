@@ -1,20 +1,20 @@
 <template>
 <div>
-<b-container>
-  <b-row class="justify-content-center">
-    <b-form class="col-6 mt-3" @submit.prevent="signin">
-      <div class="form-group">
-        <label for="InputEmail">Email address</label>
-        <input v-model="user.email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="InputPassword">Password</label>
-        <input v-model="user.password" type="password" class="form-control" id="InputPassword" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-secondary mb-5">登入</button>
-    </b-form>
-  </b-row>
-</b-container>
+  <b-container>
+    <b-row class="justify-content-center">
+      <b-form class="col-6 mt-3" @submit.prevent="signin">
+        <div class="form-group">
+          <label for="InputEmail">Email address</label>
+          <input v-model="user.email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="InputPassword">Password</label>
+          <input v-model="user.password" type="password" class="form-control" id="InputPassword" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-secondary mb-5">登入</button>
+      </b-form>
+    </b-row>
+  </b-container>
 </div>
 </template>
 <script>

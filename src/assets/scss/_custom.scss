@@ -8,10 +8,16 @@
   border-radius: 25px;
   padding: 0;
   margin-left: -20px;
+  @include moilbe {
+    margin: auto;
+  }
 }
 .banner-text {
   margin-left: 20%;
   z-index: 2;
+  @include moilbe {
+    margin-left: 0;
+  }
 }
 .bannerGradient {
   top: 0;
@@ -53,9 +59,15 @@
 }
 .chefright {
   border-radius: 0 $border-radius 0 0;
+  @include moilbe {
+    border-radius: 0;
+  }
 }
 .businessHours {
   border-radius: 0 0 0 $border-radius;
+  @include moilbe {
+    border-radius: 0;
+  }
 }
 .managerContent {
   @include font;
@@ -77,10 +89,17 @@
 .setMenu-img {
   width: auto;
   height: 400px;
+  @include moilbe {
+    height: 240px;
+  }
 }
 .card-img {
   width: auto;
   height: 300px;
+  object-fit:cover;
+  @include moilbe {
+    height: 240px;
+  }
 }
 .card-img-top {
   object-fit:cover;
@@ -111,6 +130,9 @@
   font-size: 1rem;
   font-weight: 200;
   height: 100px;
+  @include moilbe {
+    height: 50px;
+  }
 }
 .menu {
   height: 400px;
@@ -121,7 +143,7 @@
   border-bottom: 3px solid #000;
 }
 .setMenu {
-  min-width: 300px;
+  min-width: 260px;
   max-width: 1050px;
   cursor: pointer;
 }
@@ -142,7 +164,25 @@
 .a2,.a3,.a4 {
   display: none;
 }
+.carttable{
+  @include moilbe {
+    display: none;
+  }
+}
+.cart-title {
+  font-size: $font-size-lg;
+  font-weight: 700;
+}
+.cart-text {
+  font-size: $font-size-base;
+  font-weight: 400;
+}
 // swiper css
+.swiper {
+  @include moilbe {
+    display: none;
+  }
+}
 .swiper-slide {
   height: 300px;
 }
@@ -215,6 +255,9 @@
 //modal css
 .modal-dialog {
   max-width: 83.33%;
+  @include moilbe {
+    max-width: 95%;
+  }
 }
 .modal-dialog-centered {
   justify-content: center;
@@ -239,6 +282,9 @@
 .modal-body {
   position: relative;
   padding: 36px;
+  @include moilbe {
+    padding: 8px;
+  }
 }
 .xButton {
   width: 40px;
@@ -247,6 +293,23 @@
   right: -20px;
   background: $secondary;
   padding: 5px;
+  @include moilbe {
+    z-index: 2;
+  }
+}
+.numberButton{
+  width: 50%;
+  @include moilbe {
+    width: 48%;
+    margin-right: 16px;
+  }
+  @include pad {
+    width: 48%;
+    margin-right: 16px;
+  }
+}
+.modalCartbutton{
+  width: 50%;
 }
 .addButton {
   width: 50px;

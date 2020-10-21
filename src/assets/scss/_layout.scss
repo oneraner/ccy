@@ -4,8 +4,11 @@
 .nav {
   height: 80px;
   border-radius: 10px;
-  @include pad{
-    height: 160px;
+  @include moilbe {
+    height: 240px;
+  }
+  @include pad {
+    height: 150px;
   }
 }
 .navButton {
@@ -40,8 +43,8 @@
 .footer {
   font-size: $font-size-lg;
   height: 150px;
-  @include pad{
-    height: 80px;
+  @include moilbe {
+    height: 140px;
   }
 }
 .contact {
