@@ -18,8 +18,8 @@
   </div>
   <div class="row justify-content-center sectionSpcing">
     <h2 class="col-8 d-flex justify-content-center chefTitle mt-3 mb-3">專業廚房</h2>
-    <div class="col-12 kitchenimg"></div>
-    <div class="col-12 d-flex justify-content-center bg-white p-3">
+    <div class="col-11 col-md-12 kitchenimg"></div>
+    <div class="botRound col-11 col-md-12 d-flex justify-content-center bg-white p-3">
       CCY Steak 的主廚團隊皆由行政主廚 Chao 由世界各地延攬而來，<br>
       從各地尋找食材與發揮食材的美味，每位成員均能獨當一面，並且 <br>
       CCY Steak 每季更新菜單，讓賓客充滿新鮮的體驗。
@@ -27,8 +27,8 @@
   </div>
   <div class="row justify-content-center sectionSpcing">
     <h2 class="col-8 d-flex justify-content-center chefTitle mt-3 mb-3">餐廳環境</h2>
-    <div class="col-12 corerestaurant"></div>
-    <div class="col-12 d-flex justify-content-center bg-white p-3">
+    <div class="col-11 col-md-12 corerestaurant"></div>
+    <div class="botRound col-11 col-md-12 d-flex justify-content-center bg-white p-3">
       CCY Steak 整體環境採用深色，重視隱私的空間規劃，於 CCY Steak 用餐，<br>
       可以在不受打擾的環境中享受沉靜的時光，餐具採用法國 DEGLON MEETING 牛排刀，<br>
       酒杯採用德國 RITZENHOFF 系列，CCY Steak 極度重視賓客的用餐體驗。
@@ -36,8 +36,8 @@
   </div>
   <div class="row justify-content-center sectionSpcing">
     <h2 class="col-8 d-flex justify-content-center chefTitle mt-3 mb-3">都市夜景</h2>
-    <div class="col-12 cityimg"></div>
-    <div class="col-12 d-flex justify-content-center bg-white p-3">
+    <div class="col-11 col-md-12 cityimg"></div>
+    <div class="botRound col-11 col-md-12 d-flex justify-content-center bg-white p-3">
       CCY Steak 座落於台北市熱鬧的信義計畫區邊角，可遠眺台北 101 ，<br>
       又不會於人來人往人流中心顯得過度吵雜，用餐前後可選周圍的象山步道，<br>
       或於信義計畫區內走走，無論喜歡熱鬧或沉靜皆可適當的規劃，帶給賓客美好的一天。

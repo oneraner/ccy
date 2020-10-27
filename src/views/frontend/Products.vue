@@ -8,9 +8,9 @@
     <div class="row justify-content-center bigtopSpacing bigbotSpacing">
       <div class="col-12 sectionSpcing">
         <div class="menuTitle col-12 mb-3">套餐</div>
-        <div class="col-12 d-flex justify-content-center flex-wrap pl-0 pr-0">
-          <div v-for="item in setMenu" :key="item.id" class="animateMenu d-flex justify-content-start mb-3 overflow-hidden position-relative">
-            <div class="setMenu d-flex flex-column flex-sm-row justify-content-start align-items-center rounded pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+        <div class="col-12 d-flex justify-content-center flex-wrap paddingLevel">
+          <div v-for="item in setMenu" :key="item.id" class="animateMenu customBorder w-100 d-flex justify-content-start mb-3 overflow-hidden position-relative">
+            <div class="setMenu d-flex flex-column flex-sm-row justify-content-start align-items-center rounded overflow-hidden" @click.prevent="getProduct(item.id)">
               <div class="col-12 col-md-6 d-flex justify-content-center align-items-center overflow-hidden">
                 <img :src="item.imageUrl[0]" class="animateimg setMenu-img">
               </div>
@@ -45,7 +45,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
@@ -163,10 +163,10 @@
     <b-modal id="productModal" ref="productModal" size="xl" centered hide-header hide-footer>
       <b-button class="xButton d-flex justify-content-center align-items-center rounded-circle position-absolute" @click="$bvModal.hide('productModal')">x</b-button>
       <div class="row justify-content-between flex-wrap mb-4">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-lg-6">
           <b-img :src="tempProduct.imageUrl[0]" fluid class="mb-3"></b-img>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-lg-6">
           <div class="activityTitle d-flex mb-3">{{tempProduct.title}}</div>
           <div class="d-flex justify-content-center mb-3">{{tempProduct.description}}</div>
             <p class="d-flex justify-content-center">

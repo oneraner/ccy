@@ -4,10 +4,31 @@
       <div class="dark-color">
         <div class="container">
           <nav class="nav row justify-content-between align-items-center">
-            <div class="col-12 col-lg-3">
-              <b-link to="/" ><div class="logo"></div></b-link>
+            <!-- moilbe -->
+            <div class="col-3 noneBoard">
+              <div>
+                <b-dropdown id="dropdown-1" variant="dark-color" no-caret>
+                  <template #button-content>
+                    <font-awesome-icon :icon="['fas', 'bars']" style="color:#ddac56; width:40px; height:40px;"/>
+                  </template>
+                  <b-dropdown-item variant="dark-color">
+                    <router-link to="/news" class="navButton">最新消息</router-link>
+                  </b-dropdown-item>
+                  <b-dropdown-item>
+                    <router-link to="/core" class="navButton">關於CCY</router-link>
+                  </b-dropdown-item>
+                  <b-dropdown-item>
+                    <router-link to="/products" class="navButton">美食饗宴</router-link>
+                  </b-dropdown-item>
+                </b-dropdown>
+              </div>
             </div>
-            <ul class="d-flex justify-content-between align-items-center col-9 col-lg-7">
+            <!-- logo -->
+            <div class="col-6 col-lg-3 pl-0 pr-0">
+              <b-link to="/" class="overflow-hidden" ><div class="logo"></div></b-link>
+            </div>
+            <!-- board -->
+            <ul class="d-lg-flex nonePad justify-content-between align-items-center col-lg-7">
               <li class="col-4 col-lg-3 center">
                 <router-link to="/news" class="navButton">最新消息</router-link>
               </li>

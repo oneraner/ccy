@@ -142,12 +142,24 @@
 .kitchenimg {
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/U39QROFDl6eylGjsAnqczSsbLPqyTQg06ObhOThPvWDlnPb3VTL6i079iRhBYb7KCLRZnklACfWDWQeWE8ydwT6moqrq5CrA3dVbXgQS54MfH8ITyYxPVsPP3PpPyOhH.jpg');
     height: 500px;
+  @include moilbe {
+    height: 310px;
+  }
+    border-radius: $border-radius $border-radius 0 0;
 }
 .cityimg {
   @include bgi('https://hexschool-api.s3.us-west-2.amazonaws.com/custom/5tZX9agZmm9bcEL4TpctpJ59tXFp79MR6BAW7NaxFxQcFm47GBkRcKlj88BRsaYAvsr5f6GGDfnOzH0CtWHI2h9PiZtfnIoUaGmiA7HmzfjScpY30znlNVVRuh16LBBV.jpg');
     height: 500px;
+  @include moilbe {
+    height: 310px;
+  }
+    border-radius: $border-radius $border-radius 0 0;
 }
 .corerestaurant {
   @include bgi('~@/assets/image/adrien-olichon-ZgREXhl8ER0-unsplash.jpg');
     height: 500px;
+  @include moilbe {
+    height: 310px;
+  }
+    border-radius: $border-radius $border-radius 0 0;
 }

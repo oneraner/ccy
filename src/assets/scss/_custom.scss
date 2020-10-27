@@ -10,13 +10,32 @@
   margin-left: -20px;
   @include moilbe {
     margin: auto;
+    height: 100px;
   }
+}
+.dropdown-menu {
+  background-color: $dark-color;
+  width: 300px;
+  @include pad {
+    width: 550px;
+  }
+}
+.dropdown-item {
+  text-align: center;
 }
 .banner-text {
   margin-left: 20%;
   z-index: 2;
   @include moilbe {
     margin-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.banner-text-p {
+  @include moilbe {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 .bannerGradient {
@@ -93,6 +112,12 @@
     height: 240px;
   }
 }
+.card-deck {
+  @include moilbe {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 .card-img {
   width: auto;
   height: 300px;
@@ -105,8 +130,13 @@
   object-fit:cover;
 }
 .customCard {
-  min-width: 300px;
-  max-width: 500px;
+  width: 500px;
+  @include pad {
+    width: 400px;
+  }
+  @include moilbe {
+    width: 300px;
+  }
   border: 1px solid $secondary;
   border-radius: 8px;
 }
@@ -143,8 +173,7 @@
   border-bottom: 3px solid #000;
 }
 .setMenu {
-  min-width: 260px;
-  max-width: 1050px;
+  width: 100%;
   cursor: pointer;
 }
 .activityTitle {
@@ -195,7 +224,7 @@
 // hover animate
 .animateMenu:hover {
   border: 1px solid $primary;
-  border-radius: 8px;
+  border-radius: $border-radius;
 }
 .animateMenu:hover .animateimg {
   transform: translate(0, 0) scale(1.2);
@@ -310,6 +339,7 @@
 }
 .modalCartbutton{
   width: 50%;
+  text-align: center;
 }
 .addButton {
   width: 50px;

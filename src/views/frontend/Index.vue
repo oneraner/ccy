@@ -9,7 +9,7 @@
     <div class="bannerGradient h-100 w-50 position-absolute"></div>
     <div class="banner-text">
       <h1 class="d-flex justify-content-center justify-content-sm-start mb-3">一客完美的牛排</h1>
-      <p>創新熟成技術，歲月的琢磨打造自信的牛排，<br>東西方經典甜點。</p>
+      <p class="banner-text-p">創新熟成技術，歲月的琢磨打造自信的牛排，<br>東西方經典甜點。</p>
       <b-link to="/products" class="bannerbutton border rounded d-flex justify-content-center align-items-center p-3">瀏覽菜單</b-link>
     </div>
   </div>
@@ -39,30 +39,30 @@
     </swiper>
     <!-- moilbe products img -->
     <div class="moilbe">
-      <div class="row">
-        <div class="col-12 entree rounded position-relative mb-3">
+      <div class="row justify-content-center">
+        <div class="col-11 entree rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[0])">綜合刺身</div>
         </div>
-        <div class="col-12 soup rounded position-relative mb-3">
+        <div class="col-11 soup rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[1])">法式洋蔥湯</div>
         </div>
-        <div class="col-12 salad rounded position-relative mb-3">
+        <div class="col-11 salad rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[2])">凱薩沙拉</div>
         </div>
-        <div class="col-12 dessert rounded position-relative mb-3">
+        <div class="col-11 dessert rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[3])">法式馬卡龍</div>
         </div>
-        <div class="col-12 tea rounded position-relative mb-3">
+        <div class="col-11 tea rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[4])">名間冬片仔</div>
         </div>
-        <div class="col-12 sausage rounded position-relative mb-3">
+        <div class="col-11 sausage rounded position-relative mb-3">
           <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[5])">墨魚香腸</div>
         </div>
       </div>
     </div>
     <div class="row justify-content-center">
       <h2 class="col-8 d-flex justify-content-center chefTitle mb-3">主廚</h2>
-      <div class="col-12 d-flex flex-column flex-lg-row justify-content-center">
+      <div class="col-12 d-flex flex-column flex-lg-row justify-content-center moilbePadding">
         <div class="chef col-12 col-lg-6"></div>
         <div class="chefright d-flex flex-column justify-content-center col-12 col-lg-6 bg-secondary text-white p-4">
           <p class="activityTitle d-flex justify-content-center">Chef Chao</p>
@@ -77,7 +77,7 @@
       </div>
     </div>
     <div class="row sectionSpcing">
-      <div class="col-12 d-flex flex-column-reverse flex-lg-row">
+      <div class="col-12 d-flex flex-column-reverse flex-lg-row moilbePadding">
         <ul class="businessHours d-flex flex-column align-items-start col-12 col-lg-6 bg-secondary text-white p-4">
           <li class="activityTitle w-100 d-flex justify-content-center mb-5">營業時間 Business Hours</li>
           <li class="mb-5">午餐 Lunch： 11；00~14：00(最後點餐時間為13：00)</li>

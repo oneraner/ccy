@@ -56,6 +56,27 @@ body{
 .sectionSpcing {
   margin-bottom: 64px;
 }
+.botRound{
+  border-radius: 0 0 $border-radius $border-radius;
+}
+.paddingLevel{
+  @include moilbe {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.moilbePadding {
+  @include moilbe {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.customBorder{
+  border: 1px solid $secondary;
+  border-radius: $border-radius;
+}
 // loadcss
 @keyframes ldio-9d27yb1g2eu {
   0% { opacity: 1 }

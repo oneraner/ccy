@@ -5,10 +5,10 @@
   height: 80px;
   border-radius: 10px;
   @include moilbe {
-    height: 240px;
+    height: 100px;
   }
   @include pad {
-    height: 150px;
+    height: 100px;
   }
 }
 .navButton {
@@ -44,7 +44,7 @@
   font-size: $font-size-lg;
   height: 150px;
   @include moilbe {
-    height: 140px;
+    height: 160px;
   }
 }
 .contact {
