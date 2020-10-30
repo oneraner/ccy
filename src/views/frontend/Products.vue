@@ -8,22 +8,22 @@
     <div class="row justify-content-center bigtopSpacing bigbotSpacing">
       <div class="col-12 sectionSpcing">
         <div class="menuTitle col-12 mb-3">套餐</div>
-        <div class="col-12 d-flex justify-content-center flex-wrap paddingLevel">
-          <div v-for="item in setMenu" :key="item.id" class="animateMenu customBorder w-100 d-flex justify-content-start mb-3 overflow-hidden position-relative">
+        <div class="col-12 d-flex justify-content-center flex-wrap">
+          <div v-for="item in setMenu" :key="item.id" class="animateMenu customSetmenu d-flex justify-content-start mb-3 overflow-hidden position-relative">
             <div class="setMenu d-flex flex-column flex-sm-row justify-content-start align-items-center rounded overflow-hidden" @click.prevent="getProduct(item.id)">
-              <div class="col-12 col-md-6 d-flex justify-content-center align-items-center overflow-hidden">
+              <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center overflow-hidden">
                 <img :src="item.imageUrl[0]" class="animateimg setMenu-img">
               </div>
-              <div class="menu col-12 col-sm-6 d-flex flex-column justify-content-between bg-white pt-sm-5 pb-sm-5">
+              <div class="menu col-12 col-sm-6 d-flex flex-column justify-content-between bg-white pt-lg-5 pb-lg-5">
                 <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
                 <p class="custom-cardbody d-flex justify-content-center">{{item.content}}</p>
-                <p class="d-flex justify-content-around">
+                <p class="d-flex justify-content-around mt-n3">
                   <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
                   <span class="card-text">特價：{{item.price}}</span>
                 </p>
                 <p class="d-flex justify-content-between">
-                  <span class="col-6 pl-0 pr-sm-3"><b-button class="w-100" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button></span>
-                  <span class="col-6 pl-0 pl-sm-3 pr-0 pr-sm-3" onclick="event.cancelBubble = true"><b-button class="w-100" @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+                  <span class="pr-3"><b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button></span>
+                  <span class="" onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
                 </p>
               </div>
             </div>

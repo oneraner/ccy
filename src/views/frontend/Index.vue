@@ -40,23 +40,43 @@
     <!-- moilbe products img -->
     <div class="moilbe">
       <div class="row justify-content-center">
-        <div class="col-11 entree rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[0])">綜合刺身</div>
+        <div class="col-12 d-flex justify-content-around flex-wrap">
+          <div v-for="item in setMenu" :key="item.id" class="animateMenu customCard d-flex flex-column flex-sm-row justify-content-start overflow-hidden mb-3">
+            <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+              <img :src="item.imageUrl[0]" class="animateimg card-img">
+            </div>
+            <div class="custom-cardright col-12 col-sm-6 bg-white d-flex flex-column justify-content-between"  @click.prevent="getProduct(item.id)">
+              <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
+              <p class="custom-cardbody">{{item.content}}</p>
+              <p class="d-flex justify-content-around">
+                <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
+                <span class="card-text">特價：{{item.price}}</span>
+              </p>
+              <p class="d-flex justify-content-around">
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="col-11 soup rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[1])">法式洋蔥湯</div>
-        </div>
-        <div class="col-11 salad rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[2])">凱薩沙拉</div>
-        </div>
-        <div class="col-11 dessert rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[3])">法式馬卡龍</div>
-        </div>
-        <div class="col-11 tea rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[4])">名間冬片仔</div>
-        </div>
-        <div class="col-11 sausage rounded position-relative mb-3">
-          <div class="swiperanimate" @click.prevent="getProduct(swiperitem.id[5])">墨魚香腸</div>
+        <div class="col-12 d-flex justify-content-around flex-wrap">
+          <div v-for="item in entree" :key="item.id" class="animateMenu customCard d-flex flex-column flex-sm-row justify-content-start overflow-hidden mb-3">
+            <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center pr-0 overflow-hidden" @click.prevent="getProduct(item.id)">
+              <img :src="item.imageUrl[0]" class="animateimg card-img">
+            </div>
+            <div class="custom-cardright col-12 col-sm-6 bg-white d-flex flex-column justify-content-between"  @click.prevent="getProduct(item.id)">
+              <p class="card-title d-flex justify-content-center pt-3 pb-3 mb-0">{{item.title}}</p>
+              <p class="custom-cardbody">{{item.content}}</p>
+              <p class="d-flex justify-content-around">
+                <span class="card-text">原價：<del>{{item.origin_price}}</del></span>
+                <span class="card-text">特價：{{item.price}}</span>
+              </p>
+              <p class="d-flex justify-content-around">
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -183,6 +203,8 @@ export default {
         num: 1,
         imageUrl: []
       },
+      setMenu: [],
+      entree: [],
       swiperitem: {
         id: [
           'mVsZuU5Edl0g86gHY5nqXdEvhwnDwNnW9B3oPQfPZ9CAgccusL5QQ1hWPGWNiLLh',
@@ -197,7 +219,28 @@ export default {
 
     }
   },
+  created () {
+    this.getProducts()
+  },
   methods: {
+    getProducts (page = 1) {
+      this.isLoading = true
+      const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/products?page=${page}`
+      this.$http.get(api).then((res) => {
+        this.products = res.data.data
+        this.setMenu = this.products.filter((item) =>
+          item.category === '套餐'
+        )
+        this.entree = this.products.filter((item) =>
+          item.category === '前菜'
+        )
+        this.isLoading = false
+      }).catch((error) => {
+        if (error) {
+          this.isLoading = false
+        }
+      })
+    },
     getProduct (id) {
       this.isLoading = true
       const api = `${process.env.VUE_APP_APIPATH}api/${process.env.VUE_APP_UUID}/ec/product/${id}`

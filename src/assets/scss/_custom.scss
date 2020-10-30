@@ -108,8 +108,21 @@
 .setMenu-img {
   width: auto;
   height: 400px;
+  object-fit:cover;
+  @include pad {
+    height: 300px;
+  }
   @include moilbe {
     height: 240px;
+  }
+}
+.setMenu-right {
+  height: 400px;
+  @include pad {
+    height: 300px;
+  }
+  @include moilbe {
+    height: 300px;
   }
 }
 .card-deck {
@@ -128,6 +141,17 @@
 }
 .card-img-top {
   object-fit:cover;
+}
+.customSetmenu {
+  width: 1050px;
+  @include pad {
+    width: 400px;
+  }
+  @include moilbe {
+    width: 300px;
+  }
+  border: 1px solid $secondary;
+  border-radius: $border-radius;
 }
 .customCard {
   width: 500px;
@@ -166,6 +190,9 @@
 }
 .menu {
   height: 400px;
+  @include pad {
+    height: 300px;
+  }
 }
 .menuTitle {
   font-size: 36px;
