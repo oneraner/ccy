@@ -22,8 +22,8 @@
                   <span class="card-text">特價：{{item.price}}</span>
                 </p>
                 <p class="d-flex justify-content-between">
-                  <span class="pr-3"><b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button></span>
-                  <span class="" onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
+                  <span class="w-50 pr-3"><b-button class="w-100" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button></span>
+                  <span class="w-50" onclick="event.cancelBubble = true"><b-button class="w-100" @click.prevent="addCart(item.id)">加入購物車</b-button></span>
                 </p>
               </div>
             </div>
@@ -176,13 +176,13 @@
               <span class="mr-3"><small>原價：<del>{{tempProduct.origin_price}}</del></small></span>
               <span>特價：{{tempProduct.price}}</span>
             </p>
-            <div class="col-12 d-flex justify-content-between">
+            <div class="col-12 d-flex justify-content-center p-0">
               <div class="numberButton d-flex">
                 <b-button class="addButton" @click.prevent="updateSubtract()">-</b-button>
                 <div class="productNum">{{tempProduct.num}}</div>
                 <b-button class="lessButton" @click.prevent="tempProduct.num ++;updateQ()">+</b-button>
               </div>
-              <b-button class="modalCartbutton mr-3" @click.prevent="addCart(tempProduct.id, tempProduct.num)">加入購物車</b-button>
+              <b-button class="modalCartbutton" @click.prevent="addCart(tempProduct.id, tempProduct.num)">加入購物車</b-button>
             </div>
          </div>
       </div>

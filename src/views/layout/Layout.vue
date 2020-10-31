@@ -9,7 +9,7 @@
               <div>
                 <b-dropdown id="dropdown-1" variant="dark-color" no-caret>
                   <template #button-content>
-                    <font-awesome-icon :icon="['fas', 'bars']" style="color:#ddac56; width:40px; height:40px;"/>
+                    <font-awesome-icon :icon="['fas', 'bars']" style="color:#ddac56; width:35px; height:35px;"/>
                   </template>
                   <b-dropdown-item variant="dark-color">
                     <router-link to="/news" class="navButton">最新消息</router-link>
@@ -39,10 +39,19 @@
                 <router-link to="/products" class="navButton">美食饗宴</router-link>
               </li>
             </ul>
-            <ul class="d-flex justify-content-center justify-content-xl-end align-items-center col-3 col-lg-2">
+            <!-- board-cart -->
+            <ul class="d-lg-flex justify-content-center justify-content-xl-end align-items-center nonePad col-3 col-lg-2">
               <li class="hoverWhite">
-                <b-button to="/cart" variant="outline-primary" class="cartButton nonePad">
+                <b-button to="/cart" variant="outline-primary" class="cartButton">
                   <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:30px; height:30px; border-radius:50%;"/>
+                </b-button>
+              </li>
+            </ul>
+            <!-- pad moilbe cart -->
+            <ul class="d-flex d-lg-none noneBoard justify-content-center align-items-center col-3">
+              <li class="hoverWhite">
+                <b-button to="/cart">
+                   <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:35px; height:35px;"/>
                 </b-button>
               </li>
             </ul>

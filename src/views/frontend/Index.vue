@@ -145,7 +145,7 @@
               <span class="mr-3"><small>原價：<del>{{tempProduct.origin_price}}</del></small></span>
               <span>特價：{{tempProduct.price}}</span>
             </p>
-          <div class="col-12 d-flex justify-content-between">
+          <div class="col-12 d-flex justify-content-center p-0">
             <div class="numberButton d-flex">
               <b-button class="addButton" @click.prevent="updateSubtract()">-</b-button>
               <div class="productNum">{{tempProduct.num}}</div>
