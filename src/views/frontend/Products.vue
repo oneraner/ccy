@@ -67,7 +67,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
@@ -89,7 +89,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
@@ -111,7 +111,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
@@ -133,7 +133,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
@@ -154,7 +154,7 @@
                 <span class="card-text">特價：{{item.price}}</span>
               </p>
               <p class="d-flex justify-content-around">
-                <b-button variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
+                <b-button class="mr-3" variant="outline-secondary" @click.prevent="getProduct(item.id)">查看詳情</b-button>
                 <span onclick="event.cancelBubble = true"><b-button @click.prevent="addCart(item.id)">加入購物車</b-button></span>
               </p>
             </div>
