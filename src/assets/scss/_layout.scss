@@ -12,6 +12,9 @@
   }
 }
 .navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family:'Noto Sans TC', sans-serif;
   font-size: $font-size-lg;
   font-weight: 400;
@@ -20,6 +23,20 @@
   text-decoration:none;
   padding: 20px 10px 20px 10px;
   border-radius: $border-radius;
+  @include pad {
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @include moilbe {
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 .iconButton {
   border: 1px solid $primary;

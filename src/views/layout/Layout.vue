@@ -1,31 +1,23 @@
 <template>
   <div id="top" class="light-color">
     <div class="home">
-      <div class="dark-color">
+      <div class="dark-color position-relative">
+        <ul class="navDropdown-menu" style="display:none">
+          <li class="navDropdown-item"><b-link to="/news" class="navButton" @click="navDropdown()">最新消息</b-link></li>
+          <li class="navDropdown-item"><b-link to="/core" class="navButton" @click="navDropdown()">關於CCY</b-link></li>
+          <li class="navDropdown-item"><b-link to="/products" class="navButton" @click="navDropdown()">美食饗宴</b-link></li>
+        </ul>
         <div class="container">
           <nav class="nav row justify-content-between align-items-center">
             <!-- moilbe -->
             <div class="col-3 noneBoard">
-              <div>
-                <b-dropdown id="dropdown-1" variant="dark-color" no-caret>
-                  <template #button-content>
-                    <font-awesome-icon :icon="['fas', 'bars']" style="color:#ddac56; width:35px; height:35px;"/>
-                  </template>
-                  <b-dropdown-item variant="dark-color">
-                    <router-link to="/news" class="navButton">最新消息</router-link>
-                  </b-dropdown-item>
-                  <b-dropdown-item>
-                    <router-link to="/core" class="navButton">關於CCY</router-link>
-                  </b-dropdown-item>
-                  <b-dropdown-item>
-                    <router-link to="/products" class="navButton">美食饗宴</router-link>
-                  </b-dropdown-item>
-                </b-dropdown>
-              </div>
+              <b-button @click.prevent="navDropdown()">
+                <font-awesome-icon :icon="['fas', 'bars']" style="color:#ddac56; width:35px; height:35px;"/>
+              </b-button>
             </div>
             <!-- logo -->
             <div class="col-6 col-lg-3 pl-0 pr-0">
-              <b-link to="/" class="overflow-hidden" ><div class="logo"></div></b-link>
+              <b-link to="/" class="overflow-hidden" @click="closeDropdown()"><div class="logo"></div></b-link>
             </div>
             <!-- board -->
             <ul class="d-lg-flex nonePad justify-content-between align-items-center col-lg-7">
@@ -50,7 +42,7 @@
             <!-- pad moilbe cart -->
             <ul class="d-flex d-lg-none noneBoard justify-content-center align-items-center col-3">
               <li class="hoverWhite">
-                <b-button to="/cart">
+                <b-button to="/cart" @click="closeDropdown()">
                    <font-awesome-icon :icon="['fas', 'shopping-cart']" style="color:#ddac56; width:35px; height:35px;"/>
                 </b-button>
               </li>
@@ -64,7 +56,7 @@
       <div class="dark-color">
         <footer class="container">
           <div class="row footer justify-content-between align-items-center pl-0">
-            <ul class="col-12 col-lg-3">
+            <ul class="col-6 col-lg-3 m-auto m-lg-0">
               <b-link to="/"><div class="logo"></div></b-link>
               <li class="address rounded p-1 nonePad d-lg-flex align-items-center">本網站由ccysteak公司所有
                 <router-link to="/admin/image" class="btn btn-manager nonePad"><font-awesome-icon :icon="['fas', 'tools']" style="color:#ddac56; width:27px; height:20px;"/></router-link>
@@ -106,6 +98,20 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    navDropdown () {
+      const dropdown = document.querySelector('.navDropdown-menu')
+      if (dropdown.style.display === 'none') {
+        dropdown.style.display = 'block'
+      } else {
+        dropdown.style.display = 'none'
+      }
+    },
+    closeDropdown () {
+      const dropdown = document.querySelector('.navDropdown-menu')
+      dropdown.style.display = 'none'
     }
   }
 }

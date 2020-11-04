@@ -6,10 +6,10 @@
     </div></div>
   </Loading>
   <div class="banner d-flex justify-content-center justify-content-sm-start align-items-center text-white sectionSpcing position-relative">
-    <div class="bannerGradient h-100 w-50 position-absolute"></div>
+    <div class="bannerGradient position-absolute"></div>
     <div class="banner-text">
       <h1 class="d-flex justify-content-center justify-content-sm-start mb-3">一客完美的牛排</h1>
-      <p class="banner-text-p">創新熟成技術，歲月的琢磨打造自信的牛排，<br>東西方經典甜點。</p>
+      <p class="banner-text-p">創新熟成技術，歲月的琢磨打造自信的牛排，東西方經典甜點。</p>
       <b-link to="/products" class="bannerbutton border rounded d-flex justify-content-center align-items-center p-3">瀏覽菜單</b-link>
     </div>
   </div>
